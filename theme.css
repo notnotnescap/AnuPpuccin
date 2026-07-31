@@ -4702,7 +4702,7 @@ Support me: https://buymeacoffee.com/AnubisNekhet
 .callout[data-callout-metadata*=anp-block]:not([data-callout-metadata*=revert],
 [data-callout=blank-container],
 [data-callout=multi-column]) {
-  border-left: var(--size-2-3) solid rgb(var(--callout-color));
+  border-left: var(--size-2-3) solid var(--callout-color);
 }
 
 .anp-callout-sleek .callout:not([data-callout-metadata*=anp-block],
@@ -4726,7 +4726,7 @@ Support me: https://buymeacoffee.com/AnubisNekhet
 .callout[data-callout-metadata*=anp-sleek]:not([data-callout-metadata*=revert],
 [data-callout=blank-container],
 [data-callout=multi-column]) > .callout-title {
-  background-color: rgba(var(--callout-color), var(--callout-title-opacity, 0.1));
+  background-color: rgba(from var(--callout-color) r g b / var(--callout-title-opacity, 0.1));
 }
 .anp-callout-sleek .callout:not([data-callout-metadata*=anp-block],
 [data-callout-metadata*=anp-vanilla-normal],
@@ -4736,7 +4736,7 @@ Support me: https://buymeacoffee.com/AnubisNekhet
 .callout[data-callout-metadata*=anp-sleek]:not([data-callout-metadata*=revert],
 [data-callout=blank-container],
 [data-callout=multi-column]) > .callout-content {
-  border-top: var(--callout-border-width) dashed rgba(var(--callout-color), var(--callout-border-opacity));
+  border-top: var(--callout-border-width) dashed rgba(from var(--callout-color) r g b / var(--callout-border-opacity));
 }
 .anp-callout-sleek .callout:not([data-callout-metadata*=anp-block],
 [data-callout-metadata*=anp-vanilla-normal],
@@ -4768,7 +4768,7 @@ Support me: https://buymeacoffee.com/AnubisNekhet
 .callout[data-callout-metadata*=anp-vanilla-normal]:not([data-callout-metadata*=revert],
 [data-callout=blank-container],
 [data-callout=multi-column]) > .callout-title {
-  background-color: rgba(var(--callout-color), var(--callout-title-opacity, 0.1));
+  background-color: rgba(from var(--callout-color) r g b / var(--callout-title-opacity, 0.1));
 }
 .anp-callout-vanilla-normal .callout:not([data-callout-metadata*=anp-sleek],
 [data-callout-metadata*=anp-vanilla-plus],
@@ -4796,7 +4796,7 @@ Support me: https://buymeacoffee.com/AnubisNekhet
 .callout[data-callout-metadata*=anp-vanilla-normal]:not([data-callout-metadata*=revert],
 [data-callout=blank-container],
 [data-callout=multi-column]) > .callout-content {
-  border-left: var(--size-2-3) solid rgb(var(--callout-color));
+  border-left: var(--size-2-3) solid var(--callout-color);
 }
 
 .anp-callout-vanilla-plus .callout:not([data-callout-metadata*=anp-sleek],
@@ -4817,8 +4817,8 @@ Support me: https://buymeacoffee.com/AnubisNekhet
 .callout[data-callout-metadata*=anp-vanilla-plus]:not([data-callout-metadata*=revert],
 [data-callout=blank-container],
 [data-callout=multi-column]) > .callout-title {
-  background-color: rgba(var(--callout-color), var(--callout-title-opacity, 0.1));
-  border-left: var(--size-2-3) solid rgb(var(--callout-color));
+  background-color: rgba(from var(--callout-color) r g b / var(--callout-title-opacity, 0.1));
+  border-left: var(--size-2-3) solid var(--callout-color);
 }
 .anp-callout-vanilla-plus .callout:not([data-callout-metadata*=anp-sleek],
 [data-callout-metadata*=anp-vanilla-normal],
@@ -4876,39 +4876,39 @@ Support me: https://buymeacoffee.com/AnubisNekhet
 
 /*---------------CALLOUT COLORS----------------*/
 .anp-callout-color-toggle .callout[data-callout=note] {
-  --callout-color: var(--ctp-blue);
+  --callout-color: rgb(var(--ctp-blue));
 }
 .anp-callout-color-toggle .callout[data-callout=abstract], .anp-callout-color-toggle .callout[data-callout=summary], .anp-callout-color-toggle .callout[data-callout=tldr], .anp-callout-color-toggle .callout[data-callout=seealso] {
-  --callout-color: var(--ctp-blue);
+  --callout-color: rgb(var(--ctp-blue));
 }
 .anp-callout-color-toggle .callout[data-callout=info], .anp-callout-color-toggle .callout[data-callout=todo], .anp-callout-color-toggle .callout[data-callout=tip], .anp-callout-color-toggle .callout[data-callout=hint], .anp-callout-color-toggle .callout[data-callout=important] {
-  --callout-color: var(--ctp-teal);
+  --callout-color: rgb(var(--ctp-teal));
 }
 .anp-callout-color-toggle .callout[data-callout=success], .anp-callout-color-toggle .callout[data-callout=check], .anp-callout-color-toggle .callout[data-callout=done], .anp-callout-color-toggle .callout[data-callout=question], .anp-callout-color-toggle .callout[data-callout=help], .anp-callout-color-toggle .callout[data-callout=faq] {
-  --callout-color: var(--ctp-green);
+  --callout-color: rgb(var(--ctp-green));
 }
 .anp-callout-color-toggle .callout[data-callout=warning], .anp-callout-color-toggle .callout[data-callout=caution], .anp-callout-color-toggle .callout[data-callout=attention] {
-  --callout-color: var(--ctp-yellow);
+  --callout-color: rgb(var(--ctp-yellow));
 }
 .anp-callout-color-toggle .callout[data-callout=failure], .anp-callout-color-toggle .callout[data-callout=fail], .anp-callout-color-toggle .callout[data-callout=missing] {
-  --callout-color: var(--ctp-maroon);
+  --callout-color: rgb(var(--ctp-maroon));
 }
 .anp-callout-color-toggle .callout[data-callout=danger], .anp-callout-color-toggle .callout[data-callout=error], .anp-callout-color-toggle .callout[data-callout=bug] {
-  --callout-color: var(--ctp-red);
+  --callout-color: rgb(var(--ctp-red));
 }
 .anp-callout-color-toggle .callout[data-callout=example] {
-  --callout-color: var(--ctp-mauve);
+  --callout-color: rgb(var(--ctp-mauve));
 }
 .anp-callout-color-toggle .callout[data-callout=quote], .anp-callout-color-toggle .callout[data-callout=cite] {
-  --callout-color: var(--ctp-surface2);
+  --callout-color: rgb(var(--ctp-surface2));
 }
 .anp-callout-color-toggle.anuppuccin-accent-toggle .callout[data-callout=note] {
-  --callout-color: var(--ctp-accent);
+  --callout-color: rgb(var(--ctp-accent));
 }
 
 /*---------------CUSTOM CALLOUTS---------------*/
 .callout[data-callout=formula] {
-  --callout-color: var(--ctp-text);
+  --callout-color: rgb(var(--ctp-text));
   width: fit-content;
   height: fit-content;
   mix-blend-mode: normal;
