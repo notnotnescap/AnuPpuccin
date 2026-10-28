@@ -3879,12 +3879,6 @@ input.slider,
   background-color: rgba(var(--ctp-text), 0.075);
 }
 
-/*-Side dock Ribbon border fix-*/
-.side-dock-ribbon,
-.workspace-ribbon.mod-primary:before {
-  border: none;
-}
-
 .mod-community-theme .modal-content .community-modal-details .community-modal-info summary h1:first-child,
 .mod-community-theme .modal-content .community-modal-details .community-modal-info summary h2:first-child,
 .mod-community-theme .modal-content .community-modal-details .community-modal-info summary h3:first-child,
@@ -4610,6 +4604,13 @@ body.anp-border-layout .workspace-ribbon.mod-left:before {
 body.anp-border-layout .workspace-ribbon.mod-left,
 body.anp-border-layout .workspace-ribbon.mod-left.is-focused {
   border-right-color: var(--card-background-color);
+}
+body.anp-border-layout {
+  /*-Side dock Ribbon border fix-*/
+}
+body.anp-border-layout .side-dock-ribbon,
+body.anp-border-layout .workspace-ribbon.mod-primary:before {
+  border: none;
 }
 body.anp-border-layout.is-popout-window .workspace {
   margin-left: var(--anp-border-padding, 20px);
