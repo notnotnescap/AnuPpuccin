@@ -3753,11 +3753,11 @@ input.slider,
 }
 
 .canvas-node.is-themed .canvas-node-label {
-  color: rgb(var(--canvas-color));
+  color: var(--canvas-color);
 }
 
 .canvas-node-placeholder {
-  color: rgb(var(--canvas-color));
+  color: var(--canvas-color);
 }
 .canvas-node-placeholder::after {
   top: 0;
