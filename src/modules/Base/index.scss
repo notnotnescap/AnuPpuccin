@@ -3,22 +3,22 @@
 *===============================================================*/
 
 /*======== EDITOR ===============*/
-@import "editor.scss";
+@use "editor.scss";
 
 /*======== CURSOR MODS ==========*/
-@import "cursor-modifications.scss";
+@use "cursor-modifications.scss";
 
 /*======== FILE PREVIEW =========*/
-@import "file-preview.scss";
+@use "file-preview.scss";
 
 /*======== GRAPH ================*/
-@import "graph.scss";
+@use "graph.scss";
 
 /*======== RTL ==================*/
-@import "rtl.scss";
+@use "rtl.scss";
 
 /*======== PRINT ================*/
-@import "print.scss";
+@use "print.scss";
 
 /*======== PDF ==================*/
-@import "pdf.scss";
+@use "pdf.scss";

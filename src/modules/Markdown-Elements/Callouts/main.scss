@@ -1,3 +1,8 @@
+@use "styles/block.scss";
+@use "styles/sleek.scss";
+@use "styles/vanilla-normal.scss";
+@use "styles/vanilla-plus.scss";
+
 /*----------------CALLOUTS-------------------*/
 .callout:not([data-callout-metadata*="revert"]) {
     //targets callouts that dont have revert metadata
@@ -56,8 +61,3 @@
         margin: 0 !important;
     }
 }
-
-@import "styles/block.scss";
-@import "styles/sleek.scss";
-@import "styles/vanilla-normal.scss";
-@import "styles/vanilla-plus.scss";

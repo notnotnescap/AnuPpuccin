@@ -26,9 +26,6 @@ body .kanban-plugin__lane {
   border: none;
   border-radius: 0;
 }
-body .kanban-plugin__lane .kanban-plugin__lane-header-wrapper {
-  border-bottom: none;
-}
 body .kanban-plugin__lane .kanban-plugin__lane-header-wrapper .kanban-plugin__lane-grip {
   color: var(--text-muted);
 }
@@ -51,6 +48,9 @@ body .kanban-plugin__lane .kanban-plugin__lane-header-wrapper .kanban-plugin__la
 body .kanban-plugin__lane .kanban-plugin__lane-header-wrapper .kanban-plugin__lane-settings-button-wrapper .kanban-plugin__lane-settings-button .kanban-plugin__icon {
   rotate: 90deg;
 }
+body .kanban-plugin__lane .kanban-plugin__lane-header-wrapper {
+  border-bottom: none;
+}
 body .kanban-plugin__lane:has(.kanban-plugin__placeholder:only-child):not(:has(.kanban-plugin__item)) .kanban-plugin__item-button-wrapper {
   padding: 0;
 }
@@ -66,14 +66,14 @@ body .kanban-plugin__lane .kanban-plugin__lane-items .kanban-plugin__placeholder
   margin-bottom: 0;
   margin-top: 0;
 }
+body .kanban-plugin__lane .kanban-plugin__lane-items .kanban-plugin__item-wrapper .kanban-plugin__item.is-complete .kanban-plugin__item-markdown {
+  text-decoration: line-through;
+  color: var(--text-faint);
+}
 body .kanban-plugin__lane .kanban-plugin__lane-items .kanban-plugin__item-wrapper .kanban-plugin__item {
   border: none;
   box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 2px 4px;
   transition: background var(--kanban-transition) !important;
-}
-body .kanban-plugin__lane .kanban-plugin__lane-items .kanban-plugin__item-wrapper .kanban-plugin__item.is-complete .kanban-plugin__item-markdown {
-  text-decoration: line-through;
-  color: var(--text-faint);
 }
 body .kanban-plugin__lane .kanban-plugin__lane-items .kanban-plugin__item-wrapper .kanban-plugin__item .kanban-plugin__item-content-wrapper {
   background: var(--notion-kanban-card);

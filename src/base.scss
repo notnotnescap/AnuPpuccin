@@ -13,9 +13,9 @@ of my code, please credit my theme in your CSS file, and specify
             https://www.buymeacoffee.com/anubisnekhet
 *===============================================================*/
 
-@import "modules/Core/index.scss";
-@import "modules/Base/index.scss";
-@import "modules/Workspace/index.scss";
-@import "modules/Markdown-Elements/index.scss";
-@import "modules/Features/index.scss";
-@import "modules/Integrations/index.scss";
+@use "modules/Core/index.scss" as core;
+@use "modules/Base/index.scss" as base;
+@use "modules/Workspace/index.scss" as workspace;
+@use "modules/Markdown-Elements/index.scss" as markdown;
+@use "modules/Features/index.scss" as features;
+@use "modules/Integrations/index.scss" as integrations;

@@ -116,34 +116,37 @@ settings:
             value: ctp-thorns
 */
 
-@import "ext-colorschemes/amoled-dark.scss";
-@import "ext-colorschemes/atom-dark.scss";
-@import "ext-colorschemes/atom-light.scss";
-@import "ext-colorschemes/biscuit-dark.scss";
-@import "ext-colorschemes/coffee-dark.scss";
-@import "ext-colorschemes/dracula.scss";
-@import "ext-colorschemes/everforest-light.scss";
-@import "ext-colorschemes/everforest-dark.scss";
-@import "ext-colorschemes/flexoki-dark.scss";
-@import "ext-colorschemes/generic-dark.scss";
-@import "ext-colorschemes/gruvbox-dark.scss";
-@import "ext-colorschemes/gruvbox-light.scss";
-@import "ext-colorschemes/kanagawa-dark.scss";
-@import "ext-colorschemes/luminscence-light.scss";
-@import "ext-colorschemes/nord-dark.scss";
-@import "ext-colorschemes/nord-light.scss";
-@import "ext-colorschemes/nord-darker.scss";
-@import "ext-colorschemes/notion-light.scss";
-@import "ext-colorschemes/notion-dark.scss";
-@import "ext-colorschemes/rosebox.scss";
-@import "ext-colorschemes/rosepine-dark.scss";
-@import "ext-colorschemes/royal-velvet.scss";
-@import "ext-colorschemes/sandy-beaches-light.scss";
-@import "ext-colorschemes/solarized-dark.scss";
-@import "ext-colorschemes/solarized-light.scss";
-@import "ext-colorschemes/thorns.scss";
-@import "ext-colorschemes/material-mint-light.scss";
-@import "ext-colorschemes/material-mint-dark.scss";
+@use "sass:map";
+@use "sass:color";
+@use "sass:math";
+@use "ext-colorschemes/amoled-dark.scss" as *;
+@use "ext-colorschemes/atom-dark.scss" as *;
+@use "ext-colorschemes/atom-light.scss" as *;
+@use "ext-colorschemes/biscuit-dark.scss" as *;
+@use "ext-colorschemes/coffee-dark.scss" as *;
+@use "ext-colorschemes/dracula.scss" as *;
+@use "ext-colorschemes/everforest-light.scss" as *;
+@use "ext-colorschemes/everforest-dark.scss" as *;
+@use "ext-colorschemes/flexoki-dark.scss" as *;
+@use "ext-colorschemes/generic-dark.scss" as *;
+@use "ext-colorschemes/gruvbox-dark.scss" as *;
+@use "ext-colorschemes/gruvbox-light.scss" as *;
+@use "ext-colorschemes/kanagawa-dark.scss" as *;
+@use "ext-colorschemes/luminscence-light.scss" as *;
+@use "ext-colorschemes/nord-dark.scss" as *;
+@use "ext-colorschemes/nord-light.scss" as *;
+@use "ext-colorschemes/nord-darker.scss" as *;
+@use "ext-colorschemes/notion-light.scss" as *;
+@use "ext-colorschemes/notion-dark.scss" as *;
+@use "ext-colorschemes/rosebox.scss" as *;
+@use "ext-colorschemes/rosepine-dark.scss" as *;
+@use "ext-colorschemes/royal-velvet.scss" as *;
+@use "ext-colorschemes/sandy-beaches-light.scss" as *;
+@use "ext-colorschemes/solarized-dark.scss" as *;
+@use "ext-colorschemes/solarized-light.scss" as *;
+@use "ext-colorschemes/thorns.scss" as *;
+@use "ext-colorschemes/material-mint-light.scss" as *;
+@use "ext-colorschemes/material-mint-dark.scss" as *;
 
 $ext-color-list: "rosewater", "flamingo", "pink", "mauve", "red", "maroon",
 	"peach", "yellow", "green", "teal", "sky", "sapphire", "blue", "lavender",
@@ -203,22 +206,11 @@ $ext-theme-list: $theme-atom-light, $theme-amoled-dark, $theme-atom-dark,
 }
 
 @each $theme-name in $ext-theme-list {
-
-	.theme-#{map-get($theme-name, theme-mode)}.anp-theme-ext-#{map-get($theme-name, theme-mode)}.ctp-#{map-get($theme-name, theme-name)},
-	.anp-theme-ext-#{map-get($theme-name, theme-mode)}.ctp-#{map-get($theme-name, theme-name)} .themed-color-wrapper>.theme-#{map-get($theme-name, theme-mode)} {
+	.theme-#{map.get($theme-name, theme-mode)}.anp-theme-ext-#{map.get($theme-name, theme-mode)}.ctp-#{map.get($theme-name, theme-name)},
+	.anp-theme-ext-#{map.get($theme-name, theme-mode)}.ctp-#{map.get($theme-name, theme-name)} .themed-color-wrapper > .theme-#{map.get($theme-name, theme-mode)} {
 		@each $color-name in $ext-color-list {
-			--ctp-ext-#{$color-name}: #{red(map-get($theme-name, ctp-#{$color-name}))
+			$color: map.get($theme-name, ctp-#{$color-name});
+			--ctp-ext-#{$color-name}: #{math.round(color.channel($color, "red", $space: rgb))}, #{math.round(color.channel($color, "green", $space: rgb))}, #{math.round(color.channel($color, "blue", $space: rgb))};
 		}
-
-		,
-		#{green(map-get($theme-name, ctp-#{$color-name}))
 	}
-
-	,
-	#{blue(map-get($theme-name, ctp-#{$color-name}))
-}
-
-;
-}
-}
 }
