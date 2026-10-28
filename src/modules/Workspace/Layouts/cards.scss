@@ -101,12 +101,8 @@ body.anp-card-layout {
         }
     }
 
-    .workspace-ribbon.mod-left {
-        margin-top: calc(var(--header-height) - 1px);
-    }
-
     .workspace-tab-header-container,
-    .workspace-ribbon.mod-left:before {
+    .workspace-ribbon.mod-primary:before {
         border-bottom: none;
     }
 

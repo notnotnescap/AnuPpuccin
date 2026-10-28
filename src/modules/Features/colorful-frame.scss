@@ -304,20 +304,21 @@ body.anp-colorful-frame.anp-card-layout {
         }
     }
 
-    // Obsidian outlines the active tab with a zero-blur box-shadow, and repeats
-    // that ring on the two curve fillers under the tab. Every other border is gone
-    // in this layout, so the ring only makes the tab stand out. Keep the fillers'
-    // fill and drop the ring.
-    .workspace-tab-header-container .workspace-tab-header.is-active {
-        box-shadow: none;
+}
 
-        &::before,
-        &::after {
-            box-shadow: inset 0 0 0 var(--tab-outline-width) transparent,
-                0 0 0 calc(var(--tab-curve) * 4) var(--tab-background-active);
-        }
+// Obsidian outlines the active tab with a zero-blur box-shadow, and repeats that
+// ring on the two curve fillers under the tab. Against the colourful frame the ring
+// only makes the tab stand out, so keep the fillers' fill and drop the ring.
+body.anp-colorful-frame .workspace-split .workspace-tab-header-container .workspace-tab-header.is-active {
+    box-shadow: none;
+
+    &::before,
+    &::after {
+        // The .workspace-split step is needed to outrank Obsidian's own
+        // .workspace-split.mod-root rule for these fillers.
+        box-shadow: inset 0 0 0 var(--tab-outline-width) transparent,
+            0 0 0 calc(var(--tab-curve) * 4) var(--tab-background-active);
     }
-
 }
 
 .anp-colorful-frame.anp-card-layout,

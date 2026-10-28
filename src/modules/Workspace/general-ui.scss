@@ -113,3 +113,11 @@
 .workspace-ribbon.mod-primary:before {
 	border: none;
 }
+
+/*-Keep the ribbon's header bar in step with the tab bar-*/
+/* Only the default layout draws a bottom border under the tab headers, so only there
+   does the ribbon's ::before need the same one; without it the frame band ran one
+   pixel further down over the ribbon than next to it. */
+body:not(.anp-card-layout):not(.anp-border-layout) .workspace-ribbon.mod-primary::before {
+	border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
+}

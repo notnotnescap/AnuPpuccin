@@ -3881,6 +3881,14 @@ input.slider,
   border: none;
 }
 
+/*-Keep the ribbon's header bar in step with the tab bar-*/
+/* Only the default layout draws a bottom border under the tab headers, so only there
+   does the ribbon's ::before need the same one; without it the frame band ran one
+   pixel further down over the ribbon than next to it. */
+body:not(.anp-card-layout):not(.anp-border-layout) .workspace-ribbon.mod-primary::before {
+  border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
+}
+
 .mod-community-theme .modal-content .community-modal-details .community-modal-info summary h1:first-child,
 .mod-community-theme .modal-content .community-modal-details .community-modal-info summary h2:first-child,
 .mod-community-theme .modal-content .community-modal-details .community-modal-info summary h3:first-child,
@@ -4358,11 +4366,8 @@ body.anp-card-layout .workspace-split.mod-left-split:has(.workspace-sidedock-vau
   --icon-color-active: var(--text-accent);
   --icon-color-focused: var(--text-normal);
 }
-body.anp-card-layout .workspace-ribbon.mod-left {
-  margin-top: calc(var(--header-height) - 1px);
-}
 body.anp-card-layout .workspace-tab-header-container,
-body.anp-card-layout .workspace-ribbon.mod-left:before {
+body.anp-card-layout .workspace-ribbon.mod-primary:before {
   border-bottom: none;
 }
 body.anp-card-layout .mod-vertical .workspace-tabs .workspace-tab-header-container {
@@ -6471,10 +6476,11 @@ body.anp-colorful-frame.anp-card-layout .workspace-ribbon .clickable-icon:hover 
 body.anp-colorful-frame.anp-card-layout .workspace-ribbon .clickable-icon:active {
   background-color: rgba(var(--ctp-crust), 0.3);
 }
-body.anp-colorful-frame.anp-card-layout .workspace-tab-header-container .workspace-tab-header.is-active {
+
+body.anp-colorful-frame .workspace-split .workspace-tab-header-container .workspace-tab-header.is-active {
   box-shadow: none;
 }
-body.anp-colorful-frame.anp-card-layout .workspace-tab-header-container .workspace-tab-header.is-active::before, body.anp-colorful-frame.anp-card-layout .workspace-tab-header-container .workspace-tab-header.is-active::after {
+body.anp-colorful-frame .workspace-split .workspace-tab-header-container .workspace-tab-header.is-active::before, body.anp-colorful-frame .workspace-split .workspace-tab-header-container .workspace-tab-header.is-active::after {
   box-shadow: inset 0 0 0 var(--tab-outline-width) transparent, 0 0 0 calc(var(--tab-curve) * 4) var(--tab-background-active);
 }
 
