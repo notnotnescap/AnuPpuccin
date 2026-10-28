@@ -113,7 +113,10 @@ body.anp-card-layout {
     .mod-vertical {
         .workspace-tabs {
             .workspace-tab-header-container {
-                padding-left: var(--anp-card-header-left-padding, 20px);
+                // Keep the first tab clear of the card's rounded top-left corner:
+                // the tab's own curve would otherwise run into the card's corner
+                // and the pane would stop reading as a card.
+                padding-left: calc(var(--anp-card-header-left-padding, 20px) + var(--anp-card-radius, var(--radius-xl)));
 
                 .workspace-tab-header-container-inner {
                     margin: 6px -5px calc(var(--tab-outline-width) * -1);
