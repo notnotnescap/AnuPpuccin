@@ -18,9 +18,25 @@ body.anp-card-layout {
         }
     }
 
+    // The side docks paint their tab headers from --sidebar-tab-container-background
+    // instead of --tab-container-background, which left them on Obsidian's
+    // --titlebar-background while the rest of the frame used the card colour. Point
+    // it at --tab-container-background as resolved here, so the side docks follow the
+    // card colour (and the colorful frame when that is on).
     .sidebar-toggle-button,
     .workspace-tabs.mod-top {
         --tab-container-background: var(--card-background-color);
+        --sidebar-tab-container-background: var(--tab-container-background);
+    }
+
+    // The ribbon belongs to the frame, so it takes the frame colour rather than
+    // Obsidian's --background-secondary, exactly as the border layout does. The
+    // ribbon's header-height ::before is painted with --titlebar-background, so that
+    // needs the same colour or the top of the ribbon strip stays a shade off.
+    .horizontal-main-container {
+        --ribbon-background: var(--card-background-color);
+        --ribbon-background-collapsed: var(--card-background-color);
+        --titlebar-background: var(--card-background-color);
     }
 
     .workspace-tabs.mod-top:has(.obsidian-banner-wrapper) {

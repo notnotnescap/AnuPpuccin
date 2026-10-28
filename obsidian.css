@@ -4309,6 +4309,12 @@ body.anp-card-layout.anp-hide-borders .menu {
 body.anp-card-layout .sidebar-toggle-button,
 body.anp-card-layout .workspace-tabs.mod-top {
   --tab-container-background: var(--card-background-color);
+  --sidebar-tab-container-background: var(--tab-container-background);
+}
+body.anp-card-layout .horizontal-main-container {
+  --ribbon-background: var(--card-background-color);
+  --ribbon-background-collapsed: var(--card-background-color);
+  --titlebar-background: var(--card-background-color);
 }
 body.anp-card-layout .workspace-tabs.mod-top:has(.obsidian-banner-wrapper) {
   --file-header-border: none;
@@ -6463,6 +6469,8 @@ body.anp-colorful-frame.anp-card-layout .workspace,
 body.anp-colorful-frame.anp-card-layout .horizontal-main-container {
   --ribbon-background: var(--colorful-frame-color);
   --ribbon-background-collapsed: var(--colorful-frame-color);
+  --titlebar-background: var(--colorful-frame-color);
+  --titlebar-background-focused: var(--colorful-frame-color);
 }
 body.anp-colorful-frame.anp-card-layout .workspace-ribbon {
   --icon-color: var(--colorful-icon-color);

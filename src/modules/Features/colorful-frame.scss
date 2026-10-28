@@ -287,6 +287,8 @@ body.anp-colorful-frame.anp-card-layout {
     .horizontal-main-container {
         --ribbon-background: var(--colorful-frame-color);
         --ribbon-background-collapsed: var(--colorful-frame-color);
+        --titlebar-background: var(--colorful-frame-color);
+        --titlebar-background-focused: var(--colorful-frame-color);
     }
 
     .workspace-ribbon {
