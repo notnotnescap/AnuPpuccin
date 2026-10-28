@@ -6471,6 +6471,9 @@ body.anp-colorful-frame.anp-card-layout .workspace-ribbon .clickable-icon:hover 
 body.anp-colorful-frame.anp-card-layout .workspace-ribbon .clickable-icon:active {
   background-color: rgba(var(--ctp-crust), 0.3);
 }
+body.anp-colorful-frame.anp-card-layout .workspace-tab-header-container .workspace-tab-header.is-active {
+  box-shadow: none;
+}
 
 .anp-colorful-frame.anp-card-layout,
 .anp-colorful-frame.anp-card-layout .workspace-tab-container,

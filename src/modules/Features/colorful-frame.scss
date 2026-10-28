@@ -304,6 +304,12 @@ body.anp-colorful-frame.anp-card-layout {
         }
     }
 
+    // Obsidian outlines the active tab with a zero-blur box-shadow. Every other
+    // border is gone in this layout, so the outline just makes the tab stand out.
+    .workspace-tab-header-container .workspace-tab-header.is-active {
+        box-shadow: none;
+    }
+
 }
 
 .anp-colorful-frame.anp-card-layout,
