@@ -467,8 +467,11 @@ body.anp-colorful-frame .workspace-split .workspace-tab-header-container .worksp
 }
 
 .anp-colorful-frame {
-    --titlebar-background: var(--anp-colorful-frame-color, var(--color-accent));
-    --titlebar-background-focused: var(--anp-colorful-frame-color, var(--color-accent));
+    // --anp-colorful-frame-color holds an "r, g, b" triplet, so it only works inside
+    // rgb()/rgba(); using it bare produced an invalid colour whenever a custom frame
+    // colour was set.
+    --titlebar-background: rgba(var(--anp-colorful-frame-color, var(--ctp-accent)), var(--anp-colorful-frame-opacity, 1));
+    --titlebar-background-focused: rgba(var(--anp-colorful-frame-color, var(--ctp-accent)), var(--anp-colorful-frame-opacity, 1));
     --titlebar-text-color: var(--background-primary);
     --titlebar-text-color-focused: var(--background-secondary-alt);
 }
