@@ -78,11 +78,27 @@ body.anp-card-layout {
         padding: var(--size-4-2) var(--size-4-1) var(--size-4-3);
     }
 
-    .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
-        border: none;
-        margin: var(--anp-card-layout-padding, 10px);
-        margin-bottom: 0;
-        background-color: transparent;
+    // The left sidebar is one card: the pane on top and the vault profile below
+    // share a single rounded outline.
+    .workspace-split.mod-left-split:has(.workspace-sidedock-vault-profile) {
+
+        .workspace-leaf-content {
+            border-radius: var(--anp-card-radius, var(--radius-xl)) var(--anp-card-radius, var(--radius-xl)) 0 0;
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+
+        .workspace-sidedock-vault-profile {
+            border: 1px solid var(--tab-outline-color);
+            border-top: none;
+            border-radius: 0 0 var(--anp-card-radius, var(--radius-xl)) var(--anp-card-radius, var(--radius-xl));
+            margin: 0 var(--anp-card-layout-padding, 10px) var(--anp-card-layout-padding, 10px);
+            background-color: var(--card-foreground-color);
+            --icon-color: var(--text-muted);
+            --icon-color-hover: var(--text-normal);
+            --icon-color-active: var(--text-accent);
+            --icon-color-focused: var(--text-normal);
+        }
     }
 
     .workspace-ribbon.mod-left {
@@ -116,8 +132,7 @@ body.anp-card-layout {
         }
     }
 
-    .workspace-split .workspace-leaf-content:not([data-type="file-explorer"]),
-    &.anp-card-layout-filebrowser .workspace-leaf-content[data-type="file-explorer"] {
+    .workspace-split .workspace-leaf-content {
         background-color: var(--card-foreground-color);
         border: 1px solid var(--tab-outline-color);
     }
@@ -125,8 +140,7 @@ body.anp-card-layout {
     &.anp-card-shadows {
 
         .workspace-split .workspace-leaf-content,
-        &.anp-card-layout-actions .side-dock-actions,
-        &.anp-card-layout-filebrowser .workspace-split .workspace-leaf-content[data-type="file-explorer"] {
+        &.anp-card-layout-actions .side-dock-actions {
             box-shadow: 0 3px 4px 0px rgba(0, 0, 0, 0.05);
         }
     }
@@ -182,8 +196,7 @@ body.anp-card-layout:not(.is-phone) {
         }
     }
 
-    .workspace-split .workspace-leaf-content:not([data-type="file-explorer"]),
-    &.anp-card-layout-filebrowser .workspace-leaf-content[data-type="file-explorer"] {
+    .workspace-split .workspace-leaf-content {
         border-radius: var(--anp-card-radius, var(--radius-xl));
         margin-bottom: var(--anp-card-layout-padding, 10px);
     }

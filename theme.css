@@ -2648,10 +2648,6 @@ settings:
     title: Enable card format for actions
     type: class-toggle
 -
-    id: anp-card-layout-filebrowser
-    title: Enable card format for file browser
-    type: class-toggle
--
     id: anp-layout-border
     title: Border Layout Settings
     description: 
@@ -4346,11 +4342,21 @@ body.anp-card-layout.anp-card-layout-actions.anp-fixed-status-bar .side-dock-set
 body.anp-card-layout .side-dock-actions {
   padding: var(--size-4-2) var(--size-4-1) var(--size-4-3);
 }
-body.anp-card-layout .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
-  border: none;
-  margin: var(--anp-card-layout-padding, 10px);
+body.anp-card-layout .workspace-split.mod-left-split:has(.workspace-sidedock-vault-profile) .workspace-leaf-content {
+  border-radius: var(--anp-card-radius, var(--radius-xl)) var(--anp-card-radius, var(--radius-xl)) 0 0;
   margin-bottom: 0;
-  background-color: transparent;
+  border-bottom: none;
+}
+body.anp-card-layout .workspace-split.mod-left-split:has(.workspace-sidedock-vault-profile) .workspace-sidedock-vault-profile {
+  border: 1px solid var(--tab-outline-color);
+  border-top: none;
+  border-radius: 0 0 var(--anp-card-radius, var(--radius-xl)) var(--anp-card-radius, var(--radius-xl));
+  margin: 0 var(--anp-card-layout-padding, 10px) var(--anp-card-layout-padding, 10px);
+  background-color: var(--card-foreground-color);
+  --icon-color: var(--text-muted);
+  --icon-color-hover: var(--text-normal);
+  --icon-color-active: var(--text-accent);
+  --icon-color-focused: var(--text-normal);
 }
 body.anp-card-layout .workspace-ribbon.mod-left {
   margin-top: calc(var(--header-height) - 1px);
@@ -4372,11 +4378,11 @@ body.anp-card-layout .mod-right-split .workspace-tab-container {
   padding-right: var(--anp-card-layout-padding, 10px);
   background-color: var(--tab-container-background);
 }
-body.anp-card-layout .workspace-split .workspace-leaf-content:not([data-type=file-explorer]), body.anp-card-layout.anp-card-layout-filebrowser .workspace-leaf-content[data-type=file-explorer] {
+body.anp-card-layout .workspace-split .workspace-leaf-content {
   background-color: var(--card-foreground-color);
   border: 1px solid var(--tab-outline-color);
 }
-body.anp-card-layout.anp-card-shadows .workspace-split .workspace-leaf-content, body.anp-card-layout.anp-card-shadows.anp-card-layout-actions .side-dock-actions, body.anp-card-layout.anp-card-shadows.anp-card-layout-filebrowser .workspace-split .workspace-leaf-content[data-type=file-explorer] {
+body.anp-card-layout.anp-card-shadows .workspace-split .workspace-leaf-content, body.anp-card-layout.anp-card-shadows.anp-card-layout-actions .side-dock-actions {
   box-shadow: 0 3px 4px 0px rgba(0, 0, 0, 0.05);
 }
 body.anp-card-layout .workspace-split .mod-stacked .workspace-leaf-content {
@@ -4416,7 +4422,7 @@ body.anp-card-layout:not(.is-phone) .mod-vertical .workspace-tabs {
   padding-left: var(--anp-card-layout-padding, 10px);
   padding-right: var(--anp-card-layout-padding, 10px);
 }
-body.anp-card-layout:not(.is-phone) .workspace-split .workspace-leaf-content:not([data-type=file-explorer]), body.anp-card-layout:not(.is-phone).anp-card-layout-filebrowser .workspace-leaf-content[data-type=file-explorer] {
+body.anp-card-layout:not(.is-phone) .workspace-split .workspace-leaf-content {
   border-radius: var(--anp-card-radius, var(--radius-xl));
   margin-bottom: var(--anp-card-layout-padding, 10px);
 }
@@ -6465,21 +6471,6 @@ body.anp-colorful-frame.anp-card-layout .workspace-ribbon .clickable-icon:hover 
 body.anp-colorful-frame.anp-card-layout .workspace-ribbon .clickable-icon:active {
   background-color: rgba(var(--ctp-crust), 0.3);
 }
-body.anp-colorful-frame.anp-card-layout .workspace-leaf:has(> .workspace-leaf-content[data-type=file-explorer]) {
-  background-color: var(--card-foreground-color);
-}
-body.anp-colorful-frame.anp-card-layout:not(.anp-card-layout-filebrowser) .workspace-leaf-content[data-type=file-explorer] {
-  --tab-text-color: var(--text-faint);
-  --tab-text-color-active: var(--text-muted);
-  --tab-text-color-focused: var(--text-muted);
-  --tab-text-color-focused-active: var(--text-muted);
-  --tab-text-color-focused-highlighted: var(--text-accent);
-  --tab-text-color-focused-active-current: var(--text-normal);
-  --icon-color: var(--text-muted);
-  --icon-color-hover: var(--text-muted);
-  --icon-color-active: var(--text-accent);
-  --icon-color-focused: var(--text-normal);
-}
 
 .anp-colorful-frame.anp-card-layout,
 .anp-colorful-frame.anp-card-layout .workspace-tab-container,
@@ -6495,7 +6486,7 @@ body.anp-colorful-frame.anp-card-layout:not(.anp-card-layout-filebrowser) .works
   --icon-color-focused: var(--background-secondary-alt);
 }
 
-.anp-colorful-frame.anp-card-layout:not(.anp-card-layout-filebrowser).anp-colorful-frame-icon-toggle-light.theme-light .workspace-leaf-content[data-type=file-explorer], .anp-colorful-frame.anp-card-layout:not(.anp-card-layout-filebrowser).anp-colorful-frame-icon-toggle-dark.theme-dark .workspace-leaf-content[data-type=file-explorer] {
+.anp-colorful-frame.anp-card-layout.anp-colorful-frame-icon-toggle-light.theme-light .workspace-leaf-content[data-type=file-explorer], .anp-colorful-frame.anp-card-layout.anp-colorful-frame-icon-toggle-dark.theme-dark .workspace-leaf-content[data-type=file-explorer] {
   --tab-text-color: var(--text-normal);
   --tab-text-color-focused: var(--text-normal);
   --tab-text-color-focused-active: var(--text-normal);
