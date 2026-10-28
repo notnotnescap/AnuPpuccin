@@ -236,30 +236,27 @@ body.anp-colorful-frame-icon-toggle-dark.theme-dark {
     height: calc(100% - var(--header-height));
 }
 
-.anp-colorful-frame .sidebar-toggle-button.sidebar-toggle-button {
-    background-color: var(--background-primary) !important;
-}
-
 .anp-colorful-frame .sidebar-toggle-button {
     padding: var(--size-4-1) !important;
-    background-color: var(--background-primary);
-    --tab-container-background: var(--background-primary) !important;
+    background-color: var(--colorful-frame-color);
+    // The right-hand toggle is .mod-secondary, which Obsidian paints with
+    // var(--tab-container-background). Keep that variable on the frame colour so
+    // both toggles match the rest of the tab-bar icons instead of going dark.
+    --tab-container-background: var(--colorful-frame-color) !important;
+    --sidebar-tab-container-background: var(--colorful-frame-color) !important;
     height: calc(var(--header-height) - 5px);
     margin-right: 0;
     border-radius: 0 0 var(--radius-m) var(--radius-m);
-    border-width: 0 1px 1px 1px;
-    border-style: solid;
-    border-color: var(--tab-outline-color);
-    --icon-color: var(--text-muted);
-    --icon-color-hover: var(--text-muted);
-    --icon-color-active: var(--text-accent);
-    --icon-color-focused: var(--text-normal);
+    --icon-color: var(--colorful-icon-color-alt);
+    --icon-color-hover: var(--colorful-icon-color);
+    --icon-color-active: var(--colorful-icon-color-alt);
+    --icon-color-focused: var(--colorful-icon-color-alt);
 
     .clickable-icon {
-        --icon-color: var(--text-muted) !important;
-        --icon-color-hover: var(--text-muted) !important;
-        --icon-color-active: var(--text-accent) !important;
-        --icon-color-focused: var(--text-normal) !important;
+        --icon-color: var(--colorful-icon-color-alt) !important;
+        --icon-color-hover: var(--colorful-icon-color) !important;
+        --icon-color-active: var(--colorful-icon-color-alt) !important;
+        --icon-color-focused: var(--colorful-icon-color-alt) !important;
     }
 }
 
