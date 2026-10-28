@@ -98,7 +98,7 @@
     background-color: var(--background-modifier-hover);
 }
 
-// Fix ribbon icon drag backgrounds 
+// Fix ribbon icon drag backgrounds
 .anuppuccin-accent-toggle .drag-ghost-hidden:before {
     background-color: rgba(var(--ctp-accent), 0.3)
 }
@@ -106,4 +106,10 @@
 /*-Suggestion selected item bg fix-*/
 .suggestion-item.is-selected {
     background-color: rgba(var(--ctp-text), 0.075);
+}
+
+/*-Side dock Ribbon border fix-*/
+.side-dock-ribbon,
+.workspace-ribbon.mod-primary:before {
+	border: none;
 }
