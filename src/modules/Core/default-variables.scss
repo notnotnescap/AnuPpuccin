@@ -149,7 +149,7 @@ $accents: "rosewater", "flamingo", "pink", "mauve", "red", "maroon", "peach",
     --background-modifier-cover: rgba(var(--ctp-mantle), 0.4);
 
     &.theme-dark {
-        --canvas-color: var(--ctp-overlay0);
+        --canvas-color: rgb(var(--ctp-overlay0));
     }
 }
 
@@ -163,7 +163,7 @@ $accents: "rosewater", "flamingo", "pink", "mauve", "red", "maroon", "peach",
     --background-modifier-cover: #00000022;
 
     &.theme-light {
-        --canvas-color: var(--ctp-overlay0);
+        --canvas-color: rgb(var(--ctp-overlay0));
     }
 }
 
@@ -178,7 +178,7 @@ body {
     --tab-stacked-pane-width: calc(var(--anp-tab-stacked-pane-width, 1) * var(--file-line-width));
     --anp-table-width-pct: 100%;
     --code-background: var(--anp-code-bg-color, var(--background-secondary-alt));
-    --canvas-color: var(--ctp-overlay2);
+    --canvas-color: rgb(var(--ctp-overlay2));
     --card-background-color: rgb(var(--ctp-crust));
     --card-foreground-color: rgb(var(--ctp-base));
     --tab-inactive-color: rgb(var(--ctp-mantle));
