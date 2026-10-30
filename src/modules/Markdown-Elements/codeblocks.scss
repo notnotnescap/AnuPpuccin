@@ -6,16 +6,15 @@
     --code-normal: var(--anp-code-text-color, var(--text-normal));
 }
 
-/* Show language in LP always */
-.markdown-source-view.mod-cm6 .HyperMD-codeblock.cm-line.cm-line.cm-line.HyperMD-codeblock-begin {
-    overflow-x: visible;
-}
+/* Deliberately dropped from upstream: forced overflow-x on the codeblock begin
+   line, which changes Obsidian's default language-header behaviour in LP. */
 
 .anp-codeblock-edit-nowrap {
     .markdown-source-view.mod-cm6 .HyperMD-codeblock.cm-line {
         white-space: nowrap;
         overflow-x: scroll;
         overflow-y: hidden;
+        scrollbar-width: none;
 
         &::-webkit-scrollbar {
             display: none;
@@ -29,13 +28,16 @@
 
         & code {
             overflow-x: scroll;
+            scrollbar-width: none;
 
             &::-webkit-scrollbar {
                 display: none;
             }
         }
 
+        /* `code` is inline in reading view, so `pre` is the real scroll container */
         overflow-x: auto;
+        scrollbar-width: none;
     }
 }
 
@@ -46,12 +48,15 @@
         & code {
             white-space: pre !important;
             overflow-x: scroll;
+            scrollbar-width: none;
 
             &::-webkit-scrollbar {
                 display: none;
             }
         }
 
+        /* as above: the scrollbar is painted on `pre`, not `code` */
         overflow-x: auto;
+        scrollbar-width: none;
     }
 }

@@ -4957,6 +4957,59 @@ Support me: https://buymeacoffee.com/AnubisNekhet
   padding: 5px 5px 5px 10px;
 }
 
+.markdown-rendered :not(pre) > code {
+  --code-normal: var(--anp-code-text-color, var(--text-normal));
+}
+
+.markdown-rendered code:not([class*=language]) {
+  --code-normal: var(--anp-code-text-color, var(--text-normal));
+}
+
+/* Deliberately dropped from upstream: forced overflow-x on the codeblock begin
+   line, which changes Obsidian's default language-header behaviour in LP. */
+.anp-codeblock-edit-nowrap .markdown-source-view.mod-cm6 .HyperMD-codeblock.cm-line {
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+.anp-codeblock-edit-nowrap .markdown-source-view.mod-cm6 .HyperMD-codeblock.cm-line::-webkit-scrollbar {
+  display: none;
+}
+
+.anp-codeblock-preview-nowrap .markdown-rendered pre {
+  white-space: pre;
+}
+.anp-codeblock-preview-nowrap .markdown-rendered pre code {
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+.anp-codeblock-preview-nowrap .markdown-rendered pre code::-webkit-scrollbar {
+  display: none;
+}
+.anp-codeblock-preview-nowrap .markdown-rendered pre {
+  /* `code` is inline in reading view, so `pre` is the real scroll container */
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.anp-codeblock-preview-hl-nowrap .markdown-rendered pre[class*=language-] {
+  white-space: pre;
+}
+.anp-codeblock-preview-hl-nowrap .markdown-rendered pre[class*=language-] code {
+  white-space: pre !important;
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+.anp-codeblock-preview-hl-nowrap .markdown-rendered pre[class*=language-] code::-webkit-scrollbar {
+  display: none;
+}
+.anp-codeblock-preview-hl-nowrap .markdown-rendered pre[class*=language-] {
+  /* as above: the scrollbar is painted on `pre`, not `code` */
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
 /*-Decorations for bold and italics-*/
 .anp-decoration-toggle {
   --italic-color: rgb(var(--anp-italic-color, var(--text-normal)));
