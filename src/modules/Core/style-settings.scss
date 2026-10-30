@@ -2597,6 +2597,12 @@ settings:
     id: anp-hide-borders
     title: Hide borders
     type: class-toggle
+-
+    id: anp-match-ribbon-padding
+    title: Match right padding to the ribbon
+    description: Widen the right outer spacing to the ribbon, so both sides match while the ribbon is shown. Applies to the border and cards layouts
+    type: class-toggle
+    default: false
 
 # Workspace :: Workspace Layout :: Card Layout
 

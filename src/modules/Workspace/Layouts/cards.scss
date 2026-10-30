@@ -215,4 +215,14 @@ body.anp-card-layout:not(.is-phone) {
         border-radius: var(--anp-card-radius, var(--radius-xl));
         margin-bottom: var(--anp-card-layout-padding, 10px);
     }
+
+    // The ribbon is what pads the left edge while it is shown, so optionally widen the
+    // right one to the same width so both sides read the same (#378). The card padding
+    // sits on top of it on both sides, so they stay equal at
+    // --ribbon-width + --anp-card-layout-padding.
+    &.anp-match-ribbon-padding.show-ribbon {
+        .workspace {
+            margin-right: var(--ribbon-width, 44px);
+        }
+    }
 }

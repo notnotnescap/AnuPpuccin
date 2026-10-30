@@ -183,7 +183,11 @@ body.anp-border-layout {
 
         .workspace-split.mod-left-split {
             background-color: var(--card-background-color);
-            padding-left: calc(var(--anp-border-padding, 20px) - 20px);
+            // No inset here. This used to carry `calc(--anp-border-padding - 20px)` to
+            // make the ribbon plus the padding add up to the border padding, assuming
+            // the 20px-wide ribbon Obsidian drew; the ribbon is wider now, so the inset
+            // only pushed the left band past the ribbon and past the right padding.
+            padding-left: 0;
 
             .workspace-tabs {
                 background-color: var(--card-background-color);
@@ -318,6 +322,25 @@ body.anp-border-layout {
     &.is-popout-window {
         .workspace {
             margin-left: var(--anp-border-padding, 20px);
+        }
+    }
+
+    // The ribbon is what pads the left edge of the frame, so a window without one
+    // (ribbon hidden, or a popout window) would sit flush against that edge while the
+    // right keeps --anp-border-padding. Mirror the right margin there, so both sides
+    // are the same width whether or not the ribbon is shown (#378).
+    &:not(.is-mobile):not(.show-ribbon) {
+        .workspace {
+            margin-left: var(--anp-border-padding, 20px);
+        }
+    }
+
+    // Optionally match the other side too: while the ribbon is shown it is the left
+    // outer spacing, so widen the right one to the same width (#378). Off by default,
+    // because that makes the frame noticeably wider than the border padding.
+    &.anp-match-ribbon-padding:not(.is-mobile).show-ribbon {
+        .workspace {
+            margin-right: var(--ribbon-width, 44px);
         }
     }
 }

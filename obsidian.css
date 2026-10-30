@@ -2611,6 +2611,12 @@ settings:
     id: anp-hide-borders
     title: Hide borders
     type: class-toggle
+-
+    id: anp-match-ribbon-padding
+    title: Match right padding to the ribbon
+    description: Widen the right outer spacing to the ribbon, so both sides match while the ribbon is shown. Applies to the border and cards layouts
+    type: class-toggle
+    default: false
 
 # Workspace :: Workspace Layout :: Card Layout
 
@@ -4442,6 +4448,9 @@ body.anp-card-layout:not(.is-phone) .workspace-split .workspace-leaf-content {
   border-radius: var(--anp-card-radius, var(--radius-xl));
   margin-bottom: var(--anp-card-layout-padding, 10px);
 }
+body.anp-card-layout:not(.is-phone).anp-match-ribbon-padding.show-ribbon .workspace {
+  margin-right: var(--ribbon-width, 44px);
+}
 
 /*--------------------------
 Inspired by https://github.com/Akifyss/obsidian-border
@@ -4548,7 +4557,7 @@ body.anp-border-layout .workspace:not(.is-right-sidedock-open) > .workspace-spli
 }
 body.anp-border-layout .workspace .workspace-split.mod-left-split {
   background-color: var(--card-background-color);
-  padding-left: calc(var(--anp-border-padding, 20px) - 20px);
+  padding-left: 0;
 }
 body.anp-border-layout .workspace .workspace-split.mod-left-split .workspace-tabs {
   background-color: var(--card-background-color);
@@ -4635,6 +4644,12 @@ body.anp-border-layout .workspace-ribbon.mod-left.is-focused {
 }
 body.anp-border-layout.is-popout-window .workspace {
   margin-left: var(--anp-border-padding, 20px);
+}
+body.anp-border-layout:not(.is-mobile):not(.show-ribbon) .workspace {
+  margin-left: var(--anp-border-padding, 20px);
+}
+body.anp-border-layout.anp-match-ribbon-padding:not(.is-mobile).show-ribbon .workspace {
+  margin-right: var(--ribbon-width, 44px);
 }
 
 body.anp-border-layout:not(.is-mobile) .workspace {
