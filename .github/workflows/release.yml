@@ -1,0 +1,59 @@
+name: Release Obsidian theme
+
+# Publishes a release when a version tag is pushed.
+#
+# Two details decide whether the community directory picks the release up
+# (this is what issue #399 was about):
+#   * the tag must equal `version` in manifest.json EXACTLY, with no "v"
+#     prefix — the directory matches the two strings, so a `v1.6.0` tag is
+#     ignored even though the release itself is fine
+#   * `manifest.json` and `theme.css` must be attached to the release as assets
+#
+# Usage:
+#   git tag -a 1.6.0 -m "1.6.0" && git push origin 1.6.0
+#
+# The guard step fails the run loudly instead of publishing a release the
+# directory will silently never see.
+
+on:
+  push:
+    tags:
+      - "*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Check the tag matches manifest.json
+        run: |
+          set -euo pipefail
+          tag="${GITHUB_REF#refs/tags/}"
+          version="$(python3 -c 'import json; print(json.load(open("manifest.json"))["version"])')"
+
+          if [ "$tag" != "$version" ]; then
+            echo "::error::Tag '$tag' does not match version '$version' in manifest.json."
+            echo "The community directory matches them exactly, so the 'v' prefix (or a stale"
+            echo "tag) means the release is never picked up. Retag without the prefix:"
+            echo "  git tag -a $version -m \"$version\""
+            exit 1
+          fi
+
+          echo "Tag $tag matches manifest.json."
+
+      - name: Create release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          tag="${GITHUB_REF#refs/tags/}"
+
+          gh release create "$tag" \
+            --title="$tag" \
+            --generate-notes \
+            manifest.json theme.css
