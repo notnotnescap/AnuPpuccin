@@ -24,6 +24,11 @@
 }
 
 /*-Disable scrollbars-*/
+.anp-toggle-scrollbars,
+.anp-toggle-scrollbars * {
+    scrollbar-width: none;
+}
+
 .anp-toggle-scrollbars *::-webkit-scrollbar {
     display: none;
 }
