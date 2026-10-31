@@ -15,14 +15,6 @@
     --tab-max-width-active: 300px
 }
 
-.anp-alternate-tab-toggle .workspace-ribbon.mod-left {
-    margin-top: var(--header-height);
-}
-
-.anp-alternate-tab-toggle .workspace-ribbon.mod-left:before {
-    padding-bottom: 0px;
-}
-
 .anp-alternate-tab-toggle .workspace-tabs:not(.mod-stacked) .workspace-tab-header::before,
 .anp-alternate-tab-toggle .workspace-tabs:not(.mod-stacked) .workspace-tab-header::after,
 .anp-alternate-tab-toggle .workspace .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header-inner::after {

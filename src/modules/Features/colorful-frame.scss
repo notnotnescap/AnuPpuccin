@@ -50,11 +50,9 @@ body.anp-colorful-frame-icon-toggle-dark.theme-dark {
     &.anuppuccin-accent-toggle.anp-colorful-frame {
 
         &:not(.anp-card-layout, .anp-border-layout) .mod-top .workspace-tab-header-container,
-        &:not(.anp-card-layout, .anp-border-layout) .workspace-ribbon.mod-left:before,
         &.anp-card-layout,
         &.anp-card-layout .workspace-tabs.mod-top,
-        &.anp-card-layout .sidebar-toggle-button,
-        &.anp-card-layout .workspace-ribbon.mod-left:before {
+        &.anp-card-layout .sidebar-toggle-button {
             --tab-container-background: rgba(var(--anp-colorful-frame-color, var(--ctp-accent)), var(--anp-colorful-frame-opacity, 1));
             --titlebar-background: rgba(var(--anp-colorful-frame-color, var(--ctp-accent)), var(--anp-colorful-frame-opacity, 1));
         }
@@ -102,9 +100,7 @@ body.anp-colorful-frame-icon-toggle-dark.theme-dark {
     &:not(.anp-card-layout, .anp-border-layout) .mod-top .workspace-tab-header-container,
     &.anp-colorful-frame.anp-card-layout,
     &.anp-colorful-frame.anp-card-layout .workspace-tabs.mod-top,
-    &.anp-colorful-frame.anp-card-layout .sidebar-toggle-button,
-    &.anp-colorful-frame.anp-card-layout .workspace-ribbon.mod-left:before,
-    &:not(.anp-card-layout, .anp-border-layout) .workspace-ribbon.mod-left:before {
+    &.anp-colorful-frame.anp-card-layout .sidebar-toggle-button {
         --tab-container-background: hsla(var(--anp-colorful-frame-color-hsl, var(--color-accent-hsl)), var(--anp-colorful-frame-opacity, 1));
         --titlebar-background: hsla(var(--anp-colorful-frame-color-hsl, var(--color-accent-hsl)), var(--anp-colorful-frame-opacity, 1));
         ;

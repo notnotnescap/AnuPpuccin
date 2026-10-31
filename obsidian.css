@@ -3892,6 +3892,15 @@ input.slider,
   border: none;
 }
 
+/*-Keep the ribbon's divider where it has no frame to merge into-*/
+/* The rule above drops the ribbon's right border so it reads as part of the frame in
+   the card and border layouts. The default layout has no frame, so there the ribbon
+   needs it back — and in the same colour as the tab bar outline below, so the two meet
+   cleanly in the corner. */
+body:not(.anp-card-layout):not(.anp-border-layout) .workspace-ribbon.mod-primary {
+  border-right: var(--tab-outline-width) solid var(--tab-outline-color);
+}
+
 /*-Keep the ribbon's header bar in step with the tab bar-*/
 /* Only the default layout draws a bottom border under the tab headers, so only there
    does the ribbon's ::before need the same one; without it the frame band ran one
@@ -3945,13 +3954,11 @@ body.is-translucent {
   --divider-color: rgba(var(--ctp-surface0), 0.15);
 }
 
-.is-translucent:not(.is-fullscreen) .workspace-ribbon.mod-left,
 .is-translucent:not(.is-fullscreen) .workspace-tabs,
 .is-translucent:not(.is-fullscreen) .mod-left-split .workspace-tab-header-container,
 .is-translucent:not(.is-fullscreen) .mod-right-split .workspace-tab-header-container,
 .is-translucent:not(.is-fullscreen) .mod-top .workspace-tab-header-container,
 .is-translucent:not(.is-fullscreen) .workspace-tabs .workspace-leaf,
-.is-translucent:not(.is-fullscreen) .workspace-ribbon.mod-left:before,
 .is-translucent:not(.is-fullscreen) .workspace-split.mod-root,
 .is-translucent:not(.is-fullscreen) .workspace-split.mod-root.mod-left-split .view-content,
 .is-translucent:not(.is-fullscreen) .view-header,
@@ -4115,14 +4122,6 @@ body:not(.anp-alternate-tab-toggle):not(.anp-disable-newtab-align) .workspace-sp
   --tab-height: calc(var(--header-height)*0.7);
   --tab-max-width: 200px;
   --tab-max-width-active: 300px ;
-}
-
-.anp-alternate-tab-toggle .workspace-ribbon.mod-left {
-  margin-top: var(--header-height);
-}
-
-.anp-alternate-tab-toggle .workspace-ribbon.mod-left:before {
-  padding-bottom: 0px;
 }
 
 .anp-alternate-tab-toggle .workspace-tabs:not(.mod-stacked) .workspace-tab-header::before,
@@ -4342,13 +4341,8 @@ body.anp-card-layout .mod-vertical .workspace-tab-container,
 body.anp-card-layout .mod-vertical,
 body.anp-card-layout .workspace-split.mod-vertical,
 body.anp-card-layout .workspace-fake-target-overlay:not(.is-in-sidebar) .workspace-tabs .workspace-leaf,
-body.anp-card-layout .mod-root .workspace-tabs .workspace-leaf,
-body.anp-card-layout .workspace-ribbon.mod-left,
-body.anp-card-layout .workspace-ribbon.mod-left:before {
+body.anp-card-layout .mod-root .workspace-tabs .workspace-leaf {
   background-color: var(--tab-container-background);
-}
-body.anp-card-layout.anp-card-layout-actions .workspace-ribbon.mod-left {
-  margin-right: var(--anp-card-layout-padding, 10px);
 }
 body.anp-card-layout.anp-card-layout-actions .side-dock-actions {
   border-radius: 0px var(--anp-card-radius, var(--radius-xl)) var(--anp-card-radius, var(--radius-xl)) 0px;
@@ -4634,13 +4628,6 @@ body.anp-border-layout .workspace-split.mod-right-split > .workspace-leaf-resize
 }
 body.anp-border-layout .workspace-split {
   --divider-vertical-height: calc(100% + -1*var(--header-height));
-}
-body.anp-border-layout .workspace-ribbon.mod-left:before {
-  border-bottom: 1px solid var(--card-background-color);
-}
-body.anp-border-layout .workspace-ribbon.mod-left,
-body.anp-border-layout .workspace-ribbon.mod-left.is-focused {
-  border-right-color: var(--card-background-color);
 }
 body.anp-border-layout.is-popout-window .workspace {
   margin-left: var(--anp-border-padding, 20px);
@@ -6377,7 +6364,7 @@ body.anp-colorful-frame-icon-toggle-dark.theme-dark {
 .anp-colorful-frame.is-frameless.is-frameless:not(.is-hidden-frameless) .sidebar-toggle-button.mod-left {
   border-radius: 0 var(--radius-m) var(--radius-m) 0;
 }
-.anp-colorful-frame.anuppuccin-accent-toggle.anp-colorful-frame:not(.anp-card-layout, .anp-border-layout) .mod-top .workspace-tab-header-container, .anp-colorful-frame.anuppuccin-accent-toggle.anp-colorful-frame:not(.anp-card-layout, .anp-border-layout) .workspace-ribbon.mod-left:before, .anp-colorful-frame.anuppuccin-accent-toggle.anp-colorful-frame.anp-card-layout, .anp-colorful-frame.anuppuccin-accent-toggle.anp-colorful-frame.anp-card-layout .workspace-tabs.mod-top, .anp-colorful-frame.anuppuccin-accent-toggle.anp-colorful-frame.anp-card-layout .sidebar-toggle-button, .anp-colorful-frame.anuppuccin-accent-toggle.anp-colorful-frame.anp-card-layout .workspace-ribbon.mod-left:before {
+.anp-colorful-frame.anuppuccin-accent-toggle.anp-colorful-frame:not(.anp-card-layout, .anp-border-layout) .mod-top .workspace-tab-header-container, .anp-colorful-frame.anuppuccin-accent-toggle.anp-colorful-frame.anp-card-layout, .anp-colorful-frame.anuppuccin-accent-toggle.anp-colorful-frame.anp-card-layout .workspace-tabs.mod-top, .anp-colorful-frame.anuppuccin-accent-toggle.anp-colorful-frame.anp-card-layout .sidebar-toggle-button {
   --tab-container-background: rgba(var(--anp-colorful-frame-color, var(--ctp-accent)), var(--anp-colorful-frame-opacity, 1));
   --titlebar-background: rgba(var(--anp-colorful-frame-color, var(--ctp-accent)), var(--anp-colorful-frame-opacity, 1));
 }
@@ -6398,7 +6385,7 @@ body.anp-colorful-frame-icon-toggle-dark.theme-dark {
 .anp-colorful-frame.is-focused .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header.is-active .workspace-tab-header-inner .workspace-tab-header-inner-close-button {
   color: var(--color-accent);
 }
-.anp-colorful-frame:not(.anp-card-layout, .anp-border-layout) .mod-top .workspace-tab-header-container, .anp-colorful-frame.anp-colorful-frame.anp-card-layout, .anp-colorful-frame.anp-colorful-frame.anp-card-layout .workspace-tabs.mod-top, .anp-colorful-frame.anp-colorful-frame.anp-card-layout .sidebar-toggle-button, .anp-colorful-frame.anp-colorful-frame.anp-card-layout .workspace-ribbon.mod-left:before, .anp-colorful-frame:not(.anp-card-layout, .anp-border-layout) .workspace-ribbon.mod-left:before {
+.anp-colorful-frame:not(.anp-card-layout, .anp-border-layout) .mod-top .workspace-tab-header-container, .anp-colorful-frame.anp-colorful-frame.anp-card-layout, .anp-colorful-frame.anp-colorful-frame.anp-card-layout .workspace-tabs.mod-top, .anp-colorful-frame.anp-colorful-frame.anp-card-layout .sidebar-toggle-button {
   --tab-container-background: hsla(var(--anp-colorful-frame-color-hsl, var(--color-accent-hsl)), var(--anp-colorful-frame-opacity, 1));
   --titlebar-background: hsla(var(--anp-colorful-frame-color-hsl, var(--color-accent-hsl)), var(--anp-colorful-frame-opacity, 1));
 }

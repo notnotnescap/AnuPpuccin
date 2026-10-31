@@ -119,6 +119,15 @@
 	border: none;
 }
 
+/*-Keep the ribbon's divider where it has no frame to merge into-*/
+/* The rule above drops the ribbon's right border so it reads as part of the frame in
+   the card and border layouts. The default layout has no frame, so there the ribbon
+   needs it back — and in the same colour as the tab bar outline below, so the two meet
+   cleanly in the corner. */
+body:not(.anp-card-layout):not(.anp-border-layout) .workspace-ribbon.mod-primary {
+	border-right: var(--tab-outline-width) solid var(--tab-outline-color);
+}
+
 /*-Keep the ribbon's header bar in step with the tab bar-*/
 /* Only the default layout draws a bottom border under the tab headers, so only there
    does the ribbon's ::before need the same one; without it the frame band ran one

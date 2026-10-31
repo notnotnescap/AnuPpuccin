@@ -59,17 +59,11 @@ body.anp-card-layout {
     .mod-vertical,
     .workspace-split.mod-vertical,
     .workspace-fake-target-overlay:not(.is-in-sidebar) .workspace-tabs .workspace-leaf,
-    .mod-root .workspace-tabs .workspace-leaf,
-    .workspace-ribbon.mod-left,
-    .workspace-ribbon.mod-left:before {
+    .mod-root .workspace-tabs .workspace-leaf {
         background-color: var(--tab-container-background);
     }
 
     &.anp-card-layout-actions {
-        .workspace-ribbon.mod-left {
-            margin-right: var(--anp-card-layout-padding, 10px);
-        }
-
         .side-dock-actions {
             border-radius: 0px var(--anp-card-radius, var(--radius-xl)) var(--anp-card-radius, var(--radius-xl)) 0px;
             margin-top: 2px;
