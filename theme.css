@@ -1616,6 +1616,33 @@ settings:
     type: variable-number
     default: 1.2
 -
+    id: h1-style
+    title: H1 Font Style
+    type: variable-select
+    default: normal
+    options:
+    -
+        label: Normal
+        value: normal
+    -
+        label: Italic
+        value: italic
+-
+    id: h1-variant
+    title: H1 Font Variant
+    type: variable-select
+    default: normal
+    options:
+    -
+        label: Normal
+        value: normal
+    -
+        label: Small Caps
+        value: small-caps
+    -
+        label: Full Caps
+        value: uppercase
+-
     id: anp-h1-color-custom
     title: H1 Color
     type: class-select
@@ -1699,6 +1726,33 @@ settings:
     title: H2 Line Height
     type: variable-number
     default: 1.2
+-
+    id: h2-style
+    title: H2 Font Style
+    type: variable-select
+    default: normal
+    options:
+    -
+        label: Normal
+        value: normal
+    -
+        label: Italic
+        value: italic
+-
+    id: h2-variant
+    title: H2 Font Variant
+    type: variable-select
+    default: normal
+    options:
+    -
+        label: Normal
+        value: normal
+    -
+        label: Small Caps
+        value: small-caps
+    -
+        label: Full Caps
+        value: uppercase
 -
     id: anp-h2-color-custom
     title: H2 Color
@@ -1784,6 +1838,33 @@ settings:
     type: variable-number
     default: 1.3
 -
+    id: h3-style
+    title: H3 Font Style
+    type: variable-select
+    default: normal
+    options:
+    -
+        label: Normal
+        value: normal
+    -
+        label: Italic
+        value: italic
+-
+    id: h3-variant
+    title: H3 Font Variant
+    type: variable-select
+    default: normal
+    options:
+    -
+        label: Normal
+        value: normal
+    -
+        label: Small Caps
+        value: small-caps
+    -
+        label: Full Caps
+        value: uppercase
+-
     id: anp-h3-color-custom
     title: H3 Color
     type: class-select
@@ -1867,6 +1948,33 @@ settings:
     title: H4 Line Height
     type: variable-number
     default: 1.4
+-
+    id: h4-style
+    title: H4 Font Style
+    type: variable-select
+    default: normal
+    options:
+    -
+        label: Normal
+        value: normal
+    -
+        label: Italic
+        value: italic
+-
+    id: h4-variant
+    title: H4 Font Variant
+    type: variable-select
+    default: normal
+    options:
+    -
+        label: Normal
+        value: normal
+    -
+        label: Small Caps
+        value: small-caps
+    -
+        label: Full Caps
+        value: uppercase
 -
     id: anp-h4-color-custom
     title: H4 Color
@@ -1952,6 +2060,33 @@ settings:
     type: variable-number
     default: 1.5
 -
+    id: h5-style
+    title: H5 Font Style
+    type: variable-select
+    default: normal
+    options:
+    -
+        label: Normal
+        value: normal
+    -
+        label: Italic
+        value: italic
+-
+    id: h5-variant
+    title: H5 Font Variant
+    type: variable-select
+    default: normal
+    options:
+    -
+        label: Normal
+        value: normal
+    -
+        label: Small Caps
+        value: small-caps
+    -
+        label: Full Caps
+        value: uppercase
+-
     id: anp-h5-color-custom
     title: H5 Color
     type: class-select
@@ -2035,6 +2170,33 @@ settings:
     title: H6 Line Height
     type: variable-number
     default: 1.5
+-
+    id: h6-style
+    title: H6 Font Style
+    type: variable-select
+    default: normal
+    options:
+    -
+        label: Normal
+        value: normal
+    -
+        label: Italic
+        value: italic
+-
+    id: h6-variant
+    title: H6 Font Variant
+    type: variable-select
+    default: normal
+    options:
+    -
+        label: Normal
+        value: normal
+    -
+        label: Small Caps
+        value: small-caps
+    -
+        label: Full Caps
+        value: uppercase
 -
     id: anp-h6-color-custom
     title: H6 Color
@@ -6703,6 +6865,54 @@ video {
   --h4-font: var(--anp-editor-font);
   --h5-font: var(--anp-editor-font);
   --h6-font: var(--anp-editor-font);
+}
+
+.markdown-rendered h1,
+.HyperMD-header-1,
+.cm-header-1 {
+  font-style: var(--h1-style);
+  font-variant: var(--h1-variant);
+  text-transform: var(--h1-variant);
+}
+
+.markdown-rendered h2,
+.HyperMD-header-2,
+.cm-header-2 {
+  font-style: var(--h2-style);
+  font-variant: var(--h2-variant);
+  text-transform: var(--h2-variant);
+}
+
+.markdown-rendered h3,
+.HyperMD-header-3,
+.cm-header-3 {
+  font-style: var(--h3-style);
+  font-variant: var(--h3-variant);
+  text-transform: var(--h3-variant);
+}
+
+.markdown-rendered h4,
+.HyperMD-header-4,
+.cm-header-4 {
+  font-style: var(--h4-style);
+  font-variant: var(--h4-variant);
+  text-transform: var(--h4-variant);
+}
+
+.markdown-rendered h5,
+.HyperMD-header-5,
+.cm-header-5 {
+  font-style: var(--h5-style);
+  font-variant: var(--h5-variant);
+  text-transform: var(--h5-variant);
+}
+
+.markdown-rendered h6,
+.HyperMD-header-6,
+.cm-header-6 {
+  font-style: var(--h6-style);
+  font-variant: var(--h6-variant);
+  text-transform: var(--h6-variant);
 }
 
 .hide-comment-indicators .is-live-preview .cm-line:not(.cm-active) .cm-comment-start,

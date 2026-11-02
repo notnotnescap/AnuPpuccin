@@ -82,3 +82,21 @@ $accents: "rosewater", "flamingo", "pink", "mauve", "red", "maroon", "peach",
     --h5-font: var(--anp-editor-font);
     --h6-font: var(--anp-editor-font);
 }
+
+// Heading font style (italic/normal) and variant (small caps/full caps/normal).
+// The values come from the Typography :: Headings Style Settings options
+// (--h1-style, --h1-variant, ...). Applied explicitly here so the feature
+// works even though older Obsidian builds only read the font/size/weight vars.
+// The variant value is fed to both `font-variant` and `text-transform` on
+// purpose: `small-caps` is only valid in the former and `uppercase` (full
+// caps) only in the latter; the invalid half of the pair is ignored by the
+// CSS engine, so every option lands on the right property.
+@for $i from 1 through 6 {
+    .markdown-rendered h#{$i},
+    .HyperMD-header-#{$i},
+    .cm-header-#{$i} {
+        font-style: var(--h#{$i}-style);
+        font-variant: var(--h#{$i}-variant);
+        text-transform: var(--h#{$i}-variant);
+    }
+}
