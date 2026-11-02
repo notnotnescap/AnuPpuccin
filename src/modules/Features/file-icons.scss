@@ -10,7 +10,10 @@
     display: flex;
     flex-shrink: 0;
     height: var(--size-4-4);
-    margin-left: calc(-1 * var(--size-4-5));
+    // Logical margin: the icon is absolutely positioned at the title's inline start, so it has to
+    // be pulled outwards into the padding on whichever side that is (left in LTR, right in RTL).
+    // A physical `margin-left` dragged it back over the file name when the app ran RTL (#371).
+    margin-inline-start: calc(-1 * var(--size-4-5));
     opacity: var(--icon-opacity);
     position: absolute;
     width: var(--size-4-4);

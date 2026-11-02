@@ -1,9 +1,9 @@
+// Obsidian positions list bullets and fold indicators itself with logical properties
+// (`float: inline-start`, `margin-inline-start`), so they already sit on the correct side in
+// RTL. The physical overrides that used to live here pulled them back towards the LTR side:
+// `margin-right: -22px` on `.collapse-indicator` pushed list fold indicators 20px into the
+// text/bullet, because Obsidian offsets list indicators by `-2.65em`.
 .markdown-rendered.rtl {
-    .list-bullet {
-        float: right;
-        margin-right: -12px;
-    }
-
     .anp-button-metadata-toggle & {
         .frontmatter-container .frontmatter-container-header {
             left: unset;
@@ -19,11 +19,5 @@
     blockquote {
         border-right: var(--blockquote-border-thickness) solid var(--blockquote-border-color);
         border-left: none;
-    }
-
-    .collapse-indicator {
-        float: right;
-        margin-left: unset;
-        margin-right: -22px;
     }
 }

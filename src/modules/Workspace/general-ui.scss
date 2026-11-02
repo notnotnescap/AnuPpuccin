@@ -123,9 +123,11 @@
 /* The rule above drops the ribbon's right border so it reads as part of the frame in
    the card and border layouts. The default layout has no frame, so there the ribbon
    needs it back — and in the same colour as the tab bar outline below, so the two meet
-   cleanly in the corner. */
+   cleanly in the corner. The ribbon keeps its `.mod-primary` class on whichever side it renders,
+   so the divider has to sit on the ribbon's own inline end: a physical `border-right` left it on
+   the window edge in RTL, where the ribbon is on the right. */
 body:not(.anp-card-layout):not(.anp-border-layout) .workspace-ribbon.mod-primary {
-	border-right: var(--tab-outline-width) solid var(--tab-outline-color);
+	border-inline-end: var(--tab-outline-width) solid var(--tab-outline-color);
 }
 
 /*-Keep the ribbon's header bar in step with the tab bar-*/

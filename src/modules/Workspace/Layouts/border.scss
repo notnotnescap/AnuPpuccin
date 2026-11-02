@@ -231,6 +231,17 @@ body.anp-border-layout {
         .workspace-split.mod-right-split {
             background-color: var(--card-background-color);
 
+            // Obsidian names the docks by the side they render on, so the vault profile gets
+            // these in whichever block matches where the sidebar currently sits. Without this
+            // one the profile lost its outline and bottom radius whenever the sidebar was on
+            // the right (RTL).
+            .workspace-sidedock-vault-profile {
+                border-top: none;
+                background-color: var(--card-foreground-color);
+                border-right: var(--border-border-style);
+                border-bottom: var(--border-border-style);
+            }
+
             .workspace-tabs {
                 background-color: var(--card-background-color);
 
@@ -312,7 +323,8 @@ body.anp-border-layout {
 
     &.is-popout-window {
         .workspace {
-            margin-left: var(--anp-border-padding, 20px);
+            // The ribbon pads that side of the frame; keep it logical so RTL pads its own ribbon side.
+            margin-inline-start: var(--anp-border-padding, 20px);
         }
     }
 
@@ -322,7 +334,7 @@ body.anp-border-layout {
     // are the same width whether or not the ribbon is shown (#378).
     &:not(.is-mobile):not(.show-ribbon) {
         .workspace {
-            margin-left: var(--anp-border-padding, 20px);
+            margin-inline-start: var(--anp-border-padding, 20px);
         }
     }
 
@@ -331,7 +343,7 @@ body.anp-border-layout {
     // because that makes the frame noticeably wider than the border padding.
     &.anp-match-ribbon-padding:not(.is-mobile).show-ribbon {
         .workspace {
-            margin-right: var(--ribbon-width, 44px);
+            margin-inline-end: var(--ribbon-width, 44px);
         }
     }
 }
@@ -341,10 +353,21 @@ body.anp-border-layout {
 // todo: needs some fixes to enable & look great on tablets
 body.anp-border-layout:not(.is-mobile) {
     .workspace {
-        margin-right: var(--anp-border-padding, 20px);
+        // The ribbon is the outer spacing on its own side, so the border padding belongs on the
+        // opposite one: logical, so RTL puts it on the other side as well.
+        margin-inline-end: var(--anp-border-padding, 20px);
 
         .workspace-split.mod-left-split {
             padding-bottom: var(--anp-border-bottom-padding, 20px);
+
+            // The dock that holds the vault profile takes its bottom corner from the profile, so the
+            // pane above it must stay square there. The other dock has nothing below it and rounds
+            // its own bottom edge.
+            &:not(:has(.workspace-sidedock-vault-profile)) .workspace-tabs:last-child {
+                .workspace-tab-container {
+                    border-bottom-left-radius: var(--anp-border-radius, var(--radius-xl));
+                }
+            }
 
             .workspace-tabs {
                 &.mod-top-left-space {
@@ -362,13 +385,19 @@ body.anp-border-layout:not(.is-mobile) {
         .workspace-split.mod-right-split {
             padding-bottom: var(--anp-border-bottom-padding, 20px);
 
-            .workspace-tabs {
-                &:last-child {
-                    .workspace-tab-container {
-                        border-bottom-right-radius: var(--anp-border-radius, var(--radius-xl));
-                    }
-                }
+            .workspace-sidedock-vault-profile {
+                border-bottom-right-radius: var(--anp-border-radius, var(--radius-xl));
+            }
 
+            // Mirror of the left block: a dock with nothing below it rounds its own bottom edge; the
+            // one holding the vault profile takes that corner from the profile instead.
+            &:not(:has(.workspace-sidedock-vault-profile)) .workspace-tabs:last-child {
+                .workspace-tab-container {
+                    border-bottom-right-radius: var(--anp-border-radius, var(--radius-xl));
+                }
+            }
+
+            .workspace-tabs {
                 &.mod-top-right-space {
                     .workspace-tab-container {
                         border-top-right-radius: var(--anp-border-radius, var(--radius-xl));

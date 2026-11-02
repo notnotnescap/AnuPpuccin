@@ -4597,10 +4597,6 @@ input.slider,
 }
 
 /*======== RTL ==================*/
-.markdown-rendered.rtl .list-bullet {
-  float: right;
-  margin-right: -12px;
-}
 .anp-button-metadata-toggle .markdown-rendered.rtl .frontmatter-container .frontmatter-container-header {
   left: unset;
   right: calc(100% - 32px);
@@ -4612,11 +4608,6 @@ input.slider,
 .markdown-rendered.rtl blockquote {
   border-right: var(--blockquote-border-thickness) solid var(--blockquote-border-color);
   border-left: none;
-}
-.markdown-rendered.rtl .collapse-indicator {
-  float: right;
-  margin-left: unset;
-  margin-right: -22px;
 }
 
 /*======== PRINT ================*/
@@ -4897,9 +4888,11 @@ input.slider,
 /* The rule above drops the ribbon's right border so it reads as part of the frame in
    the card and border layouts. The default layout has no frame, so there the ribbon
    needs it back — and in the same colour as the tab bar outline below, so the two meet
-   cleanly in the corner. */
+   cleanly in the corner. The ribbon keeps its `.mod-primary` class on whichever side it renders,
+   so the divider has to sit on the ribbon's own inline end: a physical `border-right` left it on
+   the window edge in RTL, where the ribbon is on the right. */
 body:not(.anp-card-layout):not(.anp-border-layout) .workspace-ribbon.mod-primary {
-  border-right: var(--tab-outline-width) solid var(--tab-outline-color);
+  border-inline-end: var(--tab-outline-width) solid var(--tab-outline-color);
 }
 
 /*-Keep the ribbon's header bar in step with the tab bar-*/
@@ -5346,7 +5339,9 @@ body.anp-card-layout .mod-root .workspace-tabs .workspace-leaf {
   background-color: var(--tab-container-background);
 }
 body.anp-card-layout.anp-card-layout-actions .side-dock-actions {
-  border-radius: 0px var(--anp-card-radius, var(--radius-xl)) var(--anp-card-radius, var(--radius-xl)) 0px;
+  border-radius: 0;
+  border-start-end-radius: var(--anp-card-radius, var(--radius-xl));
+  border-end-end-radius: var(--anp-card-radius, var(--radius-xl));
   margin-top: 2px;
   border-width: 1px 1px 0px 1px;
 }
@@ -5357,17 +5352,19 @@ body.anp-card-layout.anp-card-layout-actions .side-dock-actions {
 }
 body.anp-card-layout.anp-card-layout-actions.anp-fixed-status-bar .side-dock-settings {
   border-width: 1px;
-  border-radius: 0px var(--anp-card-radius, var(--radius-xl)) var(--anp-card-radius, var(--radius-xl)) 0px;
+  border-radius: 0;
+  border-start-end-radius: var(--anp-card-radius, var(--radius-xl));
+  border-end-end-radius: var(--anp-card-radius, var(--radius-xl));
 }
 body.anp-card-layout .side-dock-actions {
   padding: var(--size-4-2) var(--size-4-1) var(--size-4-3);
 }
-body.anp-card-layout .workspace-split.mod-left-split:has(.workspace-sidedock-vault-profile) .workspace-leaf-content {
+body.anp-card-layout .workspace-split:has(.workspace-sidedock-vault-profile) .workspace-leaf-content {
   border-radius: var(--anp-card-radius, var(--radius-xl)) var(--anp-card-radius, var(--radius-xl)) 0 0;
   margin-bottom: 0;
   border-bottom: none;
 }
-body.anp-card-layout .workspace-split.mod-left-split:has(.workspace-sidedock-vault-profile) .workspace-sidedock-vault-profile {
+body.anp-card-layout .workspace-split:has(.workspace-sidedock-vault-profile) .workspace-sidedock-vault-profile {
   border: 1px solid var(--tab-outline-color);
   border-top: none;
   border-radius: 0 0 var(--anp-card-radius, var(--radius-xl)) var(--anp-card-radius, var(--radius-xl));
@@ -5383,7 +5380,7 @@ body.anp-card-layout .workspace-ribbon.mod-primary:before {
   border-bottom: none;
 }
 body.anp-card-layout .mod-vertical .workspace-tabs .workspace-tab-header-container {
-  padding-left: calc(var(--anp-card-header-left-padding, 20px) + var(--anp-card-radius, var(--radius-xl)));
+  padding-inline-start: calc(var(--anp-card-header-left-padding, 20px) + var(--anp-card-radius, var(--radius-xl)));
 }
 body.anp-card-layout .mod-vertical .workspace-tabs .workspace-tab-header-container .workspace-tab-header-container-inner {
   margin: 6px -5px calc(var(--tab-outline-width) * -1);
@@ -5406,25 +5403,29 @@ body.anp-card-layout .workspace-split .mod-stacked .workspace-leaf-content {
   border-radius: 0;
   border: none;
   margin-bottom: 0px;
-  border-left: none;
+  border-inline-start: none;
 }
 body.anp-card-layout .workspace-split.mod-horizontal > * {
   width: unset;
 }
 body.anp-card-layout .workspace .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header {
   border-style: solid;
-  border-radius: var(--anp-card-radius, var(--radius-xl)) 0px 0px var(--anp-card-radius, var(--radius-xl));
+  border-radius: 0;
+  border-start-start-radius: var(--anp-card-radius, var(--radius-xl));
+  border-end-start-radius: var(--anp-card-radius, var(--radius-xl));
   border-width: var(--tab-outline-width);
   border-color: var(--tab-outline-color);
-  border-right: var(--tab-outline-width) dashed var(--tab-outline-color);
+  border-inline-end: var(--tab-outline-width) dashed var(--tab-outline-color);
 }
 body.anp-card-layout .workspace .workspace-tabs.mod-stacked .workspace-leaf {
-  border-left-width: 0px;
+  border-inline-start-width: 0px;
   border-top-width: var(--tab-outline-width);
   border-bottom-width: var(--tab-outline-width);
   border-style: solid;
   border-color: var(--tab-outline-color);
-  border-radius: 0 var(--anp-card-radius, var(--radius-xl)) var(--anp-card-radius, var(--radius-xl)) 0;
+  border-radius: 0;
+  border-start-end-radius: var(--anp-card-radius, var(--radius-xl));
+  border-end-end-radius: var(--anp-card-radius, var(--radius-xl));
 }
 body.anp-card-layout .workspace .workspace-tabs.mod-stacked .workspace-tab-container {
   padding-bottom: var(--anp-card-layout-padding, 10px);
@@ -5443,8 +5444,13 @@ body.anp-card-layout:not(.is-phone) .workspace-split .workspace-leaf-content {
   border-radius: var(--anp-card-radius, var(--radius-xl));
   margin-bottom: var(--anp-card-layout-padding, 10px);
 }
+body.anp-card-layout:not(.is-phone) .workspace-split:has(.workspace-sidedock-vault-profile) .workspace-tabs:last-child .workspace-leaf-content {
+  border-radius: var(--anp-card-radius, var(--radius-xl)) var(--anp-card-radius, var(--radius-xl)) 0 0;
+  margin-bottom: 0;
+  border-bottom: none;
+}
 body.anp-card-layout:not(.is-phone).anp-match-ribbon-padding.show-ribbon .workspace {
-  margin-right: var(--ribbon-width, 44px);
+  margin-inline-end: var(--ribbon-width, 44px);
 }
 
 /*--------------------------
@@ -5582,6 +5588,12 @@ body.anp-border-layout .workspace .workspace-split.mod-left-split .workspace-sid
 body.anp-border-layout .workspace .workspace-split.mod-right-split {
   background-color: var(--card-background-color);
 }
+body.anp-border-layout .workspace .workspace-split.mod-right-split .workspace-sidedock-vault-profile {
+  border-top: none;
+  background-color: var(--card-foreground-color);
+  border-right: var(--border-border-style);
+  border-bottom: var(--border-border-style);
+}
 body.anp-border-layout .workspace .workspace-split.mod-right-split .workspace-tabs {
   background-color: var(--card-background-color);
 }
@@ -5631,20 +5643,23 @@ body.anp-border-layout .workspace-split {
   --divider-vertical-height: calc(100% + -1*var(--header-height));
 }
 body.anp-border-layout.is-popout-window .workspace {
-  margin-left: var(--anp-border-padding, 20px);
+  margin-inline-start: var(--anp-border-padding, 20px);
 }
 body.anp-border-layout:not(.is-mobile):not(.show-ribbon) .workspace {
-  margin-left: var(--anp-border-padding, 20px);
+  margin-inline-start: var(--anp-border-padding, 20px);
 }
 body.anp-border-layout.anp-match-ribbon-padding:not(.is-mobile).show-ribbon .workspace {
-  margin-right: var(--ribbon-width, 44px);
+  margin-inline-end: var(--ribbon-width, 44px);
 }
 
 body.anp-border-layout:not(.is-mobile) .workspace {
-  margin-right: var(--anp-border-padding, 20px);
+  margin-inline-end: var(--anp-border-padding, 20px);
 }
 body.anp-border-layout:not(.is-mobile) .workspace .workspace-split.mod-left-split {
   padding-bottom: var(--anp-border-bottom-padding, 20px);
+}
+body.anp-border-layout:not(.is-mobile) .workspace .workspace-split.mod-left-split:not(:has(.workspace-sidedock-vault-profile)) .workspace-tabs:last-child .workspace-tab-container {
+  border-bottom-left-radius: var(--anp-border-radius, var(--radius-xl));
 }
 body.anp-border-layout:not(.is-mobile) .workspace .workspace-split.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-container {
   border-top-left-radius: var(--anp-border-radius, var(--radius-xl));
@@ -5655,7 +5670,10 @@ body.anp-border-layout:not(.is-mobile) .workspace .workspace-split.mod-left-spli
 body.anp-border-layout:not(.is-mobile) .workspace .workspace-split.mod-right-split {
   padding-bottom: var(--anp-border-bottom-padding, 20px);
 }
-body.anp-border-layout:not(.is-mobile) .workspace .workspace-split.mod-right-split .workspace-tabs:last-child .workspace-tab-container {
+body.anp-border-layout:not(.is-mobile) .workspace .workspace-split.mod-right-split .workspace-sidedock-vault-profile {
+  border-bottom-right-radius: var(--anp-border-radius, var(--radius-xl));
+}
+body.anp-border-layout:not(.is-mobile) .workspace .workspace-split.mod-right-split:not(:has(.workspace-sidedock-vault-profile)) .workspace-tabs:last-child .workspace-tab-container {
   border-bottom-right-radius: var(--anp-border-radius, var(--radius-xl));
 }
 body.anp-border-layout:not(.is-mobile) .workspace .workspace-split.mod-right-split .workspace-tabs.mod-top-right-space .workspace-tab-container {
@@ -6085,8 +6103,16 @@ video {
 
 /*--------------HEADERS----------------*/
 .markdown-source-view.mod-cm6 .cm-fold-indicator .collapse-indicator {
-  margin-left: -22px;
   padding: 0px 6px;
+}
+
+.markdown-source-view.mod-cm6:not(.is-rtl) .cm-fold-indicator .collapse-indicator {
+  margin-left: -22px;
+}
+
+.markdown-source-view.mod-cm6.is-rtl .cm-fold-indicator .collapse-indicator {
+  margin-left: 0;
+  margin-right: -22px;
 }
 
 .anp-header-color-toggle.anp-h1-rosewater .app-container,
@@ -8497,7 +8523,7 @@ None of the original code was used and the feature was implemented from scratch.
   display: flex;
   flex-shrink: 0;
   height: var(--size-4-4);
-  margin-left: calc(-1 * var(--size-4-5));
+  margin-inline-start: calc(-1 * var(--size-4-5));
   opacity: var(--icon-opacity);
   position: absolute;
   width: var(--size-4-4);

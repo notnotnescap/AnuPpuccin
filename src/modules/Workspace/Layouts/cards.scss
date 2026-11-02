@@ -65,7 +65,9 @@ body.anp-card-layout {
 
     &.anp-card-layout-actions {
         .side-dock-actions {
-            border-radius: 0px var(--anp-card-radius, var(--radius-xl)) var(--anp-card-radius, var(--radius-xl)) 0px;
+            border-radius: 0;
+            border-start-end-radius: var(--anp-card-radius, var(--radius-xl));
+            border-end-end-radius: var(--anp-card-radius, var(--radius-xl));
             margin-top: 2px;
             border-width: 1px 1px 0px 1px;
         }
@@ -79,7 +81,9 @@ body.anp-card-layout {
         &.anp-fixed-status-bar {
             .side-dock-settings {
                 border-width: 1px;
-                border-radius: 0px var(--anp-card-radius, var(--radius-xl)) var(--anp-card-radius, var(--radius-xl)) 0px;
+                border-radius: 0;
+                border-start-end-radius: var(--anp-card-radius, var(--radius-xl));
+                border-end-end-radius: var(--anp-card-radius, var(--radius-xl));
             }
         }
     }
@@ -88,9 +92,10 @@ body.anp-card-layout {
         padding: var(--size-4-2) var(--size-4-1) var(--size-4-3);
     }
 
-    // The left sidebar is one card: the pane on top and the vault profile below
-    // share a single rounded outline.
-    .workspace-split.mod-left-split:has(.workspace-sidedock-vault-profile) {
+    // The sidebar holding the vault profile is one card: the pane on top and the profile below
+    // share a single rounded outline. Matched on the profile itself, because Obsidian names the
+    // docks by the side they render on — `.mod-left-split` is the right-hand dock in RTL.
+    .workspace-split:has(.workspace-sidedock-vault-profile) {
 
         .workspace-leaf-content {
             border-radius: var(--anp-card-radius, var(--radius-xl)) var(--anp-card-radius, var(--radius-xl)) 0 0;
@@ -122,7 +127,7 @@ body.anp-card-layout {
                 // Keep the first tab clear of the card's rounded top-left corner:
                 // the tab's own curve would otherwise run into the card's corner
                 // and the pane would stop reading as a card.
-                padding-left: calc(var(--anp-card-header-left-padding, 20px) + var(--anp-card-radius, var(--radius-xl)));
+                padding-inline-start: calc(var(--anp-card-header-left-padding, 20px) + var(--anp-card-radius, var(--radius-xl)));
 
                 .workspace-tab-header-container-inner {
                     margin: 6px -5px calc(var(--tab-outline-width) * -1);
@@ -158,7 +163,7 @@ body.anp-card-layout {
         border-radius: 0;
         border: none;
         margin-bottom: 0px;
-        border-left: none;
+        border-inline-start: none;
     }
 
     .workspace-split.mod-horizontal>* {
@@ -168,19 +173,23 @@ body.anp-card-layout {
     .workspace .workspace-tabs.mod-stacked {
         .workspace-tab-container .workspace-tab-header {
             border-style: solid;
-            border-radius: var(--anp-card-radius, var(--radius-xl)) 0px 0px var(--anp-card-radius, var(--radius-xl));
+            border-radius: 0;
+            border-start-start-radius: var(--anp-card-radius, var(--radius-xl));
+            border-end-start-radius: var(--anp-card-radius, var(--radius-xl));
             border-width: var(--tab-outline-width);
             border-color: var(--tab-outline-color);
-            border-right: var(--tab-outline-width) dashed var(--tab-outline-color);
+            border-inline-end: var(--tab-outline-width) dashed var(--tab-outline-color);
         }
 
         .workspace-leaf {
-            border-left-width: 0px;
+            border-inline-start-width: 0px;
             border-top-width: var(--tab-outline-width);
             border-bottom-width: var(--tab-outline-width);
             border-style: solid;
             border-color: var(--tab-outline-color);
-            border-radius: 0 var(--anp-card-radius, var(--radius-xl)) var(--anp-card-radius, var(--radius-xl)) 0;
+            border-radius: 0;
+            border-start-end-radius: var(--anp-card-radius, var(--radius-xl));
+            border-end-end-radius: var(--anp-card-radius, var(--radius-xl));
         }
 
         .workspace-tab-container {
@@ -210,13 +219,22 @@ body.anp-card-layout:not(.is-phone) {
         margin-bottom: var(--anp-card-layout-padding, 10px);
     }
 
+    // Merge the sidebar's last pane into the vault profile below it so the two read as one card.
+    // This has to outrank the rule above, which otherwise restores the pane's bottom radius, its
+    // bottom border and its margin, leaving the profile as a detached strip.
+    .workspace-split:has(.workspace-sidedock-vault-profile) .workspace-tabs:last-child .workspace-leaf-content {
+        border-radius: var(--anp-card-radius, var(--radius-xl)) var(--anp-card-radius, var(--radius-xl)) 0 0;
+        margin-bottom: 0;
+        border-bottom: none;
+    }
+
     // The ribbon is what pads the left edge while it is shown, so optionally widen the
     // right one to the same width so both sides read the same (#378). The card padding
     // sits on top of it on both sides, so they stay equal at
     // --ribbon-width + --anp-card-layout-padding.
     &.anp-match-ribbon-padding.show-ribbon {
         .workspace {
-            margin-right: var(--ribbon-width, 44px);
+            margin-inline-end: var(--ribbon-width, 44px);
         }
     }
 }

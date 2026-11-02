@@ -2,8 +2,19 @@
 
 // Fix fold indicators of headings in edit mode when using em font sizes (match reading mode)
 .markdown-source-view.mod-cm6 .cm-fold-indicator .collapse-indicator {
-    margin-left: -22px;
     padding: 0px 6px;
+}
+
+// Keep the LTR offset out of RTL: there the indicator starts on the right edge of the line, so
+// a negative `margin-left` dragged it over the heading text. Obsidian's own RTL rule uses the
+// mirrored value, so mirror it here too (with the specificity to outrank the generic rule above).
+.markdown-source-view.mod-cm6:not(.is-rtl) .cm-fold-indicator .collapse-indicator {
+    margin-left: -22px;
+}
+
+.markdown-source-view.mod-cm6.is-rtl .cm-fold-indicator .collapse-indicator {
+    margin-left: 0;
+    margin-right: -22px;
 }
 
 // Custom header font
