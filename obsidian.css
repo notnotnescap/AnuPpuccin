@@ -118,6 +118,9 @@ settings:
         label: Kanagawa
         value: ctp-kanagawa-dark
     -
+        label: Material Gruvbox
+        value: ctp-material-gruvbox-dark
+    -
         label: Material Mint
         value: ctp-material-mint-dark
     -
@@ -3511,6 +3514,10 @@ body.theme-dark {
   --ctp-accent: var(--ctp-blue);
 }
 
+.theme-dark.ctp-material-gruvbox-dark {
+  --ctp-accent: 125, 174, 163;
+}
+
 .theme-dark.anp-theme-ext-amoled {
   --ctp-ext-surface2: 80, 80, 80 !important;
   --ctp-ext-surface1: 50, 50, 50 !important;
@@ -3998,6 +4005,36 @@ body.theme-dark {
   --ctp-ext-base: 18, 31, 33;
   --ctp-ext-mantle: 11, 18, 20;
   --ctp-ext-crust: 5, 9, 10;
+}
+
+.theme-dark.ctp-material-gruvbox-dark,
+.ctp-material-gruvbox-dark .themed-color-wrapper > .theme-dark {
+  --ctp-ext-rosewater: 231, 138, 78;
+  --ctp-ext-flamingo: 148, 94, 128;
+  --ctp-ext-pink: 211, 134, 155;
+  --ctp-ext-mauve: 148, 94, 128;
+  --ctp-ext-red: 234, 105, 98;
+  --ctp-ext-maroon: 193, 74, 74;
+  --ctp-ext-peach: 195, 94, 10;
+  --ctp-ext-yellow: 231, 138, 78;
+  --ctp-ext-green: 169, 182, 101;
+  --ctp-ext-teal: 137, 180, 130;
+  --ctp-ext-sky: 125, 174, 163;
+  --ctp-ext-sapphire: 69, 112, 122;
+  --ctp-ext-blue: 69, 112, 122;
+  --ctp-ext-lavender: 211, 134, 155;
+  --ctp-ext-text: 212, 190, 152;
+  --ctp-ext-subtext1: 242, 229, 188;
+  --ctp-ext-subtext0: 235, 219, 178;
+  --ctp-ext-overlay2: 213, 196, 161;
+  --ctp-ext-overlay1: 146, 131, 116;
+  --ctp-ext-overlay0: 102, 92, 84;
+  --ctp-ext-surface2: 80, 73, 69;
+  --ctp-ext-surface1: 60, 56, 54;
+  --ctp-ext-surface0: 50, 48, 47;
+  --ctp-ext-base: 40, 40, 40;
+  --ctp-ext-mantle: 29, 32, 33;
+  --ctp-ext-crust: 19, 21, 22;
 }
 
 .theme-dark.ctp-nord-dark,
