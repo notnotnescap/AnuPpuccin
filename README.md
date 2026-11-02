@@ -47,7 +47,7 @@ AnuPpuccin has a [Discussions](https://github.com/AnubisNekhet/AnuPpuccin/discus
 ### Custom palette
 
 <p align="center"> <img src="assets/gh-colorscheme-preview.webp"> </p>
-The theme supports various palettes (5 in the base theme and even more if you use the <a href="https://github.com/AnubisNekhet/AnuPpuccin/blob/main/snippets/extended-colorschemes.css">extended colorschemes</a> snippet) which include many popular colorschemes such as Catppuccin and Dracula. These are heavily integrated into the theme as they are directly used to stylize various UI elements.
+The theme supports various palettes (5 in the base theme and even more through the built-in extended colorschemes) which include many popular colorschemes such as Catppuccin and Dracula. These are heavily integrated into the theme as they are directly used to stylize various UI elements.
 
 ### Layouts
 
@@ -145,7 +145,7 @@ Markdown embeds have an alternate styling with an animated variant which can be 
 
 ## Colorschemes used
 
-**Note**: Colorschemes that aren't in the base theme can be used through the [extended colorschemes](https://github.com/AnubisNekhet/AnuPpuccin/blob/main/snippets/extended-colorschemes.css) snippet. <br> **Important**: Some colorschemes have been been modified to fit the Catppuccin color value style, which means there will be some changes made to make the theme feel more natural.
+**Note**: Colorschemes that aren't in the base theme are included in the theme by default and can be selected directly from the Light Theme and Dark Theme dropdowns in Style Settings. <br> **Important**: Some colorschemes have been been modified to fit the Catppuccin color value style, which means there will be some changes made to make the theme feel more natural.
 
 | Theme                                                     | Light Mode | Dark Mode | Extra Notes                                                                                                                 |
 | --------------------------------------------------------- | ---------- | --------- | --------------------------------------------------------------------------------------------------------------------------- |

@@ -14,38 +14,126 @@ settings:
     collapsed: true
 -
     id: anuppuccin-theme-light
-    title: Light Theme Flavor
+    title: Light Theme
     description: Select your preferred light mode flavor
     type: class-select
     allowEmpty: false
     default: ctp-latte
     options:
     -
-        label: Latte
+        label: Catppuccin Latte
         value: ctp-latte
     -
         label: Rosé Pine
         value: ctp-rosepine-light
+    -
+        label: Atom
+        value: ctp-atom-light
+    -
+        label: Everforest
+        value: ctp-everforest-light
+    -
+        label: Gruvbox
+        value: ctp-gruvbox-light
+    -
+        label: Material Mint
+        value: ctp-material-mint-light
+    -
+        label: Luminescence
+        value: ctp-luminescence-light
+    -
+        label: Nord
+        value: ctp-nord-light
+    -
+        label: Notion
+        value: ctp-notion-light
+    -
+        label: Sandy Beaches
+        value: ctp-sandy-beaches-light
+    -
+        label: Solarized
+        value: ctp-solarized-light
 -
     id: anuppuccin-theme-dark
-    title: Dark Theme Flavor
+    title: Dark Theme
     description: Select your preferred dark mode flavor
     type: class-select
     allowEmpty: false
     default: ctp-mocha
     options:
     -
-        label: Frappe
+        label: Catppuccin Frappe
         value: ctp-frappe
     -
-        label: Macchiato
+        label: Catppuccin Macchiato
         value: ctp-macchiato
     -
-        label: Mocha
+        label: Catppuccin Mocha
         value: ctp-mocha
     -
-        label: Mocha Old
+        label: Catppuccin Mocha Old
         value: ctp-mocha-old
+    -
+        label: AMOLED Dark
+        value: ctp-amoled-dark
+    -
+        label: Atom
+        value: ctp-atom-dark
+    -
+        label: Biscuit
+        value: ctp-biscuit-dark
+    -
+        label: Coffee
+        value: ctp-coffee-dark
+    -
+        label: Dark (Generic)
+        value: ctp-generic-dark
+    -
+        label: Dracula
+        value: ctp-dracula
+    -
+        label: Everforest
+        value: ctp-everforest-dark
+    -
+        label: Flexoki
+        value: ctp-flexoki-dark
+    -
+        label: Gruvbox
+        value: ctp-gruvbox-dark
+    -
+        label: Kanagawa
+        value: ctp-kanagawa-dark
+    -
+        label: Material Mint
+        value: ctp-material-mint-dark
+    -
+        label: Nord
+        value: ctp-nord-dark
+    -
+        label: Notion
+        value: ctp-notion-dark
+    -
+        label: Nord Dark (Custom palette)
+        value: ctp-nord-darker
+    -
+        label: Rosé Pine
+        value: ctp-rosepine-dark
+    -
+        label: Rosebox
+        value: ctp-rosebox
+    -
+        label: Royal Velvet
+        value: ctp-royal-velvet
+    -
+        label: Solarized
+        value: ctp-solarized-dark
+    -
+        label: Thorns
+        value: ctp-thorns
+-
+    id: anp-theme-ext-amoled
+    title: Toggle amoled black on all themes
+    type: class-toggle
 -
     id: anuppuccin-light-theme-accents
     title: Light Theme Accent
@@ -152,12 +240,6 @@ settings:
     description: Forces colorscheme-specific custom accents to be utilised instead of default obsidian accent
     type: class-toggle
     default: true
--
-    id: anuppuccin-url-extended-colorschemes
-    title: Extended Color Schemes Snippet
-    description: "Download the snippet by clicking on [this link](https://github.com/AnubisNekhet/AnuPpuccin/blob/main/snippets/extended-colorschemes.css)."
-    type: info-text
-    markdown: true
 
 # Colors :: Color Overrides
 
