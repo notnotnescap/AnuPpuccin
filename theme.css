@@ -147,6 +147,9 @@ settings:
     -
         label: Thorns
         value: ctp-thorns
+    -
+        label: Tokyo Night
+        value: ctp-tokyo-night
 -
     id: anp-theme-ext-amoled
     title: Toggle amoled black on all themes
@@ -3518,6 +3521,10 @@ body.theme-dark {
   --ctp-accent: 125, 174, 163;
 }
 
+.theme-dark.ctp-tokyo-night {
+  --ctp-accent: 122, 162, 247;
+}
+
 .theme-dark.anp-theme-ext-amoled {
   --ctp-ext-surface2: 80, 80, 80 !important;
   --ctp-ext-surface1: 50, 50, 50 !important;
@@ -4395,6 +4402,36 @@ body.theme-dark {
   --ctp-ext-base: 21, 21, 21;
   --ctp-ext-mantle: 15, 15, 15;
   --ctp-ext-crust: 10, 10, 10;
+}
+
+.theme-dark.ctp-tokyo-night,
+.ctp-tokyo-night .themed-color-wrapper > .theme-dark {
+  --ctp-ext-rosewater: 255, 158, 100;
+  --ctp-ext-flamingo: 247, 118, 142;
+  --ctp-ext-pink: 187, 154, 247;
+  --ctp-ext-mauve: 187, 154, 247;
+  --ctp-ext-red: 247, 118, 142;
+  --ctp-ext-maroon: 219, 75, 75;
+  --ctp-ext-peach: 255, 158, 100;
+  --ctp-ext-yellow: 224, 175, 104;
+  --ctp-ext-green: 158, 206, 106;
+  --ctp-ext-teal: 115, 218, 202;
+  --ctp-ext-sky: 125, 207, 255;
+  --ctp-ext-sapphire: 42, 195, 222;
+  --ctp-ext-blue: 122, 162, 247;
+  --ctp-ext-lavender: 157, 124, 216;
+  --ctp-ext-text: 192, 202, 245;
+  --ctp-ext-subtext1: 169, 177, 214;
+  --ctp-ext-subtext0: 154, 165, 206;
+  --ctp-ext-overlay2: 115, 122, 162;
+  --ctp-ext-overlay1: 86, 95, 137;
+  --ctp-ext-overlay0: 84, 92, 126;
+  --ctp-ext-surface2: 65, 72, 104;
+  --ctp-ext-surface1: 59, 66, 97;
+  --ctp-ext-surface0: 41, 46, 66;
+  --ctp-ext-base: 26, 27, 38;
+  --ctp-ext-mantle: 22, 22, 30;
+  --ctp-ext-crust: 22, 22, 30;
 }
 
 /*===============================================================

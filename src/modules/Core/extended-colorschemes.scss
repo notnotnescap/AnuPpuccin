@@ -30,6 +30,7 @@
 @use "ext-colorschemes/material-mint-light.scss" as *;
 @use "ext-colorschemes/material-mint-dark.scss" as *;
 @use "ext-colorschemes/material-gruvbox-dark.scss" as *;
+@use "ext-colorschemes/tokyo-night.scss" as *;
 
 $ext-color-list: "rosewater", "flamingo", "pink", "mauve", "red", "maroon",
 	"peach", "yellow", "green", "teal", "sky", "sapphire", "blue", "lavender",
@@ -45,7 +46,7 @@ $ext-theme-list: $theme-atom-light, $theme-amoled-dark, $theme-atom-dark,
 	$theme-nord-darker, $theme-nord-light, $theme-notion-light,
 	$theme-notion-dark, $theme-rosebox, $theme-rosepine-dark,
 	$theme-royal-velvet, $theme-sandy-beaches-light, $theme-solarized-dark,
-	$theme-solarized-light, $theme-thorns;
+	$theme-solarized-light, $theme-thorns, $theme-tokyo-night;
 
 .theme-dark.ctp-rosebox {
 	--ctp-accent: 165, 117, 98;
@@ -82,6 +83,10 @@ $ext-theme-list: $theme-atom-light, $theme-amoled-dark, $theme-atom-dark,
 
 .theme-dark.ctp-material-gruvbox-dark {
 	--ctp-accent: 125, 174, 163;
+}
+
+.theme-dark.ctp-tokyo-night {
+	--ctp-accent: 122, 162, 247;
 }
 
 .theme-dark.anp-theme-ext-amoled {
