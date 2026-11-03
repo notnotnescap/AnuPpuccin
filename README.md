@@ -7,9 +7,6 @@
 <h3 align="center">Voted <b>Best Theme</b> in <a href="https://forum.obsidian.md/t/gems-of-the-year-2022-winners/54903">Gems of the Year 2022</a> awards 🎉
 </h3>
 
-<h2 align="center">Notice</h2>
-<p align="center">AnuPpuccin is currently on hiatus!<br>I have been busy with endsems and projects, thus I haven't been able to dedicate time to fix bugs and issues and I'm really sorry for that 😅. Thank you for your understanding!</p>
-
 ## Preface
 
 Please do note that I've made this theme for myself, and it may not fit your use cases. However, I've made most of the configuration completely optional so that the experience remains as close to vanilla if you choose to do so. Most of the in-application variables are recolored so that your custom snippets can be used easily with the theme.
@@ -30,7 +27,7 @@ AnuPpuccin is licensed under the GPL-3.0 license which allows you to modify the 
 <summary><h2>Installation</h2></summary>
 <h3>Normal Installation</h3>
 Go to your theme folder (<code>.obsidian/themes</code>) and run:<br><br>
-<pre><code>git clone https://github.com/AnubisNekhet/AnuPpuccin.git</code></pre>
+<pre><code>git clone git@github.com:notnotnescap/AnuPpuccin.git</code></pre>
 <h3>Updating</h3>
 Go to your AnuPuccin folder (<code>.obsidian/themes/Anuppuccin</code>) and run:<br><br>
 <pre><code>git pull</code></pre>
