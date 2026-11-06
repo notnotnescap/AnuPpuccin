@@ -13,6 +13,29 @@
                 var(--background-primary));
     }
 
+    // Apply styling to bookmarks
+    [data-type="bookmarks"] {
+
+        .tree-item-self,
+        .tree-item-self .tree-item-inner {
+            color: var(--anp-full-rainbow-text-inverted,
+                    var(--background-primary));
+            --icon-color: var(--anp-full-rainbow-text-inverted,
+                    var(--background-primary));
+            --nav-collapse-icon-color: var(--anp-full-rainbow-text-inverted,
+                    var(--background-primary));
+            --nav-collapse-icon-color-collapsed: var(--anp-full-rainbow-text-inverted,
+                    var(--background-primary));
+        }
+
+        .tree-item:not(.tree-item .tree-item) {
+            border-radius: 5px;
+            margin-bottom: 2px;
+            background-color: rgba(var(--rainbow-folder-color),
+                    var(--anp-rainbow-folder-bg-opacity));
+        }
+    }
+
     // Apply styling to files in root level
     &.anp-rainbow-file-toggle {
         .nav-files-container>div>.nav-folder-children>.nav-file .nav-file-title {

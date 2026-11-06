@@ -64,15 +64,24 @@ $accents: rosewater, flamingo, pink, mauve, red, maroon, peach, yellow, green,
 // variable a is the repeat count, it varies from 1 to 11
 // variable i is the color position count, it varies from 1 to a
 // the function runs 3 loops: once for repetition counts, once for position, and once for the different colors available
+//
+// The cycling palette only colours the first level of the tree. Nested
+// folders and bookmark items are gated on the subfolder colour inheritance
+// toggle being off, so that enabling it makes them inherit their parent
+// colour instead of restarting the counter (see issue #289).
 @for $a from 1 through 11 {
 	body.rainbow-repeat-#{$a} {
 		@for $i from 1 through $a {
 			@each $accent in $accents {
 				&.rainbow-color-#{$i}-#{"" + $accent} {
-					.nav-folder-children > .nav-folder,
-					.nav-files-container > div > .nav-folder,
-					[data-type="bookmarks"] .tree-item.tree-item {
-						&:nth-child(#{$a}n + #{$i + 1}) {
+					.nav-files-container > div > .nav-folder:nth-child(#{$a}n + #{$i + 1}),
+					[data-type="bookmarks"] .tree-item:not(.tree-item .tree-item):nth-child(#{$a}n + #{$i + 1}) {
+						@include rainbow-colors($accent);
+					}
+
+					&:not(.anp-rainbow-subfolder-color-toggle) {
+						.nav-folder-children > .nav-folder:nth-child(#{$a}n + #{$i + 1}),
+						[data-type="bookmarks"] .tree-item.tree-item:nth-child(#{$a}n + #{$i + 1}) {
 							@include rainbow-colors($accent);
 						}
 					}
