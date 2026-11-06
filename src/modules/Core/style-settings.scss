@@ -2515,16 +2515,8 @@ settings:
     level: 2
     collapsed: true
 -
-    id: anp-custom-vault-toggle
-    title: Enable custom vault title
-    type: class-toggle
--
     id: anp-file-icons
     title: Enable file icons
-    type: class-toggle
--
-    id: anp-floating-header
-    title: Enable floating vault title
     type: class-toggle
 -
     id: anp-collapse-folders
@@ -3264,20 +3256,6 @@ settings:
 -
     id: anp-rainbow-subfolder-color-toggle
     title: Enable subfolder color inheritance
-    type: class-toggle
-
-# Workspace :: Floating Search Bar
-
--
-    id: anp-floating-search-bar-header
-    title: Floating Search Bar
-    description: Floats the search input and info container in the search pane
-    type: heading
-    level: 2
-    collapsed: true
--
-    id: anp-floating-search-bar
-    title: Enable Floating Search Bar
     type: class-toggle
 
 # Workspace :: Stacked Tabs

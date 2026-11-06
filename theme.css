@@ -2529,16 +2529,8 @@ settings:
     level: 2
     collapsed: true
 -
-    id: anp-custom-vault-toggle
-    title: Enable custom vault title
-    type: class-toggle
--
     id: anp-file-icons
     title: Enable file icons
-    type: class-toggle
--
-    id: anp-floating-header
-    title: Enable floating vault title
     type: class-toggle
 -
     id: anp-collapse-folders
@@ -3278,20 +3270,6 @@ settings:
 -
     id: anp-rainbow-subfolder-color-toggle
     title: Enable subfolder color inheritance
-    type: class-toggle
-
-# Workspace :: Floating Search Bar
-
--
-    id: anp-floating-search-bar-header
-    title: Floating Search Bar
-    description: Floats the search input and info container in the search pane
-    type: heading
-    level: 2
-    collapsed: true
--
-    id: anp-floating-search-bar
-    title: Enable Floating Search Bar
     type: class-toggle
 
 # Workspace :: Stacked Tabs
@@ -5864,54 +5842,6 @@ body.is-translucent {
   visibility: hidden;
 }
 
-/* AGPLv3 License
-Floating Search Bar
-Author: AnubisNekhet
-Note: If you decide to implement it in your theme or redistribute it, please keep this comment (Especially for *certain* individuals who may try to rebrand it as their own :))
-Support me: https://buymeacoffee.com/AnubisNekhet
-*/
-body.anp-floating-search-bar .workspace-leaf-content[data-type=search] .nav-header {
-  z-index: var(--layer-popover);
-  padding: 0;
-  background: var(--background-secondary);
-}
-body.anp-floating-search-bar .workspace-leaf-content[data-type=search] .nav-header .nav-buttons-container {
-  padding: var(--size-4-2);
-}
-body.anp-floating-search-bar .workspace-leaf-content[data-type=search] .nav-header ~ .search-input-container {
-  background: var(--background-secondary);
-  padding: 0;
-  width: calc(100% - var(--size-4-3));
-  margin: 4px auto;
-  box-shadow: 0 3px 4px 0px rgba(0, 0, 0, 0.05);
-  z-index: var(--layer-popover);
-}
-body.anp-floating-search-bar .workspace-leaf-content[data-type=search] .search-info-container {
-  box-shadow: 0 3px 4px 0px rgba(0, 0, 0, 0.05);
-  color: var(--text-muted);
-  padding: var(--size-4-1) var(--size-4-4) var(--size-4-1);
-  font-size: var(--font-ui-smaller);
-  border: var(--input-border-width) solid var(--background-modifier-border);
-  width: fit-content;
-  max-width: calc(100% - var(--size-4-3));
-  margin-left: calc(0.5 * var(--size-4-3));
-  margin-right: calc(0.5 * var(--size-4-3));
-  border-radius: var(--input-radius);
-  background: var(--background-secondary);
-  z-index: var(--layer-popover);
-  overflow-x: clip;
-}
-body.anp-floating-search-bar .workspace-leaf-content[data-type=search] .search-info-container:empty {
-  display: none;
-}
-body.anp-floating-search-bar .workspace-leaf-content[data-type=search] .search-result-container.mod-global-search {
-  overflow-y: auto;
-  margin-bottom: calc(-1 * var(--padx));
-  top: calc(-1 * var(--padx));
-  --padx: 50px;
-  padding-top: calc(var(--padx) + 10px);
-}
-
 body:not(.anp-alternate-tab-toggle):not(.anp-disable-newtab-align) .workspace-split.mod-vertical .workspace-tab-header-spacer {
   display: none;
 }
@@ -7969,32 +7899,6 @@ table.dataview.table-view-table > tbody > tr:hover {
   margin-right: calc(50% - var(--anp-table-width-pct) / 2);
 }
 
-/*-Custom folder title-*/
-.anp-custom-vault-toggle .nav-folder.mod-root > .nav-folder-title > .nav-folder-title-content {
-  font-size: 130%;
-  font-weight: bold;
-  text-align: center;
-  margin-left: 30px;
-}
-
-.anp-custom-vault-toggle .nav-folder.mod-root > .nav-folder-title > .nav-folder-title-content:before {
-  content: " ";
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' data-darkreader-inline-stroke='' style='--darkreader-inline-stroke:currentColor;'%3E%3Cpath d='m6 14 1.45-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.55 6a2 2 0 0 1-1.94 1.5H4a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2h3.93a2 2 0 0 1 1.66.9l.82 1.2a2 2 0 0 0 1.66.9H18a2 2 0 0 1 2 2v2'%3E%3C/path%3E%3C/svg%3E");
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' data-darkreader-inline-stroke='' style='--darkreader-inline-stroke:currentColor;'%3E%3Cpath d='m6 14 1.45-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.55 6a2 2 0 0 1-1.94 1.5H4a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2h3.93a2 2 0 0 1 1.66.9l.82 1.2a2 2 0 0 0 1.66.9H18a2 2 0 0 1 2 2v2'%3E%3C/path%3E%3C/svg%3E");
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  mask-size: contain;
-  background-size: contain;
-  text-align: center;
-  width: 26px;
-  height: 26px;
-  margin-left: -30px;
-  margin-top: -4px;
-  color: rgb(var(--ctp-yellow));
-  position: absolute;
-  background-color: rgb(var(--ctp-yellow));
-}
-
 /*-----------------------------------
 Rainbow tags is a snippet by @raisabelatrix
 Link: https://gist.github.com/raisabelatrix/eb383f7e19b59f951430c2f3c6ed80b0
@@ -9375,30 +9279,6 @@ Icons were taken from Font Awesome: https://fontawesome.com/
 
 .anp-speech-bubble [data-task="9"] {
   background: linear-gradient(to left, rgba(var(--ctp-lavender), var(--anp-speech-bubble-opacity)), rgba(var(--ctp-mauve), var(--anp-speech-bubble-opacity)));
-}
-
-/*------------FLOATING VAULT TITLE-----------*/
-/*----------------------------------
-This feature is inspired by Cecilia May's Primary theme: https://github.com/ceciliamay/obsidianmd-theme-primary
-None of the original code was used and the feature was implemented from scratch.
-----------------------------------*/
-.anp-floating-header .nav-folder.mod-root > .nav-folder-title {
-  background-color: var(--background-secondary);
-  position: sticky;
-  top: 0;
-  z-index: var(--layer-popover);
-  width: 100%;
-  border: 1px solid var(--background-modifier-border);
-  border-radius: var(--radius-s);
-  box-shadow: 0 3px 4px 0px rgba(0, 0, 0, 0.05);
-}
-
-.anp-floating-header.anp-card-layout .nav-folder.mod-root > .nav-folder-title {
-  background-color: var(--card-foreground-color, var(--background-primary));
-}
-
-.anp-floating-header.anp-custom-vault-toggle .nav-folder.mod-root > .nav-folder-title {
-  padding-top: 10px;
 }
 
 .anp-codeblock-numbers .HyperMD-codeblock-begin {
