@@ -4,18 +4,6 @@
 // `margin-right: -22px` on `.collapse-indicator` pushed list fold indicators 20px into the
 // text/bullet, because Obsidian offsets list indicators by `-2.65em`.
 .markdown-rendered.rtl {
-    .anp-button-metadata-toggle & {
-        .frontmatter-container .frontmatter-container-header {
-            left: unset;
-            right: calc(100% - 32px);
-
-            &:after {
-                margin-left: unset;
-                margin-right: 7px;
-            }
-        }
-    }
-
     blockquote {
         border-right: var(--blockquote-border-thickness) solid var(--blockquote-border-color);
         border-left: none;

@@ -19,7 +19,7 @@
 }
 
 /*-Padding for banner pages-*/
-.obsidian-banner-wrapper .frontmatter-container {
+.obsidian-banner-wrapper .metadata-container {
     margin-top: 20px;
 }
 
@@ -88,10 +88,7 @@
     flex-grow: 1;
 }
 
-/* Hide empty frontmatter (uses :has()) */
-.frontmatter-container:not(:has(.frontmatter-section)) {
-    display: none;
-}
+/* Empty properties are hidden by Obsidian itself via [data-property-count="0"] */
 
 /* Inline title visibility */
 .inline-title {

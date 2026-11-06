@@ -61,11 +61,6 @@ body:not(.is-mobile):not(.anp-hide-status-bar) .kanban-plugin__board>div {
     }
 }
 
-/* Kanban Autocomplete Fix */
-.kanban-plugin__autocomplete-item-active em {
-    color: var(--text-on-accent);
-}
-
 /* Kanban Callout Fix */
 .kanban-plugin__item .callout {
     margin-top: .66em;

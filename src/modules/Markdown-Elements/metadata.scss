@@ -1,6 +1,7 @@
+/* Obsidian drives the properties block through these variables and outranks a
+   plain `display: none` on .metadata-container, so hide it at the variable. */
 .anp-toggle-metadata,
-.markdown-rendered.hide-metadata {
-    .frontmatter-container {
-        display: none;
-    }
+.hide-metadata {
+    --metadata-display-editing: none;
+    --metadata-display-reading: none;
 }

@@ -268,7 +268,6 @@ Inserting these css classes into your note frontmatter will style your notes ind
 | `heading-normal-toggle`     | Disables color in headings                                    |
 | `decorations-normal-toggle` | Disables color in text decorations like **bold** and _italic_ |
 | `hide-metadata`             | Hides metadata                                                |
-| `metadata-button`           | Enables custom metadata button                                |
 
 ### Integrations
 

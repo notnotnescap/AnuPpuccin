@@ -1332,11 +1332,6 @@ settings:
     title: Enable Color Transition (WIP)
     description: "Adds a transition when switching palettes, looks really neat :)"
     type: class-toggle
--
-    id: anp-button-metadata-toggle
-    title: Enable Custom Metadata Button
-    type: class-toggle
--
     id: anp-print
     title: Enable Print Styling
     type: class-toggle
@@ -5324,7 +5319,7 @@ input.slider,
 .status-bar-item.mod-clickable,
 .titlebar-button,
 .button,
-.frontmatter-container .frontmatter-container-header,
+.metadata-container .metadata-properties-heading,
 .card.u-clickable,
 .list-item-part.clickable-icon,
 .u-clickable,
@@ -5404,14 +5399,6 @@ input.slider,
 }
 
 /*======== RTL ==================*/
-.anp-button-metadata-toggle .markdown-rendered.rtl .frontmatter-container .frontmatter-container-header {
-  left: unset;
-  right: calc(100% - 32px);
-}
-.anp-button-metadata-toggle .markdown-rendered.rtl .frontmatter-container .frontmatter-container-header:after {
-  margin-left: unset;
-  margin-right: 7px;
-}
 .markdown-rendered.rtl blockquote {
   border-right: var(--blockquote-border-thickness) solid var(--blockquote-border-color);
   border-left: none;
@@ -5495,20 +5482,21 @@ input.slider,
   --pdf-background: var(--background-secondary);
   --pdf-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 8px transparent;
   --pdf-thumbnail-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 8px transparent;
+  /* the page container is .pdfViewer (camelCase); .pdf-viewer no longer exists */
 }
-.theme-dark.anp-pdf-blend-toggle-dark .pdf-viewer .canvasWrapper,
+.theme-dark.anp-pdf-blend-toggle-dark .pdfViewer .canvasWrapper,
 .theme-dark.anp-pdf-blend-toggle-dark .pdf-thumbnail-view .thumbnailImage,
-.theme-light.anp-pdf-blend-toggle-light .pdf-viewer .canvasWrapper,
+.theme-light.anp-pdf-blend-toggle-light .pdfViewer .canvasWrapper,
 .theme-light.anp-pdf-blend-toggle-light .pdf-thumbnail-view .thumbnailImage {
   filter: invert(1) hue-rotate(180deg);
   mix-blend-mode: screen;
 }
-.theme-dark.anp-pdf-blend-toggle-dark .pdf-viewer,
-.theme-light.anp-pdf-blend-toggle-light .pdf-viewer {
+.theme-dark.anp-pdf-blend-toggle-dark .pdfViewer,
+.theme-light.anp-pdf-blend-toggle-light .pdfViewer {
   background-color: var(--pdf-background);
 }
-.theme-dark.anp-pdf-blend-toggle-dark .pdf-viewer .page,
-.theme-light.anp-pdf-blend-toggle-light .pdf-viewer .page {
+.theme-dark.anp-pdf-blend-toggle-dark .pdfViewer .page,
+.theme-light.anp-pdf-blend-toggle-light .pdfViewer .page {
   background-color: var(--background-primary);
   border-color: var(--pdf-background);
 }
@@ -5592,7 +5580,7 @@ input.slider,
 }
 
 /*-Padding for banner pages-*/
-.obsidian-banner-wrapper .frontmatter-container {
+.obsidian-banner-wrapper .metadata-container {
   margin-top: 20px;
 }
 
@@ -5661,11 +5649,7 @@ input.slider,
   flex-grow: 1;
 }
 
-/* Hide empty frontmatter (uses :has()) */
-.frontmatter-container:not(:has(.frontmatter-section)) {
-  display: none;
-}
-
+/* Empty properties are hidden by Obsidian itself via [data-property-count="0"] */
 /* Inline title visibility */
 .inline-title {
   display: var(--anp-inline-title-vis, block);
@@ -7744,9 +7728,12 @@ hr {
   font-size: var(--anp-latex-block-font-size, var(--font-size-lg));
 }
 
-.anp-toggle-metadata .frontmatter-container,
-.markdown-rendered.hide-metadata .frontmatter-container {
-  display: none;
+/* Obsidian drives the properties block through these variables and outranks a
+   plain `display: none` on .metadata-container, so hide it at the variable. */
+.anp-toggle-metadata,
+.hide-metadata {
+  --metadata-display-editing: none;
+  --metadata-display-reading: none;
 }
 
 /*-Recolor table borders-*/
@@ -8076,66 +8063,6 @@ body.rainbow-tags {
 }
 .markdown-reading-view .markdown-preview-view.capacities-card::after {
   display: none;
-}
-
-/*-Button for metadata-*/
-body.anuppuccin-accent-toggle.anp-button-metadata-toggle .frontmatter-container .frontmatter-container-header,
-body.anuppuccin-accent-toggle .markdown-rendered.metadata-button .frontmatter-container .frontmatter-container-header {
-  background-color: rgba(var(--ctp-accent), 0.8);
-}
-body.anuppuccin-accent-toggle.anp-button-metadata-toggle .frontmatter-container .frontmatter-container-header:hover,
-body.anuppuccin-accent-toggle .markdown-rendered.metadata-button .frontmatter-container .frontmatter-container-header:hover {
-  background-color: rgba(var(--ctp-accent), 0.7);
-}
-body.anuppuccin-accent-toggle.anp-button-metadata-toggle .frontmatter-container .frontmatter-container-header:active,
-body.anuppuccin-accent-toggle .markdown-rendered.metadata-button .frontmatter-container .frontmatter-container-header:active {
-  background-color: rgba(var(--ctp-accent), 0.6);
-}
-
-body:not(.anuppuccin-accent-toggle).anp-button-metadata-toggle .frontmatter-container .frontmatter-container-header,
-body:not(.anuppuccin-accent-toggle) .markdown-rendered.metadata-button .frontmatter-container .frontmatter-container-header {
-  background-color: hsla(var(--color-accent-hsl), 0.8);
-}
-body:not(.anuppuccin-accent-toggle).anp-button-metadata-toggle .frontmatter-container .frontmatter-container-header:hover,
-body:not(.anuppuccin-accent-toggle) .markdown-rendered.metadata-button .frontmatter-container .frontmatter-container-header:hover {
-  background-color: hsla(var(--color-accent-hsl), 0.7);
-}
-body:not(.anuppuccin-accent-toggle).anp-button-metadata-toggle .frontmatter-container .frontmatter-container-header:active,
-body:not(.anuppuccin-accent-toggle) .markdown-rendered.metadata-button .frontmatter-container .frontmatter-container-header:active {
-  background-color: hsla(var(--color-accent-hsl), 0.6);
-}
-
-.anp-button-metadata-toggle .frontmatter-container,
-.markdown-rendered.metadata-button .frontmatter-container {
-  padding: 0;
-}
-.anp-button-metadata-toggle .frontmatter-container .frontmatter-container-header,
-.markdown-rendered.metadata-button .frontmatter-container .frontmatter-container-header {
-  width: 32px !important;
-  z-index: 1;
-  height: 32px !important;
-  text-overflow: clip;
-  overflow: hidden;
-  color: transparent !important;
-  position: absolute;
-  left: calc(100% - 32px);
-  border-radius: 6px;
-}
-.anp-button-metadata-toggle .frontmatter-container .frontmatter-container-header:after,
-.markdown-rendered.metadata-button .frontmatter-container .frontmatter-container-header:after {
-  position: absolute;
-  content: " ";
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' data-darkreader-inline-stroke='' style='--darkreader-inline-stroke:currentColor;'%3E%3Cpolygon points='12 2 2 7 12 12 22 7 12 2'%3E%3C/polygon%3E%3Cpolyline points='2 17 12 22 22 17'%3E%3C/polyline%3E%3Cpolyline points='2 12 12 17 22 12'%3E%3C/polyline%3E%3C/svg%3E");
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' data-darkreader-inline-stroke='' style='--darkreader-inline-stroke:currentColor;'%3E%3Cpolygon points='12 2 2 7 12 12 22 7 12 2'%3E%3C/polygon%3E%3Cpolyline points='2 17 12 22 22 17'%3E%3C/polyline%3E%3Cpolyline points='2 12 12 17 22 12'%3E%3C/polyline%3E%3C/svg%3E");
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  background-size: contain;
-  background-color: var(--background-primary);
-  color: var(--background-secondary);
-  width: 22px;
-  height: 22px;
-  margin-left: 5px;
-  margin-top: 5px;
 }
 
 /*-------Tweak for Minimal Cards--------------
@@ -12322,19 +12249,20 @@ body.rainbow-repeat-1.rainbow-color-1-lavender [data-type=bookmarks] .tree-item:
   color: rgb(var(--ctp-accent));
 }
 
-.obsidian-icon-folder-icon {
+/* Iconize renamed its classes from .obsidian-icon-folder-* to .iconize-* in v2 */
+.iconize-icon {
   margin-top: -5px;
 }
 
-.anp-simple-rainbow-color-toggle.anp-simple-rainbow-icon-folder-toggle .obsidian-icon-folder-icon {
+.anp-simple-rainbow-color-toggle.anp-simple-rainbow-icon-folder-toggle .iconize-icon {
   color: rgb(var(--rainbow-folder-color));
 }
 
-.obsidian-icon-folder-modal.prompt-results .suggestion-item {
+.iconize-modal.prompt-results .suggestion-item {
   color: var(--text-normal);
 }
 
-.prompt .obsidian-icon-folder-subheadline {
+.prompt .iconize-subheadline {
   color: var(--text-muted);
 }
 
@@ -12401,17 +12329,18 @@ body.rainbow-repeat-1.rainbow-color-1-lavender [data-type=bookmarks] .tree-item:
   transition: background-color 0.1s;
 }
 
-.cMenuToolbarDefaultAesthetic {
+/* Editing Toolbar v4 renamed cMenuToolbar* to editingToolbar*; the divider kept the old name */
+.editingToolbarDefaultAesthetic {
   margin: 5px 10px 0 10px;
   box-shadow: 0 3px 4px 0px rgba(0, 0, 0, 0.05);
   background-color: var(--background-primary);
 }
 
-#cMenuToolbarModalBar.top button.cMenuToolbarCommandItem:hover {
+#editingToolbarModalBar.top button.editingToolbarCommandItem:hover {
   background-color: var(--background-secondary);
 }
 
-#cMenuToolbarModalBar.top :is(.cMenuToolbarCommandItem, button[class^=cMenuToolbarCommandsubItem]):not(.cMenuToolbar-Divider-Line) {
+#editingToolbarModalBar.top :is(.editingToolbarCommandItem, button[class^=editingToolbarCommandsubItem]):not(.cMenuToolbar-Divider-Line) {
   transition: all 0s linear;
 }
 
@@ -12591,11 +12520,6 @@ body:not(.is-mobile):not(.anp-hide-status-bar) .kanban-plugin__board > div {
 }
 .kanban-plugin__date-picker .flatpickr-day:not(.today):hover {
   border-width: 0;
-}
-
-/* Kanban Autocomplete Fix */
-.kanban-plugin__autocomplete-item-active em {
-  color: var(--text-on-accent);
 }
 
 /* Kanban Callout Fix */

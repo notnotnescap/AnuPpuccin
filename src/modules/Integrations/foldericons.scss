@@ -1,15 +1,16 @@
-.obsidian-icon-folder-icon {
+/* Iconize renamed its classes from .obsidian-icon-folder-* to .iconize-* in v2 */
+.iconize-icon {
     margin-top: -5px;
 }
 
-.anp-simple-rainbow-color-toggle.anp-simple-rainbow-icon-folder-toggle .obsidian-icon-folder-icon {
+.anp-simple-rainbow-color-toggle.anp-simple-rainbow-icon-folder-toggle .iconize-icon {
     color: rgb(var(--rainbow-folder-color));
 }
 
-.obsidian-icon-folder-modal.prompt-results .suggestion-item {
+.iconize-modal.prompt-results .suggestion-item {
     color: var(--text-normal);
 }
 
-.prompt .obsidian-icon-folder-subheadline {
+.prompt .iconize-subheadline {
     color: var(--text-muted);
 }
