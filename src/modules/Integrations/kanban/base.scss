@@ -1,9 +1,3 @@
-/* Notion-Styled Kanban Fix */
-body.theme-dark.theme-dark {
-    --notion-kanban-card: rgb(var(--ctp-surface0));
-    --notion-kanban-card-hover: rgb(var(--ctp-surface1));
-}
-
 /* Fix bottom padding of kanban board on mobile */
 body.is-mobile .kanban-plugin__board>div {
     padding-bottom: 5rem;

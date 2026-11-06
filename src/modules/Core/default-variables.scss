@@ -192,18 +192,4 @@ body {
     --pdf-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 2px 8px transparent;
     --pdf-sidebar-background: var(--background-primary);
     --pdf-thumbnail-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 2px 8px transparent;
-
-    &.theme-light {
-        --anp-background-image: var(--anp-background-image-light);
-        --anp-custom-bg-brightness: var(--anp-custom-bg-brightness-light);
-        --anp-custom-bg-blur: var(--anp-custom-bg-blur-light);
-        --anp-custom-bg-card-fg-opacity: var(--anp-custom-bg-card-fg-opacity-light);
-    }
-
-    &.theme-dark {
-        --anp-background-image: var(--anp-background-image-dark);
-        --anp-custom-bg-brightness: var(--anp-custom-bg-brightness-dark);
-        --anp-custom-bg-blur: var(--anp-custom-bg-blur-dark);
-        --anp-custom-bg-card-fg-opacity: var(--anp-custom-bg-card-fg-opacity-dark);
-    }
 }

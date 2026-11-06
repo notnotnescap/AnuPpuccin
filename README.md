@@ -54,8 +54,9 @@ Anuppuccin currently supports 2 layout variants.
 
 ### Rainbow folders
 
-The theme comes with a toggleable rainbow folder snippet which color-codes your folders as per their order in the filesystem.<br>
+The theme comes with a toggleable rainbow folder feature which color-codes your folders as per their order in the filesystem.<br>
 It's great if you need to easily distinguish between folders or if you want to make your vault look a bit prettier (Both in my case :P)<br>
+The extended rainbow folder colors are included in the theme by default, allowing you to customise the repeating color count and the color of each folder position directly from the Rainbow Folders section in Style Settings.<br>
 
 <p align="center"> <img src="assets/gh-rainbow-preview.webp"> </p>
 
