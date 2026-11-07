@@ -1,0 +1,22 @@
+/* BASES */
+
+// Three things push tag pills off the midline of a Bases row (#362):
+// 1. the multi-select container is taller than the row (its own block padding plus the pill),
+//    and Chromium start-aligns an overflowing flex box, so the pills drop ~1px lower as soon
+//    as the cell is focused. Dropping the padding lets the 30px row centre the container.
+// 2. the row paints its 1px separator inside the row's bottom edge (the row above paints the
+//    top line), so content centred in the row reads ~1px low between the two painted lines;
+//    lifting the container by half of that border evens the space above and below.
+// 3. a tag column built from a rendered value (`file.tags`) renders its chips as inline
+//    `a.tag` elements, whose baseline alignment drops them a further ~0.4px, so that renderer
+//    needs a full 1px lift.
+.bases-table-cell .multi-select-container {
+    padding-block: 0;
+    position: relative;
+    top: -0.5px;
+}
+
+.bases-table-cell .value-list-container {
+    position: relative;
+    top: -1px;
+}

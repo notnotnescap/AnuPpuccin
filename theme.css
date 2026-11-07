@@ -5523,6 +5523,19 @@ input.slider,
   background: var(--color-accent);
 }
 
+/*======== BASES ================*/
+/* BASES */
+.bases-table-cell .multi-select-container {
+  padding-block: 0;
+  position: relative;
+  top: -0.5px;
+}
+
+.bases-table-cell .value-list-container {
+  position: relative;
+  top: -1px;
+}
+
 .canvas-card-menu {
   box-shadow: none;
   border: 1px solid var(--background-modifier-border);
