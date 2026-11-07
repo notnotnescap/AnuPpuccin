@@ -9614,6 +9614,14 @@ Icons were taken from Font Awesome: https://fontawesome.com/
   counter-reset: line-numbers;
 }
 
+.anp-codeblock-numbers .cm-content {
+  counter-reset: line-numbers;
+}
+
+.anp-codeblock-numbers .HyperMD-codeblock-begin + .cm-line.HyperMD-codeblock {
+  counter-set: line-numbers 0;
+}
+
 .anp-codeblock-numbers .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin):not(.HyperMD-codeblock-end) {
   padding-left: 5em;
   position: relative;

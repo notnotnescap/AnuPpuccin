@@ -2,6 +2,23 @@
     counter-reset: line-numbers;
 }
 
+// CodeMirror only renders the lines near the viewport, so once a long code block's opening fence
+// is scrolled out of the DOM its `counter-reset` disappears with it: with no counter in scope,
+// every line's `counter-increment` creates its own counter and the whole block numbers as 1
+// (issue #359). The editor content is always rendered, so anchoring the counter there keeps the
+// lines counting.
+.anp-codeblock-numbers .cm-content {
+    counter-reset: line-numbers;
+}
+
+// Each block still has to start at 1: `counter-set` on the line after the fence rewinds the
+// anchored counter, and that line's own increment then prints 1. Held back to a `counter-set`
+// rather than a second `counter-reset` because two competing reset anchors of one counter make
+// Chromium drop the per-block restart.
+.anp-codeblock-numbers .HyperMD-codeblock-begin + .cm-line.HyperMD-codeblock {
+    counter-set: line-numbers 0;
+}
+
 .anp-codeblock-numbers .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin):not(.HyperMD-codeblock-end) {
     padding-left: 5em;
     position: relative;
