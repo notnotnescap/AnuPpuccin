@@ -277,7 +277,7 @@ Inserting these css classes into your note frontmatter will style your notes ind
 
 #### Minimal Features
 
-AnuPpuccin does not come with any code provided by [Minimal](https://github.com/kepano/obsidian-minimal), however it does contain styling and style settings support for certain features that can be compiled via CSS. You can buy Kepano a coffee here:
+AnuPpuccin includes Minimal's [Cards](https://github.com/kepano/obsidian-minimal/blob/master/src/scss/features/cards.scss) snippet, used under its MIT license with full style settings support. You can buy Kepano a coffee here:
 <a href="https://www.buymeacoffee.com/kepano" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
 ### Recommended Fonts
@@ -297,7 +297,7 @@ AnuPpuccin does not come with any code provided by [Minimal](https://github.com/
 
 ## Credits and Acknowledgements
 
-- [@kepano's](https://github.com/kepano) [Minimal](https://github.com/kepano/obsidian-minimal) for the inspiration for [colorful frames](https://github.com/AnubisNekhet/AnuPpuccin/blob/main/src/modules/Features/colorful-frame.scss) and partial inspiration for style settings menus design, as well as style settings for the Minimal Cards snippet
+- [@kepano's](https://github.com/kepano) [Minimal](https://github.com/kepano/obsidian-minimal) for the inspiration for [colorful frames](https://github.com/AnubisNekhet/AnuPpuccin/blob/main/src/modules/Features/colorful-frame.scss) and partial inspiration for style settings menus design, as well as the [Minimal Cards](https://github.com/kepano/obsidian-minimal/blob/master/src/scss/features/cards.scss) snippet, which is bundled with the theme under its MIT license
 - [@ceciliamay's](https://github.com/ceciliamay) [Primary](https://github.com/ceciliamay/obsidianmd-theme-primary) for inspiration for [custom checkboxes](https://github.com/AnubisNekhet/AnuPpuccin/blob/main/src/modules/Features/custom-checkboxes.scss) and [floating vault title](https://github.com/AnubisNekhet/AnuPpuccin/blob/main/src/modules/Features/floating-title.scss)
-- [@SlRvb](https://github.com/SlRvb) for [ITS](https://github.com/SlRvb/Obsidian--ITS-Theme) frontmatter styling inspiration.
+- [@SlRvb](https://github.com/SlRvb) for [ITS](https://github.com/SlRvb/Obsidian--ITS-Theme) frontmatter styling inspiration, which is available as the built-in Properties Card style setting.
 - [@Akifyss](https://github.com/Akifyss) for their [border theme](https://github.com/Akifyss/obsidian-border) layout design.

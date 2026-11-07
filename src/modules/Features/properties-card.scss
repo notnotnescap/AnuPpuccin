@@ -1,0 +1,41 @@
+/*------------------------------------------
+ * Based on the AnuPpuccin ITS Frontmatter snippet, which tries to
+ * emulate the look of frontmatter in ITS, a theme by @SlRvb
+ * (https://github.com/SlRvb/Obsidian--ITS-Theme), adapted to Obsidian's
+ * modern properties (metadata) block.
+ * All credits go to SlRvb and their theme for inspiration.
+ * Donate to SlRvb here: https://ko-fi.com/slrvb
+------------------------------------------*/
+body.anp-properties-card-toggle {
+	--properties-card-background-opacity: 0.5;
+
+	// Card-style container around the properties block
+	.metadata-container {
+		background-color: rgba(
+			var(--ctp-mantle),
+			var(--properties-card-background-opacity)
+		);
+		border: 1px solid var(--background-modifier-border);
+		padding: var(--size-4-3);
+		border-radius: var(--radius-l);
+
+		&.is-collapsed {
+			border: none;
+			padding: 0;
+			border-radius: 0;
+		}
+	}
+
+	// Pills for multi-value properties (tags, aliases, multitext)
+	.metadata-container .metadata-property-value .multi-select-pill,
+	.metadata-container .metadata-property-value .tag {
+		border: none;
+		background-color: var(--background-secondary-alt);
+		border-radius: var(--tag-radius);
+	}
+
+	// Hide the properties block on notes with no properties
+	.metadata-container:not(:has(.metadata-property)) {
+		display: none;
+	}
+}

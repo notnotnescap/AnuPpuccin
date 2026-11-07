@@ -1263,13 +1263,7 @@ settings:
 -
     id: anp-snippet-minimal-cards-disc
     title: Usage
-    description: "Minimal Cards is a feature of [Minimal](https://github.com/kepano/obsidian-minimal). AnuPpuccin does not come compiled with the snippet, however you can use a compiled version with this theme."
-    type: info-text
-    markdown: true
--
-    id: anuppuccin-url-minimal-cards-snippet
-    title: Minimal Cards Snippet
-    description: "Download the snippet from [kepano](https://github.com/kepano/)'s github via [this link](https://github.com/kepano/obsidian-minimal/blob/master/src/scss/features/cards.scss)."
+    description: "Minimal Cards is a feature of [Minimal](https://github.com/kepano/obsidian-minimal). It is now included in the theme by default under its MIT license — add the `cards` or `list-cards` CSS class to a note to use it."
     type: info-text
     markdown: true
 -
@@ -2434,6 +2428,28 @@ settings:
     -
         label: Lavender
         value: anp-highlight-lavender
+
+# File Editor & Markdown Elements :: Properties Card
+
+-
+    id: anp-properties-card-header
+    title: Properties Card
+    description: Card-style container around the properties block
+    type: heading
+    level: 2
+    collapsed: true
+-
+    id: anp-properties-card-toggle
+    title: Enable Properties Card
+    type: class-toggle
+-
+    id: properties-card-background-opacity
+    title: Card background opacity
+    type: variable-number-slider
+    default: 1
+    min: 0
+    max: 1
+    step: 0.05
 
 # Workspace
 
