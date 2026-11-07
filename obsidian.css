@@ -13150,6 +13150,10 @@ body:not(.is-mobile):not(.anp-hide-status-bar) .kanban-plugin__board > div {
   text-align: center;
 }
 
+.kanban-plugin__lane-wrapper.collapse-horizontal .kanban-plugin__lane-title-count {
+  padding-inline: 6px;
+}
+
 .kanban-plugin__lane-setting-wrapper > div:last-child {
   margin-bottom: 0;
 }

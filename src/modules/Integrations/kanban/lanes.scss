@@ -48,6 +48,12 @@
     text-align: center;
 }
 
+// The counter keeps its padding on the text's own axis, so the digits do not touch the
+// pill's ends once Kanban lays the lane header out vertically (collapsed lanes).
+.kanban-plugin__lane-wrapper.collapse-horizontal .kanban-plugin__lane-title-count {
+    padding-inline: 6px;
+}
+
 .kanban-plugin__lane-setting-wrapper>div:last-child {
     margin-bottom: 0;
 }
