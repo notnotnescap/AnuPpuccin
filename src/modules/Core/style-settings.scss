@@ -576,6 +576,7 @@ settings:
 -
     id: anp-codeblock-numbers
     title: Enable Codeblock Numbering
+    description: Each codeblock starts at 1. Numbers are exact while a block is in view; scrolled deeper into a long block they count the rendered lines, not the true line index
     type: class-toggle
 -
     id: anp-codeblock-wrap-edit
