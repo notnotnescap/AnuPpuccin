@@ -20,6 +20,16 @@
     padding-right: 8px;
 }
 
+.kanban-plugin__lane-title {
+    min-width: 0;
+}
+
+.kanban-plugin__lane-title-text,
+.kanban-plugin__lane-title p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .kanban-plugin__lane-title p {
     font-weight: 500;
     white-space: nowrap;

@@ -1309,7 +1309,7 @@ settings:
 -
     id: anp-misc-element-header
     title: Miscellaneous
-    description: Color Palette Transition, Custom Metadata Button
+    description: Color Palette Transition
     type: heading
     level: 1
     collapsed: true
@@ -1318,6 +1318,7 @@ settings:
     title: Enable Color Transition (WIP)
     description: "Adds a transition when switching palettes, looks really neat :)"
     type: class-toggle
+-
     id: anp-print
     title: Enable Print Styling
     type: class-toggle

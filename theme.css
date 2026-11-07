@@ -1323,7 +1323,7 @@ settings:
 -
     id: anp-misc-element-header
     title: Miscellaneous
-    description: Color Palette Transition, Custom Metadata Button
+    description: Color Palette Transition
     type: heading
     level: 1
     collapsed: true
@@ -1332,6 +1332,7 @@ settings:
     title: Enable Color Transition (WIP)
     description: "Adds a transition when switching palettes, looks really neat :)"
     type: class-toggle
+-
     id: anp-print
     title: Enable Print Styling
     type: class-toggle
@@ -12699,6 +12700,16 @@ body:not(.is-mobile):not(.anp-hide-status-bar) .kanban-plugin__board > div {
 .kanban-plugin__lane-header-wrapper {
   gap: 5px;
   padding-right: 8px;
+}
+
+.kanban-plugin__lane-title {
+  min-width: 0;
+}
+
+.kanban-plugin__lane-title-text,
+.kanban-plugin__lane-title p {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .kanban-plugin__lane-title p {
