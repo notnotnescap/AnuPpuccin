@@ -1273,7 +1273,7 @@ settings:
 -
     id: anp-snippet-minimal-cards-disc
     title: Usage
-    description: "Minimal Cards is a feature of [Minimal](https://github.com/kepano/obsidian-minimal). It is now included in the theme by default under its MIT license — add the `cards` or `list-cards` CSS class to a note to use it."
+    description: "Minimal Cards is a feature of [Minimal](https://github.com/kepano/obsidian-minimal). It is now included in the theme by default under its MIT license, add the `cards` or `list-cards` CSS class to a note to use it."
     type: info-text
     markdown: true
 -
@@ -4413,7 +4413,7 @@ body {
   --ctp-ext-rosewater: 219, 177, 127;
   --ctp-ext-flamingo: 205, 98, 123;
   --ctp-ext-pink: 174, 63, 130;
-  --ctp-ext-mauve: 123, 61, 121;
+  --ctp-ext-mauve: 181, 126, 74;
   --ctp-ext-red: 207, 34, 62;
   --ctp-ext-maroon: 207, 48, 34;
   --ctp-ext-peach: 227, 156, 69;
@@ -4421,9 +4421,9 @@ body {
   --ctp-ext-green: 149, 154, 107;
   --ctp-ext-teal: 118, 143, 128;
   --ctp-ext-sky: 118, 143, 134;
-  --ctp-ext-sapphire: 79, 84, 118;
-  --ctp-ext-blue: 97, 79, 118;
-  --ctp-ext-lavender: 117, 109, 148;
+  --ctp-ext-sapphire: 138, 90, 53;
+  --ctp-ext-blue: 168, 111, 58;
+  --ctp-ext-lavender: 207, 159, 99;
   --ctp-ext-text: 255, 233, 199;
   --ctp-ext-subtext1: 220, 201, 188;
   --ctp-ext-subtext0: 194, 178, 178;
@@ -6142,6 +6142,7 @@ body.anp-card-layout .horizontal-main-container {
   --ribbon-background: var(--card-background-color);
   --ribbon-background-collapsed: var(--card-background-color);
   --titlebar-background: var(--card-background-color);
+  --titlebar-background-focused: var(--card-background-color);
 }
 body.anp-card-layout .workspace-tabs.mod-top:has(.obsidian-banner-wrapper) {
   --file-header-border: none;
@@ -6284,12 +6285,23 @@ body.anp-border-layout {
   --card-foreground-color: var(--background-primary);
   --border-border-style: 1px solid var(--tab-outline-color);
   --anp-border-bottom-padding: var(--anp-border-padding, 20px);
+  --tab-container-background: var(--card-background-color);
+}
+body.anp-border-layout .sidebar-toggle-button,
+body.anp-border-layout .workspace-tabs.mod-top {
+  --tab-container-background: var(--card-background-color);
+  --sidebar-tab-container-background: var(--tab-container-background);
 }
 body.anp-border-layout .horizontal-main-container {
   background-color: var(--card-background-color);
   --titlebar-background: var(--card-background-color);
+  --titlebar-background-focused: var(--card-background-color);
   --ribbon-background: var(--card-background-color);
   --ribbon-background-collapsed: var(--card-background-color);
+}
+body.anp-border-layout .workspace-ribbon {
+  --titlebar-background: var(--card-background-color);
+  --titlebar-background-focused: var(--card-background-color);
 }
 body.anp-border-layout.anp-fixed-status-bar {
   --anp-border-bottom-padding: calc(var(--anp-border-padding, 20px) - 18px);
