@@ -8,11 +8,33 @@ body.anp-border-layout {
     --border-border-style: 1px solid var(--tab-outline-color);
     --anp-border-bottom-padding: var(--anp-border-padding, 20px);
 
+    // Obsidian paints the top tab headers from --tab-container-background, which
+    // defaults to --background-secondary and so left the top strip a shade lighter
+    // than the crust frame. Point that variable (and the side docks' own variant) at
+    // the frame colour, exactly as the card layout does.
+    --tab-container-background: var(--card-background-color);
+
+    .sidebar-toggle-button,
+    .workspace-tabs.mod-top {
+        --tab-container-background: var(--card-background-color);
+        --sidebar-tab-container-background: var(--tab-container-background);
+    }
+
     .horizontal-main-container {
         background-color: var(--card-background-color);
         --titlebar-background: var(--card-background-color);
+        --titlebar-background-focused: var(--card-background-color);
         --ribbon-background: var(--card-background-color);
         --ribbon-background-collapsed: var(--card-background-color);
+    }
+
+    // The ribbon paints its header-height ::before from --titlebar-background, and while the
+    // window is focused Obsidian re-points that at --titlebar-background-focused
+    // (body.is-focused .workspace-ribbon.mod-primary), which we never set — so the top-left
+    // corner of the frame stayed a shade lighter than the rest. Keep both on the frame colour.
+    .workspace-ribbon {
+        --titlebar-background: var(--card-background-color);
+        --titlebar-background-focused: var(--card-background-color);
     }
 
     &.anp-fixed-status-bar {

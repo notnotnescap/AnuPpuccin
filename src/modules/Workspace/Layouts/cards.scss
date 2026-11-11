@@ -37,6 +37,9 @@ body.anp-card-layout {
         --ribbon-background: var(--card-background-color);
         --ribbon-background-collapsed: var(--card-background-color);
         --titlebar-background: var(--card-background-color);
+        // Obsidian re-points the ribbon's --titlebar-background at this variable while the
+        // window is focused, so it needs the frame colour too (same fix as the border layout).
+        --titlebar-background-focused: var(--card-background-color);
     }
 
     .workspace-tabs.mod-top:has(.obsidian-banner-wrapper) {
