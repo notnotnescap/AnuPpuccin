@@ -1,20 +1,15 @@
 /*===============================================================
-                           AnuPpuccin
-                           ----------
-                  Personal theme for Obsidian
+                           NeoPpuccin
 
-AnuPpuccin is licensed under the GPL-3.0 license which allows you
-  to modify the code freely, however the Copyright and license
+NeoPpuccin is licensed under the GPL-3.0 license which allows you
+to modify the code freely, however the Copyright and license
 notices must be preserved in your CSS. If you redistribute a part
-of my code, please credit my theme in your CSS file, and specify
-  which code you are using. Please keep my Buy Me a Coffee link
-                  in your README if you do so.
+of the code, please credit the theme in your CSS file.
 
-            https://www.buymeacoffee.com/anubisnekhet
 *===============================================================*/
 /* @settings
-name: AnuPpuccin
-id: anuppuccin-theme-settings
+name: NeoPpuccin
+id: neoppuccin-theme-settings
 settings:
 
 # Colors
@@ -27,7 +22,7 @@ settings:
     level: 1
     collapsed: true
 -
-    id: anuppuccin-theme-light
+    id: neoppuccin-theme-light
     title: Light Theme
     description: Select your preferred light mode flavor
     type: class-select
@@ -68,7 +63,7 @@ settings:
         label: Solarized
         value: ctp-solarized-light
 -
-    id: anuppuccin-theme-dark
+    id: neoppuccin-theme-dark
     title: Dark Theme
     description: Select your preferred dark mode flavor
     type: class-select
@@ -155,7 +150,7 @@ settings:
     title: Toggle amoled black on all themes
     type: class-toggle
 -
-    id: anuppuccin-light-theme-accents
+    id: neoppuccin-light-theme-accents
     title: Light Theme Accent
     description: Select your preferred light theme accent (Defaults to dark theme accent if left empty)
     type: class-select
@@ -205,7 +200,7 @@ settings:
         label: Lavender
         value: ctp-accent-light-lavender
 -
-    id: anuppuccin-theme-accents
+    id: neoppuccin-theme-accents
     title: Dark Theme Accent
     description: Select your preferred accent
     type: class-select
@@ -255,7 +250,7 @@ settings:
         label: Lavender
         value: ctp-accent-lavender
 -
-    id: anuppuccin-accent-toggle
+    id: neoppuccin-accent-toggle
     title: Force Custom Accents
     description: Forces colorscheme-specific custom accents to be utilised instead of default obsidian accent
     type: class-toggle
@@ -266,7 +261,7 @@ settings:
 -
     id: anp-color-overrides-header
     title: Color Overrides
-    description: 
+    description:
     type: heading
     level: 2
     collapsed: true
@@ -1096,7 +1091,7 @@ settings:
 -
     id: anp-plugin-kanban
     title: Kanban
-    description: 
+    description:
     type: heading
     level: 2
     collapsed: true
@@ -1106,7 +1101,7 @@ settings:
 -
     id: anp-plugin-card-settings
     title: Card Settings
-    description: 
+    description:
     type: heading
     level: 3
     collapsed: true
@@ -1154,7 +1149,7 @@ settings:
 -
     id: anp-plugin-lane-settings
     title: Lane Settings
-    description: 
+    description:
     type: heading
     level: 3
     collapsed: true
@@ -1199,34 +1194,34 @@ settings:
 -
     id: anp-plugin-kanban-search-settings
     title: Search Settings
-    description: 
+    description:
     type: heading
     level: 3
     collapsed: true
 -
     id: anp-kanban-search-full
     title: Enable Full Width Search Bar
-    description: 
+    description:
     type: class-toggle
 -
     id: anp-kanban-collapse-lanes
     title: Collapse Lanes With No Search Results
-    description: 
+    description:
     type: class-toggle
 -
     id: anp-kanban-hide-cards
     title: Hide Cards That Don't Contain the Search Query
-    description: 
+    description:
     type: class-toggle
 -
     id: anp-kanban-hide-mark
     title: Hide Search Result Highlight in Cards
-    description: 
+    description:
     type: class-toggle
 -
     id: anp-kanban-uncollapse-lanes
     title: Uncollapse Lanes and Unhide Cards When Sorting
-    description: 
+    description:
     type: class-toggle
 
 # Integrations :: Kanban :: Notion Style
@@ -1249,7 +1244,7 @@ settings:
 -
     id: anp-plugin-makemd
     title: MAKE.md
-    description: 
+    description:
     type: heading
     level: 2
     collapsed: true
@@ -1394,7 +1389,7 @@ settings:
 -
     id: anp-font-families-header
     title: Font Families
-    description: 
+    description:
     type: heading
     level: 2
     collapsed: true
@@ -1419,7 +1414,7 @@ settings:
 -
     id: anp-font-weight-header
     title: Font Weights
-    description: 
+    description:
     type: heading
     level: 2
     collapsed: true
@@ -1564,7 +1559,7 @@ settings:
 -
     id: anp-header-header
     title: Headings
-    description: 
+    description:
     type: heading
     level: 2
     collapsed: true
@@ -1596,7 +1591,7 @@ settings:
 -
     id: anp-h1-header
     title: H1
-    description: 
+    description:
     type: heading
     level: 3
     collapsed: true
@@ -1707,7 +1702,7 @@ settings:
 -
     id: anp-h2-header
     title: H2
-    description: 
+    description:
     type: heading
     level: 3
     collapsed: true
@@ -1818,7 +1813,7 @@ settings:
 -
     id: anp-h3-header
     title: H3
-    description: 
+    description:
     type: heading
     level: 3
     collapsed: true
@@ -1929,7 +1924,7 @@ settings:
 -
     id: anp-h4-header
     title: H4
-    description: 
+    description:
     type: heading
     level: 3
     collapsed: true
@@ -2040,7 +2035,7 @@ settings:
 -
     id: anp-h5-header
     title: H5
-    description: 
+    description:
     type: heading
     level: 3
     collapsed: true
@@ -2151,7 +2146,7 @@ settings:
 -
     id: anp-h6-header
     title: H6
-    description: 
+    description:
     type: heading
     level: 3
     collapsed: true
@@ -2262,7 +2257,7 @@ settings:
 -
     id: anp-comment-header
     title: Comments
-    description: 
+    description:
     type: heading
     level: 2
     collapsed: true
@@ -2282,7 +2277,7 @@ settings:
 -
     id: anp-decor-header
     title: Text Decoration
-    description: 
+    description:
     type: heading
     level: 2
     collapsed: true
@@ -2495,7 +2490,7 @@ settings:
 -
     id: colorful-frame
     title: Colorful Frame
-    description: 
+    description:
     type: heading
     level: 2
     collapsed: true
@@ -2567,7 +2562,7 @@ settings:
 -
     id: anp-pdf-viewer-header
     title: PDF Viewer
-    description: 
+    description:
     type: heading
     level: 2
     collapsed: true
@@ -2587,7 +2582,7 @@ settings:
 -
     id: anp-rainbow-section-header
     title: Rainbow Folders
-    description: 
+    description:
     type: heading
     level: 2
     collapsed: true
@@ -3232,7 +3227,7 @@ settings:
 -
     id: anp-full-rainbow-folder-settings
     title: Full Folder Settings
-    description: 
+    description:
     type: heading
     level: 3
     collapsed: true
@@ -3260,7 +3255,7 @@ settings:
 -
     id: anp-simple-rainbow-folder-settings
     title: Simple Folder Settings
-    description: 
+    description:
     type: heading
     level: 3
     collapsed: true
@@ -3290,7 +3285,7 @@ settings:
 -
     id: anp-stacked-tabs-header
     title: Stacked Tabs
-    description: 
+    description:
     type: heading
     level: 2
     collapsed: true
@@ -3337,7 +3332,7 @@ settings:
 -
     id: anp-alt-tab-header
     title: Tabs
-    description: 
+    description:
     type: heading
     level: 2
     collapsed: true
@@ -3436,7 +3431,7 @@ settings:
 -
     id: anp-safari-vanilla-tab-header
     title: Vanilla Safari-style Tab Settings
-    description: 
+    description:
     type: heading
     level: 3
     collapsed: true
@@ -3450,7 +3445,7 @@ settings:
 -
     id: anp-translucency-header
     title: Translucency
-    description: 
+    description:
     type: heading
     level: 2
     collapsed: true
@@ -3506,7 +3501,7 @@ settings:
 -
     id: anp-layout-card
     title: Card Layout Settings
-    description: 
+    description:
     type: heading
     level: 3
     collapsed: true
@@ -3539,7 +3534,7 @@ settings:
 -
     id: anp-layout-border
     title: Border Layout Settings
-    description: 
+    description:
     type: heading
     level: 3
     collapsed: true
@@ -3559,28 +3554,34 @@ settings:
 # Credits
 
 -
-    id: anuppuccin-support
-    title: Support AnuPpuccin
+    id: neoppuccin-support
+    title: Support NeoPuccin
     description: If you like the theme, here are some ways to support development
     type: heading
     level: 1
     collapsed: true
 -
-    id: anuppuccin-url-donate
-    title: Buy Me a Coffee
+	id: neoppuccin-url-donate
+	title: Buy me a Coffee
+	description: "[https://ko-fi.com/erd](https://ko-fi.com/erd)"
+	type: info-text
+	markdown: true
+-
+    id: neoppuccin-url-donate-anubis
+    title: Buy Anubis, the developer of AnuPpuccin, a Coffee
     description: "[https://www.buymeacoffee.com/anubisnekhet](https://www.buymeacoffee.com/anubisnekhet)"
     type: info-text
     markdown: true
 -
-    id: anuppuccin-url-star-repo
+    id: neoppuccin-url-star-repo
     title: Star the Theme on GitHub
-    description: "[https://github.com/anubisnekhet/anuppuccin](https://github.com/anubisnekhet/anuppuccin)"
+    description: "[https://github.com/notnotnescap/NeoPpuccin](https://github.com/notnotnescap/NeoPpuccin)"
     type: info-text
     markdown: true
 -
-    id: anuppuccin-url-submit-issue
+    id: neoppuccin-url-submit-issue
     title: Submit an Issue on GitHub
-    description: "[https://github.com/anubisnekhet/anuppuccin/issues](https://github.com/anubisnekhet/anuppuccin/issues)"
+    description: "[https://github.com/notnotnescap/NeoPpuccin/issues](https://github.com/notnotnescap/NeoPpuccin/issues)"
     type: info-text
     markdown: true
 
@@ -3819,11 +3820,11 @@ settings:
 }
 
 /*------------------Selecting Accents-------------------*/
-.anuppuccin-accent-toggle.ctp-accent-rosewater {
+.neoppuccin-accent-toggle.ctp-accent-rosewater {
   --ctp-accent: var(--ctp-rosewater);
 }
 
-.theme-light.anuppuccin-accent-toggle.ctp-accent-light-rosewater {
+.theme-light.neoppuccin-accent-toggle.ctp-accent-light-rosewater {
   --ctp-accent: var(--ctp-rosewater);
 }
 
@@ -3839,11 +3840,11 @@ settings:
   --anp-highlight-color: var(--ctp-rosewater);
 }
 
-.anuppuccin-accent-toggle.ctp-accent-flamingo {
+.neoppuccin-accent-toggle.ctp-accent-flamingo {
   --ctp-accent: var(--ctp-flamingo);
 }
 
-.theme-light.anuppuccin-accent-toggle.ctp-accent-light-flamingo {
+.theme-light.neoppuccin-accent-toggle.ctp-accent-light-flamingo {
   --ctp-accent: var(--ctp-flamingo);
 }
 
@@ -3859,11 +3860,11 @@ settings:
   --anp-highlight-color: var(--ctp-flamingo);
 }
 
-.anuppuccin-accent-toggle.ctp-accent-pink {
+.neoppuccin-accent-toggle.ctp-accent-pink {
   --ctp-accent: var(--ctp-pink);
 }
 
-.theme-light.anuppuccin-accent-toggle.ctp-accent-light-pink {
+.theme-light.neoppuccin-accent-toggle.ctp-accent-light-pink {
   --ctp-accent: var(--ctp-pink);
 }
 
@@ -3879,11 +3880,11 @@ settings:
   --anp-highlight-color: var(--ctp-pink);
 }
 
-.anuppuccin-accent-toggle.ctp-accent-mauve {
+.neoppuccin-accent-toggle.ctp-accent-mauve {
   --ctp-accent: var(--ctp-mauve);
 }
 
-.theme-light.anuppuccin-accent-toggle.ctp-accent-light-mauve {
+.theme-light.neoppuccin-accent-toggle.ctp-accent-light-mauve {
   --ctp-accent: var(--ctp-mauve);
 }
 
@@ -3899,11 +3900,11 @@ settings:
   --anp-highlight-color: var(--ctp-mauve);
 }
 
-.anuppuccin-accent-toggle.ctp-accent-red {
+.neoppuccin-accent-toggle.ctp-accent-red {
   --ctp-accent: var(--ctp-red);
 }
 
-.theme-light.anuppuccin-accent-toggle.ctp-accent-light-red {
+.theme-light.neoppuccin-accent-toggle.ctp-accent-light-red {
   --ctp-accent: var(--ctp-red);
 }
 
@@ -3919,11 +3920,11 @@ settings:
   --anp-highlight-color: var(--ctp-red);
 }
 
-.anuppuccin-accent-toggle.ctp-accent-maroon {
+.neoppuccin-accent-toggle.ctp-accent-maroon {
   --ctp-accent: var(--ctp-maroon);
 }
 
-.theme-light.anuppuccin-accent-toggle.ctp-accent-light-maroon {
+.theme-light.neoppuccin-accent-toggle.ctp-accent-light-maroon {
   --ctp-accent: var(--ctp-maroon);
 }
 
@@ -3939,11 +3940,11 @@ settings:
   --anp-highlight-color: var(--ctp-maroon);
 }
 
-.anuppuccin-accent-toggle.ctp-accent-peach {
+.neoppuccin-accent-toggle.ctp-accent-peach {
   --ctp-accent: var(--ctp-peach);
 }
 
-.theme-light.anuppuccin-accent-toggle.ctp-accent-light-peach {
+.theme-light.neoppuccin-accent-toggle.ctp-accent-light-peach {
   --ctp-accent: var(--ctp-peach);
 }
 
@@ -3959,11 +3960,11 @@ settings:
   --anp-highlight-color: var(--ctp-peach);
 }
 
-.anuppuccin-accent-toggle.ctp-accent-yellow {
+.neoppuccin-accent-toggle.ctp-accent-yellow {
   --ctp-accent: var(--ctp-yellow);
 }
 
-.theme-light.anuppuccin-accent-toggle.ctp-accent-light-yellow {
+.theme-light.neoppuccin-accent-toggle.ctp-accent-light-yellow {
   --ctp-accent: var(--ctp-yellow);
 }
 
@@ -3979,11 +3980,11 @@ settings:
   --anp-highlight-color: var(--ctp-yellow);
 }
 
-.anuppuccin-accent-toggle.ctp-accent-green {
+.neoppuccin-accent-toggle.ctp-accent-green {
   --ctp-accent: var(--ctp-green);
 }
 
-.theme-light.anuppuccin-accent-toggle.ctp-accent-light-green {
+.theme-light.neoppuccin-accent-toggle.ctp-accent-light-green {
   --ctp-accent: var(--ctp-green);
 }
 
@@ -3999,11 +4000,11 @@ settings:
   --anp-highlight-color: var(--ctp-green);
 }
 
-.anuppuccin-accent-toggle.ctp-accent-teal {
+.neoppuccin-accent-toggle.ctp-accent-teal {
   --ctp-accent: var(--ctp-teal);
 }
 
-.theme-light.anuppuccin-accent-toggle.ctp-accent-light-teal {
+.theme-light.neoppuccin-accent-toggle.ctp-accent-light-teal {
   --ctp-accent: var(--ctp-teal);
 }
 
@@ -4019,11 +4020,11 @@ settings:
   --anp-highlight-color: var(--ctp-teal);
 }
 
-.anuppuccin-accent-toggle.ctp-accent-sky {
+.neoppuccin-accent-toggle.ctp-accent-sky {
   --ctp-accent: var(--ctp-sky);
 }
 
-.theme-light.anuppuccin-accent-toggle.ctp-accent-light-sky {
+.theme-light.neoppuccin-accent-toggle.ctp-accent-light-sky {
   --ctp-accent: var(--ctp-sky);
 }
 
@@ -4039,11 +4040,11 @@ settings:
   --anp-highlight-color: var(--ctp-sky);
 }
 
-.anuppuccin-accent-toggle.ctp-accent-sapphire {
+.neoppuccin-accent-toggle.ctp-accent-sapphire {
   --ctp-accent: var(--ctp-sapphire);
 }
 
-.theme-light.anuppuccin-accent-toggle.ctp-accent-light-sapphire {
+.theme-light.neoppuccin-accent-toggle.ctp-accent-light-sapphire {
   --ctp-accent: var(--ctp-sapphire);
 }
 
@@ -4059,11 +4060,11 @@ settings:
   --anp-highlight-color: var(--ctp-sapphire);
 }
 
-.anuppuccin-accent-toggle.ctp-accent-blue {
+.neoppuccin-accent-toggle.ctp-accent-blue {
   --ctp-accent: var(--ctp-blue);
 }
 
-.theme-light.anuppuccin-accent-toggle.ctp-accent-light-blue {
+.theme-light.neoppuccin-accent-toggle.ctp-accent-light-blue {
   --ctp-accent: var(--ctp-blue);
 }
 
@@ -4079,11 +4080,11 @@ settings:
   --anp-highlight-color: var(--ctp-blue);
 }
 
-.anuppuccin-accent-toggle.ctp-accent-lavender {
+.neoppuccin-accent-toggle.ctp-accent-lavender {
   --ctp-accent: var(--ctp-lavender);
 }
 
-.theme-light.anuppuccin-accent-toggle.ctp-accent-light-lavender {
+.theme-light.neoppuccin-accent-toggle.ctp-accent-light-lavender {
   --ctp-accent: var(--ctp-lavender);
 }
 
@@ -4100,7 +4101,7 @@ settings:
 }
 
 /*------------------Actual Configs--------------------*/
-.anuppuccin-accent-toggle {
+.neoppuccin-accent-toggle {
   --color-accent: rgb(var(--ctp-accent));
   --color-accent-1: rgb(var(--ctp-accent));
   --color-accent-2: rgba(var(--ctp-accent), 0.9);
@@ -5567,7 +5568,7 @@ input.slider,
   fill: var(--background-primary);
 }
 
-.anuppuccin-accent-toggle .canvas-selection {
+.neoppuccin-accent-toggle .canvas-selection {
   background-color: rgba(var(--ctp-accent), 0.1);
   border: 2px solid var(--color-accent);
 }
@@ -5586,7 +5587,7 @@ input.slider,
   left: 0;
 }
 
-.anuppuccin-accent-toggle .canvas-placeholder-message {
+.neoppuccin-accent-toggle .canvas-placeholder-message {
   background: rgba(var(--ctp-accent), 0.1);
 }
 
@@ -5691,7 +5692,7 @@ input.slider,
   background-color: var(--background-modifier-hover);
 }
 
-.anuppuccin-accent-toggle .drag-ghost-hidden:before {
+.neoppuccin-accent-toggle .drag-ghost-hidden:before {
   background-color: rgba(var(--ctp-accent), 0.3);
 }
 
@@ -6767,7 +6768,7 @@ Support me: https://buymeacoffee.com/AnubisNekhet
 .anp-callout-color-toggle .callout[data-callout=quote], .anp-callout-color-toggle .callout[data-callout=cite] {
   --callout-color: rgb(var(--ctp-surface2));
 }
-.anp-callout-color-toggle.anuppuccin-accent-toggle .callout[data-callout=note] {
+.anp-callout-color-toggle.neoppuccin-accent-toggle .callout[data-callout=note] {
   --callout-color: rgb(var(--ctp-accent));
 }
 
@@ -8550,14 +8551,14 @@ body.anp-colorful-frame-icon-toggle-dark.theme-dark {
 .anp-colorful-frame.is-frameless.is-frameless:not(.is-hidden-frameless) .sidebar-toggle-button.mod-left {
   border-radius: 0 var(--radius-m) var(--radius-m) 0;
 }
-.anp-colorful-frame.anuppuccin-accent-toggle.anp-colorful-frame:not(.anp-card-layout, .anp-border-layout) .mod-top .workspace-tab-header-container, .anp-colorful-frame.anuppuccin-accent-toggle.anp-colorful-frame.anp-card-layout, .anp-colorful-frame.anuppuccin-accent-toggle.anp-colorful-frame.anp-card-layout .workspace-tabs.mod-top, .anp-colorful-frame.anuppuccin-accent-toggle.anp-colorful-frame.anp-card-layout .sidebar-toggle-button {
+.anp-colorful-frame.neoppuccin-accent-toggle.anp-colorful-frame:not(.anp-card-layout, .anp-border-layout) .mod-top .workspace-tab-header-container, .anp-colorful-frame.neoppuccin-accent-toggle.anp-colorful-frame.anp-card-layout, .anp-colorful-frame.neoppuccin-accent-toggle.anp-colorful-frame.anp-card-layout .workspace-tabs.mod-top, .anp-colorful-frame.neoppuccin-accent-toggle.anp-colorful-frame.anp-card-layout .sidebar-toggle-button {
   --tab-container-background: rgba(var(--anp-colorful-frame-color, var(--ctp-accent)), var(--anp-colorful-frame-opacity, 1));
   --titlebar-background: rgba(var(--anp-colorful-frame-color, var(--ctp-accent)), var(--anp-colorful-frame-opacity, 1));
 }
-.anp-colorful-frame.anuppuccin-accent-toggle.anp-colorful-frame.anp-card-layout .prompt {
+.anp-colorful-frame.neoppuccin-accent-toggle.anp-colorful-frame.anp-card-layout .prompt {
   --background-modifier-hover: rgba(var(--ctp-text), 0.075) ;
 }
-.anp-colorful-frame.anuppuccin-accent-toggle.anp-colorful-frame .sidebar-toggle-button, .anp-colorful-frame.anp-colorful-frame.anp-colorful-frame.anp-colorful-frame .sidebar-toggle-button {
+.anp-colorful-frame.neoppuccin-accent-toggle.anp-colorful-frame .sidebar-toggle-button, .anp-colorful-frame.anp-colorful-frame.anp-colorful-frame.anp-colorful-frame .sidebar-toggle-button {
   --background-modifier-hover: rgba(var(--ctp-text), 0.075);
 }
 .anp-colorful-frame.is-focused .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header-inner .workspace-tab-header-inner-title,
@@ -8708,7 +8709,7 @@ body.anp-colorful-frame-icon-toggle-dark.theme-dark {
 }
 
 body.anp-colorful-frame.anp-card-layout .workspace,
-.anp-colorful-frame.anuppuccin-accent-toggle.anp-card-layout .workspace-tabs {
+.anp-colorful-frame.neoppuccin-accent-toggle.anp-card-layout .workspace-tabs {
   background-color: var(--tab-container-background);
 }
 
@@ -12088,24 +12089,24 @@ body.rainbow-repeat-1.rainbow-color-1-lavender [data-type=bookmarks] .tree-item:
   border-top-width: 0;
 }
 
-.style-settings-heading[data-id=anuppuccin-theme-settings] {
+.style-settings-heading[data-id=neoppuccin-theme-settings] {
   border-color: hsla(var(--color-accent-hsl), 0.2);
 }
-.style-settings-heading[data-id=anuppuccin-theme-settings]:not(.is-collapsed) + .style-settings-container {
+.style-settings-heading[data-id=neoppuccin-theme-settings]:not(.is-collapsed) + .style-settings-container {
   border-color: hsla(var(--color-accent-hsl), 0.2);
 }
-.style-settings-heading[data-id=anuppuccin-theme-settings] .setting-item-name {
+.style-settings-heading[data-id=neoppuccin-theme-settings] .setting-item-name {
   color: var(--color-accent);
 }
 
-.anuppuccin-accent-toggle .style-settings-heading[data-id=anuppuccin-theme-settings] {
+.neoppuccin-accent-toggle .style-settings-heading[data-id=neoppuccin-theme-settings] {
   border-color: rgba(var(--ctp-accent), 0.2);
 }
-.anuppuccin-accent-toggle .style-settings-heading[data-id=anuppuccin-theme-settings]:not(.is-collapsed) + .style-settings-container {
+.neoppuccin-accent-toggle .style-settings-heading[data-id=neoppuccin-theme-settings]:not(.is-collapsed) + .style-settings-container {
   border-color: rgba(var(--ctp-accent), 0.2);
 }
 
-.style-settings-container .style-settings-heading[data-id=anuppuccin-support] .setting-item-name {
+.style-settings-container .style-settings-heading[data-id=neoppuccin-support] .setting-item-name {
   color: var(--color-accent) !important;
 }
 
@@ -12118,10 +12119,10 @@ body.rainbow-repeat-1.rainbow-color-1-lavender [data-type=bookmarks] .tree-item:
   margin-top: 0;
 }
 
-.style-settings-container .setting-item:is([data-id=anuppuccin-extended-colorschemes-links],
+.style-settings-container .setting-item:is([data-id=neoppuccin-extended-colorschemes-links],
 [data-id=anp-snippet-minimal-cards-disclaimer],
-[data-id=anuppuccin-theme-donate],
-[data-id=anuppuccin-theme-source]) .setting-item-description > div {
+[data-id=neoppuccin-theme-donate],
+[data-id=neoppuccin-theme-source]) .setting-item-description > div {
   display: none;
 }
 
@@ -12195,10 +12196,10 @@ body.rainbow-repeat-1.rainbow-color-1-lavender [data-type=bookmarks] .tree-item:
   border-image: linear-gradient(to right, rgb(var(--ctp-rosewater)) 7%, rgb(var(--ctp-flamingo)) 7%, rgb(var(--ctp-flamingo)) 14%, rgb(var(--ctp-mauve)) 14%, rgb(var(--ctp-mauve)) 21%, rgb(var(--ctp-pink)) 21%, rgb(var(--ctp-pink)) 28%, rgb(var(--ctp-red)) 28%, rgb(var(--ctp-red)) 35%, rgb(var(--ctp-maroon)) 35%, rgb(var(--ctp-maroon)) 42%, rgb(var(--ctp-peach)) 42%, rgb(var(--ctp-peach)) 49%, rgb(var(--ctp-yellow)) 49%, rgb(var(--ctp-yellow)) 56%, rgb(var(--ctp-green)) 56%, rgb(var(--ctp-green)) 63%, rgb(var(--ctp-teal)) 63%, rgb(var(--ctp-teal)) 70%, rgb(var(--ctp-sky)) 70%, rgb(var(--ctp-sky)) 77%, rgb(var(--ctp-sapphire)) 77%, rgb(var(--ctp-sapphire)) 85%, rgb(var(--ctp-blue)) 85%, rgb(var(--ctp-blue)) 92%, rgb(var(--ctp-lavender))) 5;
 }
 
-.setting-item:is([data-id^=anuppuccin-url-]) .setting-item-control {
+.setting-item:is([data-id^=neoppuccin-url-]) .setting-item-control {
   display: none;
 }
-.setting-item:is([data-id^=anuppuccin-url-]) .setting-item-name::before {
+.setting-item:is([data-id^=neoppuccin-url-]) .setting-item-name::before {
   display: inline-flex;
   font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   height: fit-content;
@@ -12213,26 +12214,30 @@ body.rainbow-repeat-1.rainbow-color-1-lavender [data-type=bookmarks] .tree-item:
   width: var(--size-4-4);
 }
 
-.setting-item[data-id=anuppuccin-url-donate] .setting-item-name::before {
+.setting-item[data-id=neoppuccin-url-donate] .setting-item-name::before {
   content: " ☕";
 }
 
-.setting-item[data-id=anuppuccin-url-star-repo] .setting-item-name::before {
+.setting-item[data-id=neoppuccin-url-donate-anubis] .setting-item-name::before {
+  content: " ☕";
+}
+
+.setting-item[data-id=neoppuccin-url-star-repo] .setting-item-name::before {
   content: " ⭐";
 }
 
-.setting-item[data-id=anuppuccin-url-submit-issue] .setting-item-name::before {
+.setting-item[data-id=neoppuccin-url-submit-issue] .setting-item-name::before {
   content: " 🐞";
 }
 
-.setting-item[data-id=anuppuccin-url-minimal-cards-snippet] .setting-item-name::before {
+.setting-item[data-id=neoppuccin-url-minimal-cards-snippet] .setting-item-name::before {
   content: " ⬇";
 }
 
-.setting-item:is([data-id*=anuppuccin-theme-settings]) > .setting-item-info > .setting-item-name {
+.setting-item:is([data-id*=neoppuccin-theme-settings]) > .setting-item-info > .setting-item-name {
   margin-left: -3px;
 }
-.setting-item:is([data-id*=anuppuccin-theme-settings]) > .setting-item-info > .setting-item-name > .style-settings-collapse-indicator::after {
+.setting-item:is([data-id*=neoppuccin-theme-settings]) > .setting-item-info > .setting-item-name > .style-settings-collapse-indicator::after {
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: contain;
   background-color: var(--color-accent);
@@ -12247,10 +12252,10 @@ body.rainbow-repeat-1.rainbow-color-1-lavender [data-type=bookmarks] .tree-item:
   vertical-align: text-top;
   margin-right: 0;
 }
-.setting-item:is([data-id*=anuppuccin-theme-settings]) > .setting-item-info > .setting-item-name > .style-settings-collapse-indicator {
+.setting-item:is([data-id*=neoppuccin-theme-settings]) > .setting-item-info > .setting-item-name > .style-settings-collapse-indicator {
   margin-right: 4px;
 }
-.setting-item:is([data-id*=anuppuccin-theme-settings]) > .setting-item-info > .setting-item-name > .style-settings-collapse-indicator > svg {
+.setting-item:is([data-id*=neoppuccin-theme-settings]) > .setting-item-info > .setting-item-name > .style-settings-collapse-indicator > svg {
   display: none;
 }
 
@@ -12454,10 +12459,10 @@ body.rainbow-repeat-1.rainbow-color-1-lavender [data-type=bookmarks] .tree-item:
   display: none;
 }
 
-.setting-item:is([data-id*=anuppuccin-support]) > .setting-item-info > .setting-item-name {
+.setting-item:is([data-id*=neoppuccin-support]) > .setting-item-info > .setting-item-name {
   margin-left: -3px;
 }
-.setting-item:is([data-id*=anuppuccin-support]) > .setting-item-info > .setting-item-name > .style-settings-collapse-indicator::after {
+.setting-item:is([data-id*=neoppuccin-support]) > .setting-item-info > .setting-item-name > .style-settings-collapse-indicator::after {
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: contain;
   background-color: var(--color-accent);
@@ -12472,10 +12477,10 @@ body.rainbow-repeat-1.rainbow-color-1-lavender [data-type=bookmarks] .tree-item:
   vertical-align: text-top;
   margin-right: 0;
 }
-.setting-item:is([data-id*=anuppuccin-support]) > .setting-item-info > .setting-item-name > .style-settings-collapse-indicator {
+.setting-item:is([data-id*=neoppuccin-support]) > .setting-item-info > .setting-item-name > .style-settings-collapse-indicator {
   margin-right: 4px;
 }
-.setting-item:is([data-id*=anuppuccin-support]) > .setting-item-info > .setting-item-name > .style-settings-collapse-indicator > svg {
+.setting-item:is([data-id*=neoppuccin-support]) > .setting-item-info > .setting-item-name > .style-settings-collapse-indicator > svg {
   display: none;
 }
 
@@ -12508,7 +12513,7 @@ body.rainbow-repeat-1.rainbow-color-1-lavender [data-type=bookmarks] .tree-item:
   background: linear-gradient(to right, rgb(var(--ctp-rosewater)) 7%, rgb(var(--ctp-flamingo)) 7%, rgb(var(--ctp-flamingo)) 14%, rgb(var(--ctp-mauve)) 14%, rgb(var(--ctp-mauve)) 21%, rgb(var(--ctp-pink)) 21%, rgb(var(--ctp-pink)) 28%, rgb(var(--ctp-red)) 28%, rgb(var(--ctp-red)) 35%, rgb(var(--ctp-maroon)) 35%, rgb(var(--ctp-maroon)) 42%, rgb(var(--ctp-peach)) 42%, rgb(var(--ctp-peach)) 49%, rgb(var(--ctp-yellow)) 49%, rgb(var(--ctp-yellow)) 56%, rgb(var(--ctp-green)) 56%, rgb(var(--ctp-green)) 63%, rgb(var(--ctp-teal)) 63%, rgb(var(--ctp-teal)) 70%, rgb(var(--ctp-sky)) 70%, rgb(var(--ctp-sky)) 77%, rgb(var(--ctp-sapphire)) 77%, rgb(var(--ctp-sapphire)) 85%, rgb(var(--ctp-blue)) 85%, rgb(var(--ctp-blue)) 92%, rgb(var(--ctp-lavender)));
 }
 
-.setting-item:is([data-id=anuppuccin-theme-settings],
+.setting-item:is([data-id=neoppuccin-theme-settings],
 [data-id=anp-colors-section-header],
 [data-id=anp-editor-header],
 [data-id=anp-misc-element-header],
@@ -12516,7 +12521,7 @@ body.rainbow-repeat-1.rainbow-color-1-lavender [data-type=bookmarks] .tree-item:
 [data-id=anp-typography-header],
 [data-id=anp-plugin-header],
 [data-id=anp-workspace-header],
-[data-id=anuppuccin-support],
+[data-id=neoppuccin-support],
 [data-id=anp-custom-rainbow-colors]):not(.is-collapsed) > .setting-item-info > .setting-item-name > .style-settings-collapse-indicator::after {
   transform: rotate(90deg);
   transition: transform 0.1s;
@@ -12527,7 +12532,7 @@ body.rainbow-repeat-1.rainbow-color-1-lavender [data-type=bookmarks] .tree-item:
   transition: transform 0.1s;
 }
 
-.setting-item:is([data-id=anuppuccin-theme-settings]) > .setting-item-info > .setting-item-name > .style-settings-collapse-indicator::after {
+.setting-item:is([data-id=neoppuccin-theme-settings]) > .setting-item-info > .setting-item-name > .style-settings-collapse-indicator::after {
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' data-darkreader-inline-stroke='' style='--darkreader-inline-stroke:currentColor;'%3E%3Ccircle cx='13.5' cy='6.5' r='.5'%3E%3C/circle%3E%3Ccircle cx='17.5' cy='10.5' r='.5'%3E%3C/circle%3E%3Ccircle cx='8.5' cy='7.5' r='.5'%3E%3C/circle%3E%3Ccircle cx='6.5' cy='12.5' r='.5'%3E%3C/circle%3E%3Cpath d='M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z'%3E%3C/path%3E%3C/svg%3E");
 }
 
@@ -12563,7 +12568,7 @@ body.rainbow-repeat-1.rainbow-color-1-lavender [data-type=bookmarks] .tree-item:
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='4' width='20' height='5' rx='2'%3E%3C/rect%3E%3Cpath d='M4 9v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9'%3E%3C/path%3E%3Cpath d='M10 13h4'%3E%3C/path%3E%3C/svg%3E");
 }
 
-.setting-item:is([data-id=anuppuccin-support]) > .setting-item-info > .setting-item-name > .style-settings-collapse-indicator::after {
+.setting-item:is([data-id=neoppuccin-support]) > .setting-item-info > .setting-item-name > .style-settings-collapse-indicator::after {
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z'%3E%3C/path%3E%3C/svg%3E");
 }
 

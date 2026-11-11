@@ -1,6 +1,6 @@
 /* @settings
-name: AnuPpuccin
-id: anuppuccin-theme-settings
+name: NeoPpuccin
+id: neoppuccin-theme-settings
 settings:
 
 # Colors
@@ -13,7 +13,7 @@ settings:
     level: 1
     collapsed: true
 -
-    id: anuppuccin-theme-light
+    id: neoppuccin-theme-light
     title: Light Theme
     description: Select your preferred light mode flavor
     type: class-select
@@ -54,7 +54,7 @@ settings:
         label: Solarized
         value: ctp-solarized-light
 -
-    id: anuppuccin-theme-dark
+    id: neoppuccin-theme-dark
     title: Dark Theme
     description: Select your preferred dark mode flavor
     type: class-select
@@ -141,7 +141,7 @@ settings:
     title: Toggle amoled black on all themes
     type: class-toggle
 -
-    id: anuppuccin-light-theme-accents
+    id: neoppuccin-light-theme-accents
     title: Light Theme Accent
     description: Select your preferred light theme accent (Defaults to dark theme accent if left empty)
     type: class-select
@@ -191,7 +191,7 @@ settings:
         label: Lavender
         value: ctp-accent-light-lavender
 -
-    id: anuppuccin-theme-accents
+    id: neoppuccin-theme-accents
     title: Dark Theme Accent
     description: Select your preferred accent
     type: class-select
@@ -241,7 +241,7 @@ settings:
         label: Lavender
         value: ctp-accent-lavender
 -
-    id: anuppuccin-accent-toggle
+    id: neoppuccin-accent-toggle
     title: Force Custom Accents
     description: Forces colorscheme-specific custom accents to be utilised instead of default obsidian accent
     type: class-toggle
@@ -252,7 +252,7 @@ settings:
 -
     id: anp-color-overrides-header
     title: Color Overrides
-    description: 
+    description:
     type: heading
     level: 2
     collapsed: true
@@ -1082,7 +1082,7 @@ settings:
 -
     id: anp-plugin-kanban
     title: Kanban
-    description: 
+    description:
     type: heading
     level: 2
     collapsed: true
@@ -1092,7 +1092,7 @@ settings:
 -
     id: anp-plugin-card-settings
     title: Card Settings
-    description: 
+    description:
     type: heading
     level: 3
     collapsed: true
@@ -1140,7 +1140,7 @@ settings:
 -
     id: anp-plugin-lane-settings
     title: Lane Settings
-    description: 
+    description:
     type: heading
     level: 3
     collapsed: true
@@ -1185,34 +1185,34 @@ settings:
 -
     id: anp-plugin-kanban-search-settings
     title: Search Settings
-    description: 
+    description:
     type: heading
     level: 3
     collapsed: true
 -
     id: anp-kanban-search-full
     title: Enable Full Width Search Bar
-    description: 
+    description:
     type: class-toggle
 -
     id: anp-kanban-collapse-lanes
     title: Collapse Lanes With No Search Results
-    description: 
+    description:
     type: class-toggle
 -
     id: anp-kanban-hide-cards
     title: Hide Cards That Don't Contain the Search Query
-    description: 
+    description:
     type: class-toggle
 -
     id: anp-kanban-hide-mark
     title: Hide Search Result Highlight in Cards
-    description: 
+    description:
     type: class-toggle
 -
     id: anp-kanban-uncollapse-lanes
     title: Uncollapse Lanes and Unhide Cards When Sorting
-    description: 
+    description:
     type: class-toggle
 
 # Integrations :: Kanban :: Notion Style
@@ -1235,7 +1235,7 @@ settings:
 -
     id: anp-plugin-makemd
     title: MAKE.md
-    description: 
+    description:
     type: heading
     level: 2
     collapsed: true
@@ -1264,7 +1264,7 @@ settings:
 -
     id: anp-snippet-minimal-cards-disc
     title: Usage
-    description: "Minimal Cards is a feature of [Minimal](https://github.com/kepano/obsidian-minimal). It is now included in the theme by default under its MIT license — add the `cards` or `list-cards` CSS class to a note to use it."
+    description: "Minimal Cards is a feature of [Minimal](https://github.com/kepano/obsidian-minimal). It is now included in the theme by default under its MIT license, add the `cards` or `list-cards` CSS class to a note to use it."
     type: info-text
     markdown: true
 -
@@ -1380,7 +1380,7 @@ settings:
 -
     id: anp-font-families-header
     title: Font Families
-    description: 
+    description:
     type: heading
     level: 2
     collapsed: true
@@ -1405,7 +1405,7 @@ settings:
 -
     id: anp-font-weight-header
     title: Font Weights
-    description: 
+    description:
     type: heading
     level: 2
     collapsed: true
@@ -1550,7 +1550,7 @@ settings:
 -
     id: anp-header-header
     title: Headings
-    description: 
+    description:
     type: heading
     level: 2
     collapsed: true
@@ -1582,7 +1582,7 @@ settings:
 -
     id: anp-h1-header
     title: H1
-    description: 
+    description:
     type: heading
     level: 3
     collapsed: true
@@ -1693,7 +1693,7 @@ settings:
 -
     id: anp-h2-header
     title: H2
-    description: 
+    description:
     type: heading
     level: 3
     collapsed: true
@@ -1804,7 +1804,7 @@ settings:
 -
     id: anp-h3-header
     title: H3
-    description: 
+    description:
     type: heading
     level: 3
     collapsed: true
@@ -1915,7 +1915,7 @@ settings:
 -
     id: anp-h4-header
     title: H4
-    description: 
+    description:
     type: heading
     level: 3
     collapsed: true
@@ -2026,7 +2026,7 @@ settings:
 -
     id: anp-h5-header
     title: H5
-    description: 
+    description:
     type: heading
     level: 3
     collapsed: true
@@ -2137,7 +2137,7 @@ settings:
 -
     id: anp-h6-header
     title: H6
-    description: 
+    description:
     type: heading
     level: 3
     collapsed: true
@@ -2244,11 +2244,11 @@ settings:
     type: class-toggle
 
 # Typography :: Comments
-  
+
 -
     id: anp-comment-header
     title: Comments
-    description: 
+    description:
     type: heading
     level: 2
     collapsed: true
@@ -2268,7 +2268,7 @@ settings:
 -
     id: anp-decor-header
     title: Text Decoration
-    description: 
+    description:
     type: heading
     level: 2
     collapsed: true
@@ -2481,7 +2481,7 @@ settings:
 -
     id: colorful-frame
     title: Colorful Frame
-    description: 
+    description:
     type: heading
     level: 2
     collapsed: true
@@ -2553,7 +2553,7 @@ settings:
 -
     id: anp-pdf-viewer-header
     title: PDF Viewer
-    description: 
+    description:
     type: heading
     level: 2
     collapsed: true
@@ -2573,7 +2573,7 @@ settings:
 -
     id: anp-rainbow-section-header
     title: Rainbow Folders
-    description: 
+    description:
     type: heading
     level: 2
     collapsed: true
@@ -3218,7 +3218,7 @@ settings:
 -
     id: anp-full-rainbow-folder-settings
     title: Full Folder Settings
-    description: 
+    description:
     type: heading
     level: 3
     collapsed: true
@@ -3246,7 +3246,7 @@ settings:
 -
     id: anp-simple-rainbow-folder-settings
     title: Simple Folder Settings
-    description: 
+    description:
     type: heading
     level: 3
     collapsed: true
@@ -3276,7 +3276,7 @@ settings:
 -
     id: anp-stacked-tabs-header
     title: Stacked Tabs
-    description: 
+    description:
     type: heading
     level: 2
     collapsed: true
@@ -3323,7 +3323,7 @@ settings:
 -
     id: anp-alt-tab-header
     title: Tabs
-    description: 
+    description:
     type: heading
     level: 2
     collapsed: true
@@ -3422,7 +3422,7 @@ settings:
 -
     id: anp-safari-vanilla-tab-header
     title: Vanilla Safari-style Tab Settings
-    description: 
+    description:
     type: heading
     level: 3
     collapsed: true
@@ -3436,7 +3436,7 @@ settings:
 -
     id: anp-translucency-header
     title: Translucency
-    description: 
+    description:
     type: heading
     level: 2
     collapsed: true
@@ -3492,7 +3492,7 @@ settings:
 -
     id: anp-layout-card
     title: Card Layout Settings
-    description: 
+    description:
     type: heading
     level: 3
     collapsed: true
@@ -3525,7 +3525,7 @@ settings:
 -
     id: anp-layout-border
     title: Border Layout Settings
-    description: 
+    description:
     type: heading
     level: 3
     collapsed: true
@@ -3545,28 +3545,34 @@ settings:
 # Credits
 
 -
-    id: anuppuccin-support
-    title: Support AnuPpuccin
+    id: neoppuccin-support
+    title: Support NeoPuccin
     description: If you like the theme, here are some ways to support development
     type: heading
     level: 1
     collapsed: true
 -
-    id: anuppuccin-url-donate
-    title: Buy Me a Coffee
+	id: neoppuccin-url-donate
+	title: Buy me a Coffee
+	description: "[https://ko-fi.com/erd](https://ko-fi.com/erd)"
+	type: info-text
+	markdown: true
+-
+    id: neoppuccin-url-donate-anubis
+    title: Buy Anubis, the developer of AnuPpuccin, a Coffee
     description: "[https://www.buymeacoffee.com/anubisnekhet](https://www.buymeacoffee.com/anubisnekhet)"
     type: info-text
     markdown: true
 -
-    id: anuppuccin-url-star-repo
+    id: neoppuccin-url-star-repo
     title: Star the Theme on GitHub
-    description: "[https://github.com/anubisnekhet/anuppuccin](https://github.com/anubisnekhet/anuppuccin)"
+    description: "[https://github.com/notnotnescap/NeoPpuccin](https://github.com/notnotnescap/NeoPpuccin)"
     type: info-text
     markdown: true
 -
-    id: anuppuccin-url-submit-issue
+    id: neoppuccin-url-submit-issue
     title: Submit an Issue on GitHub
-    description: "[https://github.com/anubisnekhet/anuppuccin/issues](https://github.com/anubisnekhet/anuppuccin/issues)"
+    description: "[https://github.com/notnotnescap/NeoPpuccin/issues](https://github.com/notnotnescap/NeoPpuccin/issues)"
     type: info-text
     markdown: true
 

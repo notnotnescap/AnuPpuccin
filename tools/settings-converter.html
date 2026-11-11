@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AnuPpuccin → NeoPpuccin Settings Converter</title>
+<style>
+  :root {
+    --base: #1e1e2e;
+    --mantle: #181825;
+    --crust: #11111b;
+    --surface0: #313244;
+    --surface1: #45475a;
+    --surface2: #585b70;
+    --text: #cdd6f4;
+    --subtext0: #a6adc8;
+    --overlay0: #6c7086;
+    --mauve: #cba6f7;
+    --lavender: #b4befe;
+    --green: #a6e3a1;
+    --red: #f38ba8;
+    --yellow: #f9e2af;
+    --peach: #fab387;
+    --radius: 10px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--base);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+
+  .wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 20px 48px;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  header h1 {
+    margin: 0 0 6px;
+    font-size: 1.7rem;
+    letter-spacing: -0.02em;
+  }
+
+  header h1 .from { color: var(--subtext0); }
+  header h1 .arrow { color: var(--mauve); }
+  header h1 .to { background: linear-gradient(90deg, var(--mauve), var(--lavender)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+  header p { margin: 0; color: var(--subtext0); font-size: 0.95rem; }
+
+  .steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 18px 0 26px;
+    font-size: 0.85rem;
+    color: var(--subtext0);
+  }
+
+  .steps span {
+    background: var(--mantle);
+    border: 1px solid var(--surface1);
+    border-radius: 999px;
+    padding: 4px 12px;
+  }
+
+  .steps b { color: var(--text); font-weight: 600; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  @media (max-width: 860px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+
+  .panel {
+    background: var(--mantle);
+    border: 1px solid var(--surface1);
+    border-radius: var(--radius);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .panel h2 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .panel h2 .badge {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--subtext0);
+    background: var(--surface0);
+    border-radius: 999px;
+    padding: 2px 10px;
+    white-space: nowrap;
+  }
+
+  textarea {
+    width: 100%;
+    min-height: 320px;
+    resize: vertical;
+    background: var(--crust);
+    color: var(--text);
+    border: 1px solid var(--surface1);
+    border-radius: 8px;
+    padding: 12px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    outline: none;
+  }
+
+  textarea:focus { border-color: var(--mauve); }
+
+  textarea[readonly] { color: var(--green); }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+
+  button, .file-btn {
+    appearance: none;
+    border: 1px solid var(--surface2);
+    background: var(--surface0);
+    color: var(--text);
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease;
+    font-family: inherit;
+  }
+
+  button:hover, .file-btn:hover { background: var(--surface1); }
+  button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  button.primary {
+    background: var(--mauve);
+    border-color: var(--mauve);
+    color: var(--crust);
+  }
+
+  button.primary:hover { background: var(--lavender); border-color: var(--lavender); }
+
+  button.ghost { background: transparent; }
+
+  .file-btn { display: inline-block; }
+
+  input[type="file"] { display: none; }
+
+  .hint { font-size: 0.78rem; color: var(--overlay0); margin: 0; }
+
+  .summary {
+    display: none;
+    background: var(--crust);
+    border: 1px solid var(--surface1);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+
+  .summary.show { display: block; }
+
+  .summary .ok { color: var(--green); }
+  .summary .warn { color: var(--yellow); }
+  .summary .err { color: var(--red); }
+
+  .summary ul {
+    margin: 6px 0 0;
+    padding-left: 18px;
+    color: var(--subtext0);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.78rem;
+    max-height: 140px;
+    overflow-y: auto;
+  }
+
+  details.dropped {
+    margin-top: 4px;
+    font-size: 0.82rem;
+  }
+
+  details.dropped summary {
+    cursor: pointer;
+    color: var(--yellow);
+    user-select: none;
+  }
+
+  footer {
+    margin-top: 28px;
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--overlay0);
+  }
+
+  footer a { color: var(--lavender); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1><span class="from">AnuPpuccin</span> <span class="arrow">→</span> <span class="to">NeoPpuccin</span> Settings Converter</h1>
+    <p>Convert your exported AnuPpuccin style settings to NeoPpuccin.</p>
+    <div class="steps">
+      <span><b>1.</b> Export settings from the Style Settings plugin</span>
+      <span><b>2.</b> Paste them below or upload a JSON file</span>
+      <span><b>3.</b> Copy or download the converted settings</span>
+    </div>
+  </header>
+
+  <div class="grid">
+    <section class="panel">
+      <h2>AnuPpuccin settings <span class="badge">input</span></h2>
+      <textarea id="input" spellcheck="false" placeholder='Paste your exported settings here, e.g.&#10;&#10;{&#10;  "anuppuccin-theme-settings@@anp-decoration-toggle": true,&#10;  "anuppuccin-theme-settings@@anuppuccin-theme-dark": "ctp-tokyo-night",&#10;  ...&#10;}'></textarea>
+      <div class="row">
+        <label class="file-btn" for="file-input">📂 Upload JSON file</label>
+        <input type="file" id="file-input" accept=".json,application/json">
+        <button id="example-btn" class="ghost">Load example</button>
+        <button id="convert-btn" class="primary">Convert</button>
+      </div>
+      <p class="hint">Everything runs locally in your browser.</p>
+    </section>
+
+    <section class="panel">
+      <h2>NeoPpuccin settings <span class="badge">output</span></h2>
+      <textarea id="output" readonly spellcheck="false" placeholder="Converted settings will appear here…"></textarea>
+      <div class="row">
+        <button id="copy-btn" disabled>📋 Copy to clipboard</button>
+        <button id="download-btn" class="ghost" disabled>⬇️ Download .json</button>
+      </div>
+      <div class="summary" id="summary"></div>
+    </section>
+  </div>
+
+  <footer>
+    <a href="https://github.com/notnotnescap/NeoPpuccin">NeoPpuccin</a> · GPL-3.0 · Not affiliated with AnuPpuccin
+  </footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // Setting ids that were renamed in NeoPpuccin.
+  var ID_RENAMES = {
+    "anuppuccin-accent-toggle": "neoppuccin-accent-toggle",
+    "anuppuccin-theme-accents": "neoppuccin-theme-accents",
+    "anuppuccin-theme-dark": "neoppuccin-theme-dark",
+    "anuppuccin-theme-light": "neoppuccin-theme-light",
+    "anuppuccin-light-theme-accents": "neoppuccin-light-theme-accents"
+  };
+
+  // The old "extended colorschemes" section is gone in NeoPpuccin:
+  // extended colorschemes are now built in by default. Only the AMOLED
+  // toggle survived, and it moved into the main settings.
+  var EXTENDED_KEEP = { "anp-theme-ext-amoled": true };
+
+  var inputEl = document.getElementById("input");
+  var outputEl = document.getElementById("output");
+  var summaryEl = document.getElementById("summary");
+  var copyBtn = document.getElementById("copy-btn");
+  var downloadBtn = document.getElementById("download-btn");
+  var convertBtn = document.getElementById("convert-btn");
+  var exampleBtn = document.getElementById("example-btn");
+  var fileInput = document.getElementById("file-input");
+
+  var lastResult = null;
+  var debounceTimer = null;
+
+  var EXAMPLE = {
+    "anuppuccin-theme-settings@@anp-decoration-toggle": true,
+    "anuppuccin-theme-settings@@anp-highlight-custom": "anp-highlight-mauve",
+    "anuppuccin-theme-settings@@anuppuccin-accent-toggle": true,
+    "anuppuccin-theme-settings@@anuppuccin-theme-accents": "ctp-accent-lavender",
+    "anuppuccin-theme-settings@@anuppuccin-theme-dark": "ctp-tokyo-night",
+    "anuppuccin-theme-settings@@anuppuccin-theme-light": "ctp-latte",
+    "anuppuccin-theme-settings-extended@@anp-theme-ext-dark": true,
+    "anuppuccin-theme-settings-extended@@catppuccin-theme-extended": "ctp-material-mint-light",
+    "anuppuccin-theme-settings-extended@@anp-theme-ext-amoled": false,
+    "anuppuccin-theme-settings@@anp-layout-select": "anp-border-layout",
+    "anuppuccin-theme-settings@@anp-border-padding": 10,
+    "anuppuccin-theme-settings@@anp-callout-select": "anp-callout-sleek",
+    "anuppuccin-theme-settings@@anp-custom-checkboxes": true,
+    "anuppuccin-theme-settings@@bold-weight": "500",
+    "anuppuccin-theme-settings@@tag-radius": 0.4
+  };
+
+  function convert(text) {
+    var data;
+    try {
+      data = JSON.parse(text);
+    } catch (e) {
+      throw new Error("Invalid JSON: " + e.message);
+    }
+    if (typeof data !== "object" || data === null || Array.isArray(data)) {
+      throw new Error("The JSON must be an object of settings (like the Style Settings export).");
+    }
+
+    var out = {};
+    var dropped = [];
+    var renamed = [];
+    var converted = 0;
+
+    Object.keys(data).forEach(function (key) {
+      var value = data[key];
+
+      if (key.indexOf("anuppuccin-theme-settings-extended@@") === 0) {
+        var extId = key.slice("anuppuccin-theme-settings-extended@@".length);
+        if (EXTENDED_KEEP[extId]) {
+          var newKey = "neoppuccin-theme-settings@@" + extId;
+          out[newKey] = value;
+          renamed.push([key, newKey]);
+          converted++;
+        } else {
+          // Extended colorscheme toggles no longer exist in NeoPpuccin.
+          dropped.push(key);
+        }
+        return;
+      }
+
+      if (key.indexOf("anuppuccin-theme-settings@@") === 0) {
+        var id = key.slice("anuppuccin-theme-settings@@".length);
+        var newId = ID_RENAMES[id] || id;
+        var newKey = "neoppuccin-theme-settings@@" + newId;
+        out[newKey] = value;
+        converted++;
+        // Only report when the setting id itself changed, not just the prefix.
+        if (newId !== id) renamed.push([key, newKey]);
+        return;
+      }
+
+      // Settings from other plugins/themes pass through untouched.
+      out[key] = value;
+    });
+
+    return { out: out, dropped: dropped, renamed: renamed, converted: converted };
+  }
+
+  function render() {
+    var text = inputEl.value.trim();
+    if (!text) {
+      outputEl.value = "";
+      summaryEl.className = "summary";
+      summaryEl.innerHTML = "";
+      copyBtn.disabled = true;
+      downloadBtn.disabled = true;
+      lastResult = null;
+      return;
+    }
+
+    var result;
+    try {
+      result = convert(text);
+    } catch (e) {
+      outputEl.value = "";
+      summaryEl.className = "summary show";
+      summaryEl.innerHTML = '<span class="err">⚠️ ' + escapeHtml(e.message) + "</span>";
+      copyBtn.disabled = true;
+      downloadBtn.disabled = true;
+      lastResult = null;
+      return;
+    }
+
+    lastResult = result;
+    outputEl.value = JSON.stringify(result.out, null, 2);
+    copyBtn.disabled = false;
+    downloadBtn.disabled = false;
+
+    var html = '<span class="ok">✓ ' + result.converted + " setting" + (result.converted === 1 ? "" : "s") + " converted</span>";
+    if (result.renamed.length) {
+      html += ' · <span class="warn">' + result.renamed.length + " renamed</span>";
+    }
+    if (result.dropped.length) {
+      html += ' · <span class="warn">' + result.dropped.length + " dropped</span>";
+      html +=
+        '<details class="dropped"><summary>Show dropped settings</summary><ul>' +
+        result.dropped.map(function (k) { return "<li>" + escapeHtml(k) + "</li>"; }).join("") +
+        "</ul></details>";
+    }
+    summaryEl.className = "summary show";
+    summaryEl.innerHTML = html;
+  }
+
+  function escapeHtml(s) {
+    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+
+  inputEl.addEventListener("input", function () {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(render, 250);
+  });
+
+  convertBtn.addEventListener("click", render);
+
+  exampleBtn.addEventListener("click", function () {
+    inputEl.value = JSON.stringify(EXAMPLE, null, 2);
+    render();
+  });
+
+  fileInput.addEventListener("change", function () {
+    var file = fileInput.files && fileInput.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function () {
+      inputEl.value = reader.result;
+      render();
+    };
+    reader.readAsText(file);
+    fileInput.value = "";
+  });
+
+  copyBtn.addEventListener("click", function () {
+    if (!lastResult) return;
+    var text = JSON.stringify(lastResult.out, null, 2);
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () {
+        flash(copyBtn, "✅ Copied!");
+      }, function () {
+        fallbackCopy(text);
+      });
+    } else {
+      fallbackCopy(text);
+    }
+  });
+
+  function fallbackCopy(text) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+      document.execCommand("copy");
+      flash(copyBtn, "✅ Copied!");
+    } catch (e) {
+      flash(copyBtn, "Copy failed, please select manually");
+    }
+    document.body.removeChild(ta);
+  }
+
+  function flash(btn, msg) {
+    var original = btn.textContent;
+    btn.textContent = msg;
+    setTimeout(function () { btn.textContent = original; }, 1500);
+  }
+
+  downloadBtn.addEventListener("click", function () {
+    if (!lastResult) return;
+    var blob = new Blob([JSON.stringify(lastResult.out, null, 2)], { type: "application/json" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = "neoppuccin-settings.json";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,5 +1,6 @@
 .DS_Store
 *.css.map
+*.psd
 backup/
 .vscode/
 *.old.css

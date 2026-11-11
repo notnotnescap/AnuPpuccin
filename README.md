@@ -1,96 +1,77 @@
-<h1 align="center">AnuPpuccin</h1>
-<h3 align="center">Personal theme for <a href="https://obsidian.md">Obsidian</a> :3</h3><br>
+# NeoPpuccin
+## A theme for [Obsidian](https://obsidian.md)
 
-<p align="center"> <img src="assets/gh-preview.webp"> </p>
+> **Note**: NeoPpuccin is a relatively new project. It will take a couple of weeks for everything to be documented and set up as intended — thanks for your patience while things are finalized!
 
-<br>
-<h3 align="center">Voted <b>Best Theme</b> in <a href="https://forum.obsidian.md/t/gems-of-the-year-2022-winners/54903">Gems of the Year 2022</a> awards 🎉
-</h3>
+> **Note**: Your AnuPpuccin settings are **not** transferred automatically. If you're migrating from AnuPpuccin, use the [settings converter](https://notnotnescap.github.io/NeoPpuccin/tools/settings-converter.html) to convert your exported style settings (or open `tools/settings-converter.html` from this repo directly).
 
-## Preface
+<p align="center"> <img src="assets/gh-preview.webp" alt="Preview"> </p>
 
-Please do note that I've made this theme for myself, and it may not fit your use cases. However, I've made most of the configuration completely optional so that the experience remains as close to vanilla if you choose to do so. Most of the in-application variables are recolored so that your custom snippets can be used easily with the theme.
-This theme makes heavy use of the <a href="https://github.com/mgmeyers/obsidian-style-settings">style settings</a> plugin, which controls most of the features in the theme. The theme is perfectly usable even without style settings, but it's only a fraction of what it actually is with the plugin.
-<br><br>
-I will respond to feature/code removal only if there is substantial evidence of it being a direct copy of the original code and not just a simple imitation. (Please keep this point in mind before accusing me of being a low-effort theme developer.)
+NeoPpuccin is a fork of [AnuPpuccin](https://github.com/AnubisNekhet/AnuPpuccin) that aims to continue it's development with bug fixes, new features and more colorschemes. 
 
-### If you like my theme:
+NeoPpuccin is a theme for Obsidian that is designed to be minimalistic, clean and easy on the eyes. The theme supports various colorschemes (including [Catppuccin](https://catppuccin.com/)), layouts and features that can be toggled on and off using the [style settings](https://github.com/mgmeyers/obsidian-style-settings) plugin.
 
-I've made this theme primarily for my own purposes and it's completely free, but if you do like it enough to consider throwing a few coins in my hat, here's a link.<br>
-<a href="https://www.buymeacoffee.com/anubisnekhet" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+# Features
 
-## License
+By default the theme provides a close-to-vanilla Obsidian experience with the Catppuccin colorscheme, but it can be customized to your liking using the [style settings](https://github.com/mgmeyers/obsidian-style-settings) plugin. The theme supports more colorschemes, different layouts and features that can be toggled on and off.
 
-AnuPpuccin is licensed under the GPL-3.0 license which allows you to modify the code freely, however the Copyright and license notices must be preserved in your CSS. If you redistribute a part of my code, please credit my theme in your CSS file, and specify which code you are using. **Please keep my <a href="https://www.buymeacoffee.com/anubisnekhet">Buy Me a Coffee link</a> in your README if you do so.**
 
-<details>
-<summary><h2>Installation</h2></summary>
-<h3>Normal Installation</h3>
-Go to your theme folder (<code>.obsidian/themes</code>) and run:<br><br>
-<pre><code>git clone git@github.com:notnotnescap/AnuPpuccin.git</code></pre>
-<h3>Updating</h3>
-Go to your AnuPuccin folder (<code>.obsidian/themes/Anuppuccin</code>) and run:<br><br>
-<pre><code>git pull</code></pre>
-<h3>Building</h3>
-Clone the github repo and run <code>sass src/base.scss theme.css</code> in the root folder.
-</details>
-
-## Community Contributions
-
-AnuPpuccin has a [Discussions](https://github.com/AnubisNekhet/AnuPpuccin/discussions/categories/snippets) page dedicated to snippets that add a personal touch to your obsidian setup. If you want to share your customizations, feel free to do so!
-
-## Features
-
-### Custom palette
+## Colorschemes
 
 <p align="center"> <img src="assets/gh-colorscheme-preview.webp"> </p>
-The theme supports various palettes (5 in the base theme and even more through the built-in extended colorschemes) which include many popular colorschemes such as Catppuccin and Dracula. These are heavily integrated into the theme as they are directly used to stylize various UI elements.
 
-### Layouts
+The theme supports the following colorschemes:
+- Atom
+- Catppuccin (Latte, Frappe, Macchiato, Mocha, Mocha Old)
+- Coffee
+- Biscuit
+- Everforest
+- Dracula
+- Gruvbox
+- Nord (Nord Light, Nord Dark, Nord Darker)
+- Notion
+- Kanagawa
+- Rosé Pine (Rosé Pine Dawn, Rosé Pine)
+- Rosebox
+- Royal Velvet
+- Sandy Beaches
+- Solarized
+- thorns
+- Generic (Dark, AMOLED Dark)
 
-Anuppuccin currently supports 2 layout variants.
+## Layouts
+
+NeoPpuccin currently supports 3 layout variants: Default, Borders and Cards.
 
 <p align="center"> <img src="assets/gh-layout-preview.webp"> </p>
 
-### Rainbow folders
-
-The theme comes with a toggleable rainbow folder feature which color-codes your folders as per their order in the filesystem.<br>
-It's great if you need to easily distinguish between folders or if you want to make your vault look a bit prettier (Both in my case :P)<br>
-The extended rainbow folder colors are included in the theme by default, allowing you to customise the repeating color count and the color of each folder position directly from the Rainbow Folders section in Style Settings.<br>
+## Rainbow folders
 
 <p align="center"> <img src="assets/gh-rainbow-preview.webp"> </p>
 
-#### Full rainbow theme
+Add a splash of color to your vault with the rainbow folders setting.
 
-This snippet makes the rainbow theme apply to the first layer of the root directory, aka only direct children.<br>
-You can choose if it applies to root files as well and customise the indentation border color.<br>
-
-#### Simple rainbow theme
-
-This snippet makes the rainbow theme apply to every folder in your filesystem, and the order is determined by the children's place in the parent folder.<br>
-You can toggle if the recolor applies to the title, the collapse border, the collapse icon and you can append a small icon to the folder title as well.<br>
-
-### Alternate tabs
+## Alternate tabs
 
 <p align="center"> <img src="assets/gh-preview-tabs.webp"> </p>
 
-### Customisable Decorations
+Customize your tabs style with the alternate tabs setting.
+
+## Customisable Decorations
 
 <p align="center"> <img src="assets/gh-decorations-preview.webp"> </p>
+
 Bold and italic colors can be toggled on and off and can be customised according to the palette as well.
 
-### Callouts
+## Callouts
 
 <p align="center"> <img src="assets/gh-callout-preview.webp"> </p>
-The theme comes with many custom callout styles (which can be toggled so they won't interfere with your own callout snippet).<br>
-The snippet also includes support for using the colors of your selected palette which means that the callouts don't ever look out of place :)<br>
-If you use the admonition plugin/have custom callout colors, they won't be affected by the recolor as it only targets vanilla callouts. However, you can make them use AnuPpuccin's palette to support dynamic per-palette theming.<br>
 
-### Custom checkboxes & Speech bubbles
+## Custom checkboxes & Speech bubbles
 
 <p align="center"> <img src="assets/gh-checkbox-preview.webp" width="50%"> </p>
-Anuppuccin's custom checkboxes try to mimic the original checkbox design as much as possible, while still being optional incase you want to use your own checkbox snippet.
-Speech bubbles have been provided which are useful for language learners and RPG vault users alike.<br>Custom checkboxes have been designed to match those provided by the <a href="https://github.com/ceciliamay/obsidianmd-theme-primary">Primary</a> theme for ease of migration and consistency.
+
+When enabled, checkboxes can have more states than just checked and unchecked. The following table shows the available states and their syntax:
 
 | Syntax  | Description     |
 | ------- | --------------- |
@@ -128,12 +109,13 @@ Speech bubbles have been provided which are useful for language learners and RPG
 | `- [8]` | Speech bubble 8 |
 | `- [9]` | Speech bubble 9 |
 
-### Colorful Frames
+## Colorful Frame
 
 <p align="center"> <img src="assets/gh-colorful-frames-preview.webp"> </p>
-Adapted from Kepano's <a href="https://github.com/kepano/obsidian-minimal">Minimal</a> theme, colorful frames add some pop to your vault by displaying your accent color on the top-most bar.
 
-### Simplified markdown embeds
+Originally adapted from Kepano's [Minimal](https://github.com/kepano/obsidian-minimal) theme, "colorful frame" add some pop to your vault by displaying your accent color Around the edges of the editor and preview panes. The accent color can be changed in the style settings.
+
+## Simplified markdown embeds
 
 Markdown embeds have an alternate styling with an animated variant which can be toggled globally using style settings or individually using alt names for embeds, for example: `![[embed|alt-name]]`
 
@@ -141,9 +123,35 @@ Markdown embeds have an alternate styling with an animated variant which can be 
 | ----------- | -------- |
 | Seamless    | seamless |
 
-## Colorschemes used
+## Custom CSS Classes
 
-**Note**: Colorschemes that aren't in the base theme are included in the theme by default and can be selected directly from the Light Theme and Dark Theme dropdowns in Style Settings. <br> **Important**: Some colorschemes have been been modified to fit the Catppuccin color value style, which means there will be some changes made to make the theme feel more natural.
+Inserting these css classes into your note frontmatter will style your notes individually.
+
+| CSS Class                   | Function                                                      |
+| --------------------------- | ------------------------------------------------------------- |
+| `heading-normal-toggle`     | Disables color in headings                                    |
+| `decorations-normal-toggle` | Disables color in text decorations like **bold** and _italic_ |
+| `hide-metadata`             | Hides metadata                                                |
+
+
+# Installation
+## Normal Installation
+Go to your theme folder (`.obsidian/themes`) and run:
+
+```sh
+git clone git@github.com:notnotnescap/NeoPpuccin.git
+```
+## Updating
+Go to your NeoPpuccin folder (`.obsidian/themes/NeoPpuccin`) and run:
+
+```sh
+git pull
+```
+
+## Building
+Clone the github repo and run `sass src/base.scss theme.css` (or `make`) in the root folder.
+
+## Colorschemes 
 
 | Theme                                                     | Light Mode | Dark Mode | Extra Notes                                                                                                                 |
 | --------------------------------------------------------- | ---------- | --------- | --------------------------------------------------------------------------------------------------------------------------- |
@@ -165,7 +173,9 @@ Markdown embeds have an alternate styling with an animated variant which can be 
 | [thorns](https://codeberg.org/rini/thorns)                | No         | Yes       | -                                                                                                                           |
 
 <details>
-<summary><h3>Previews</h3></summary>
+
+# Previews
+
 <details>
 <summary><h4>Atom</h4></summary>
 <img src="assets/colorschemes/atom-light.webp"/>
@@ -257,47 +267,30 @@ Markdown embeds have an alternate styling with an animated variant which can be 
 </details>
 </details>
 
-Note: Themes are toggled via style settings, the default themes are **Latte** for light mode and **Mocha** for dark mode.
-
-### Custom CSS Classes
-
-Inserting these css classes into your note frontmatter will style your notes individually.
-
-| CSS Class                   | Function                                                      |
-| --------------------------- | ------------------------------------------------------------- |
-| `heading-normal-toggle`     | Disables color in headings                                    |
-| `decorations-normal-toggle` | Disables color in text decorations like **bold** and _italic_ |
-| `hide-metadata`             | Hides metadata                                                |
-
-### Integrations
+# Integrations
 
 - Excalidraw
 - Kanban
 - Style Settings
 
-#### Minimal Features
+## Minimal Features
 
-AnuPpuccin includes Minimal's [Cards](https://github.com/kepano/obsidian-minimal/blob/master/src/scss/features/cards.scss) snippet, used under its MIT license with full style settings support. You can buy Kepano a coffee here:
-<a href="https://www.buymeacoffee.com/kepano" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+NeoPpuccin includes Minimal's [Cards](https://github.com/kepano/obsidian-minimal/blob/master/src/scss/features/cards.scss) snippet, used under its MIT license with full style settings support. You can support Kepano [here](https://www.buymeacoffee.com/kepano).
 
-### Recommended Fonts
+# Recommended Fonts
 
 - **Interface**: [Overpass](https://fonts.google.com/specimen/Overpass)
 - **Text**: [Rubik](https://fonts.google.com/specimen/Rubik)
 - **Headings**: [Noto Serif](https://fonts.google.com/noto/specimen/Noto+Serif)
 
-### Special thanks to:
 
-- [Paul Ryley](https://github.com/pryley) for countless contributions to the theme and amazing sense of design in general.
-- [Chuck Harmston](https://github.com/chuckharmston) for his amazing alternate tabs snippet.
-- [melnhh](https://github.com/melnhh) and Lunairee for their amazing colorschemes.
-- [EdualcLaiv](https://github.com/EdualcLaiv) for porting Royal Velvet to AnuPpuccin.
-- [xotea](https://github.com/xotea) for theming framework tweaks.
-- [raisabelatrix](https://github.com/raisabelatrix) for [rainbow tags](https://gist.github.com/raisabelatrix/eb383f7e19b59f951430c2f3c6ed80b0) variables.
+# Contributions
 
-## Credits and Acknowledgements
+As mentionned at the top, NeoPpuccin is a fork of AnuPpuccin maintained by [AnubisNekhet](https://github.com/AnubisNekhet). You may see the [github page](https://github.com/AnubisNekhet/AnuPpuccin) to see the original theme and its contributors. If you want to contribute to NeoPpuccin, please submit a pull request or open an issue on this repository.
 
-- [@kepano's](https://github.com/kepano) [Minimal](https://github.com/kepano/obsidian-minimal) for the inspiration for [colorful frames](https://github.com/AnubisNekhet/AnuPpuccin/blob/main/src/modules/Features/colorful-frame.scss) and partial inspiration for style settings menus design, as well as the [Minimal Cards](https://github.com/kepano/obsidian-minimal/blob/master/src/scss/features/cards.scss) snippet, which is bundled with the theme under its MIT license
-- [@ceciliamay's](https://github.com/ceciliamay) [Primary](https://github.com/ceciliamay/obsidianmd-theme-primary) for inspiration for [custom checkboxes](https://github.com/AnubisNekhet/AnuPpuccin/blob/main/src/modules/Features/custom-checkboxes.scss) and [floating vault title](https://github.com/AnubisNekhet/AnuPpuccin/blob/main/src/modules/Features/floating-title.scss)
-- [@SlRvb](https://github.com/SlRvb) for [ITS](https://github.com/SlRvb/Obsidian--ITS-Theme) frontmatter styling inspiration, which is available as the built-in Properties Card style setting.
-- [@Akifyss](https://github.com/Akifyss) for their [border theme](https://github.com/Akifyss/obsidian-border) layout design.
+## If you like this theme
+You can support me directly on my [my Ko-Fi page](https://ko-fi.com/erd). You can also support AnubisNekhet, the original author of AnuPpuccin, on his [Buy Me a Coffee page](https://www.buymeacoffee.com/anubisnekhet).
+
+# License
+
+NeoPpuccin is licensed under the GPL-3.0 license which allows you to modify the code freely, however the Copyright and license notices must be preserved in your CSS. If you redistribute a part of the code, please credit the theme in your CSS file.

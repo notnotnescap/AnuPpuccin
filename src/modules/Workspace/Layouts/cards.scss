@@ -94,7 +94,7 @@ body.anp-card-layout {
 
     // The sidebar holding the vault profile is one card: the pane on top and the profile below
     // share a single rounded outline. Matched on the profile itself, because Obsidian names the
-    // docks by the side they render on — `.mod-left-split` is the right-hand dock in RTL.
+    // docks by the side they render on, `.mod-left-split` is the right-hand dock in RTL.
     .workspace-split:has(.workspace-sidedock-vault-profile) {
 
         .workspace-leaf-content {

@@ -3,11 +3,11 @@ $accents: "rosewater", "flamingo", "pink", "mauve", "red", "maroon", "peach",
     "yellow", "green", "teal", "sky", "sapphire", "blue", "lavender";
 
 @each $accent in $accents {
-    .anuppuccin-accent-toggle.ctp-accent-#{$accent} {
+    .neoppuccin-accent-toggle.ctp-accent-#{$accent} {
         --ctp-accent: var(--ctp-#{$accent});
     }
 
-    .theme-light.anuppuccin-accent-toggle.ctp-accent-light-#{$accent} {
+    .theme-light.neoppuccin-accent-toggle.ctp-accent-light-#{$accent} {
         --ctp-accent: var(--ctp-#{$accent});
     }
 
@@ -25,7 +25,7 @@ $accents: "rosewater", "flamingo", "pink", "mauve", "red", "maroon", "peach",
 }
 
 /*------------------Actual Configs--------------------*/
-.anuppuccin-accent-toggle {
+.neoppuccin-accent-toggle {
     --color-accent: rgb(var(--ctp-accent));
     --color-accent-1: rgb(var(--ctp-accent));
     --color-accent-2: rgba(var(--ctp-accent), 0.9);
